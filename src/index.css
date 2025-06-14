@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* @theme static {
+  --color-primary: var(--color-red-500);
+  --color-secondary: var(--color-blue-500);
+} */
+
+* {
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.code-block,
+.mono-text {
+  font-family: "IBM Plex Mono", monospace;
+}
+.hex-container {
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  transition: all 0.3s ease-in-out;
+  background-color: #64ffda;
+}
+.logo-container {
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  transition: all 0.3s ease-in-out;
+  background-color: #64ffda;
+}
+.logo-container::before {
+  content: "";
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  background-color: #1e2939;
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  z-index: -1;
+}
+.logo-container:hover {
+  transform: translate(-7px, -4px);
+}
+@layer utilities {
+  .clip-hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .animate-hueRotate {
+    animation: hueRotate 4s linear infinite;
+  }
+
+  @keyframes hueRotate {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+}
+.skills-main {
+  display: flex;
+  --s: 100px;
+  --m: 4px;
+  --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
+}
+.skills-container {
+  font-size: 0;
+}
+.skills-container div {
+  width: var(--s);
+  margin: var(--m);
+  height: calc(var(--s) * 1.1547);
+  display: inline-block;
+  font-size: initial;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  background: red;
+  margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+}
+
+.skills-container div:nth-child(odd) {
+  background: green;
+}
+.skills-container::before {
+  content: "";
+  width: calc(var(--s) / 2 + var(--m));
+  float: left;
+  height: 120%;
+  shape-outside: repeating-linear-gradient(
+    #0000 0 calc(var(--f) - 3px),
+    #000 0 var(--f)
+  );
+}
+
+.develop-icon {
+  position: relative;
+  margin: 0 20px;
+  width: 56px;
+  height: 87px;
+  border-radius: 10px;
+  display: inline-block;
+  top: 0;
+  transform: rotate(30deg);
+}
+.develop-icon::before,
+.develop-icon::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: inherit;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.develop-icon::before {
+  transform: rotate(60deg);
+}
+.develop-icon::after {
+  transform: rotate(-60deg);
+}
+.develop-icon .circle {
+  width: 53px;
+  height: 53px;
+  position: absolute;
+  background: #fff;
+  z-index: 10;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  transform: rotate(-30deg);
+}
+
+.develop-icon.red {
+  background: linear-gradient(to bottom right, #f4511e 0%, #b71c1c 100%);
+  color: #c62828;
+}
