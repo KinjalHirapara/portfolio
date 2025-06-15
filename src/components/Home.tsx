@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { fadeInUp } from "../utils/motion";
 import profileImg from "../assets/profile.jpg";
+
 const Home: React.FC = () => {
   return (
-    <section className="max-w-5xl mx-auto px-4 h-full flex flex-col justify-center">
-      <div className="flex gap-2">
-        <div className="flex flex-col gap-6">
+    <section className="max-w-5xl mx-auto px-[60px] py-[50px] lg:px-4 lg:py-[50px] flex flex-col justify-center mobile-landscape-padding">
+      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-2 items-center md:items-start">
+        <div className="flex flex-col gap-6 flex-1">
           <motion.div
             custom={0}
             initial="hidden"
@@ -63,7 +64,7 @@ const Home: React.FC = () => {
           </motion.div>
         </div>
         <motion.div
-          className="relative w-[300px] h-[300px]"
+          className="relative w-full max-w-[300px] h-[300px] mx-auto md:mx-0"
           initial={{ opacity: 0, scale: 0.8, x: 60 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{
@@ -73,10 +74,9 @@ const Home: React.FC = () => {
             stiffness: 80,
           }}
         >
-          <div className="h-[290px] absolute inset-0 transform -translate-x-4 translate-y-2 rotate-[-4deg] bg-gradient-to-tr from-[#64ffda] to-[#1e2939] rounded-bl-[100px] z-0"></div>
-
-          <div className="relative w-full h-full p-[2px] rounded-bl-[100px] z-10 top-[-5px]">
-            <div className="w-full h-full overflow-hidden rounded-bl-[100px] bg-white">
+          <div className="h-[90%] absolute inset-0 transform -translate-x-2 sm:-translate-x-4 translate-y-1 sm:translate-y-2 rotate-[-4deg] bg-gradient-to-tr from-[#64ffda] to-[#1e2939] rounded-bl-[60px] sm:rounded-bl-[100px] z-0"></div>
+          <div className="relative w-full h-full p-[2px] rounded-bl-[60px] sm:rounded-bl-[100px] z-10 top-[-5px]">
+            <div className="w-full h-full overflow-hidden rounded-bl-[60px] sm:rounded-bl-[100px] bg-white">
               <img
                 src={profileImg}
                 alt="Profile"
@@ -89,4 +89,5 @@ const Home: React.FC = () => {
     </section>
   );
 };
+
 export default Home;

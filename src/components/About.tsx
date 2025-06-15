@@ -7,7 +7,10 @@ import { skills } from "../constants";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="max-w-5xl mx-auto h-full flex flex-col">
+    <section
+      id="about"
+      className="max-w-5xl mx-auto px-[60px] py-[50px] lg:px-4 lg:py-[10px] flex flex-col mobile-landscape-padding"
+    >
       <div className="flex flex-col md:flex-row gap-10 items-stretch pb-4">
         <div className="md:w-1/2 flex flex-col h-full">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#64ffda] flex items-center gap-2">

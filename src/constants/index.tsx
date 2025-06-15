@@ -174,7 +174,7 @@ export const projects: Project[] = [
     title: "Circle Vision",
     overline: "Timeloop Technologies",
     description:
-      "This is a website where Real Estate brokers can list the properties that they are selling/renting. The properties are listed in the form of auto-generated websites based on the content they provide. The content can be text, photos, videos and 3D tours. Customers can also register the domain they want to use for the auto-generated website.",
+      "This platform allows real estate brokers to list properties for sale or rent through auto-generated websites using their uploaded content—like text, images, videos, and 3D tours. I worked as a Front-End Developer, where I designed and developed new features and integrated APIs to enhance the overall functionality and user experience.",
     tech: ["Angular", "Bootstrap", "API Integration", "jQuery", "HTML", "CSS"],
     image: circleVisionImg,
   },

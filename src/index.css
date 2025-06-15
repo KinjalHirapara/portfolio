@@ -7,6 +7,20 @@
   --color-secondary: var(--color-blue-500);
 } */
 
+*::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #64ffda;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #43c6ac;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
@@ -154,4 +168,13 @@
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
   border-left: 12px solid #64ffda;
+}
+@media (orientation: landscape) and (max-width: 1023px),
+  (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  .mobile-landscape-padding {
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
 }

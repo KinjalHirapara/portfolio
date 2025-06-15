@@ -37,7 +37,7 @@ const Nav: React.FC = () => {
           <ThemeToggle />
         </div>
       </nav>
-      <div className="fixed bottom-0 left-[50px] z-9">
+      <div className="fixed bottom-0 md:left-[50px] left-[10px] z-9">
         <div className="flex flex-col gap-4 justify-center items-center">
           <div>
             <a
