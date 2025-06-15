@@ -1,87 +1,9 @@
 import Tilt from "react-parallax-tilt";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaGitAlt,
-  FaNodeJs,
-} from "react-icons/fa";
-import {
-  SiTypescript,
-  SiAngular,
-  SiTailwindcss,
-  SiBootstrap,
-  SiGit,
-  SiSass,
-} from "react-icons/si";
+
 import { motion } from "framer-motion";
 import { CgEditNoise } from "react-icons/cg";
-import { fadeInUp } from "../utils/motion";
-
-// Hexagon CSS clip-path utility
-const skills = [
-  {
-    name: "Angular",
-    icon: <SiAngular className="text-red-500 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-red-300 via-red-400 to-red-700",
-  },
-  {
-    name: "React",
-    icon: <FaReact className="text-cyan-400 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-cyan-300 via-cyan-400 to-cyan-700",
-  },
-  {
-    name: "HTML",
-    icon: <FaHtml5 className="text-orange-500 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-orange-300 via-orange-400 to-orange-700",
-  },
-  {
-    name: "SCSS",
-    icon: <SiSass className="text-pink-500 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-pink-300 via-pink-400 to-pink-700",
-  },
-  {
-    name: "JavaScript",
-    icon: <FaJs className="text-yellow-400 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-yellow-300 via-yellow-400 to-yellow-700",
-  },
-  {
-    name: "TypeScript",
-    icon: <SiTypescript className="text-blue-600 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-blue-300 via-blue-400 to-blue-700",
-  },
-  {
-    name: "Bootstrap",
-    icon: <SiBootstrap className="text-purple-600 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-purple-300 via-purple-400 to-purple-700",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: <SiTailwindcss className="text-sky-400 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-sky-300 via-sky-400 to-sky-700",
-  },
-  {
-    name: "Git",
-    icon: <SiGit className="text-orange-500 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-orange-300 via-orange-400 to-orange-700",
-  },
-  {
-    name: "Node.js",
-    icon: <FaNodeJs className="text-green-600 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-green-300 via-green-400 to-green-700",
-  },
-];
-
-const hexVariants = {
-  hidden: { opacity: 0, scale: 0.7, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: { delay: i * 0.12, type: "spring", stiffness: 120 },
-  }),
-};
+import { fadeInUp, hexVariants } from "../utils/motion";
+import { skills } from "../constants";
 
 const About: React.FC = () => {
   return (
@@ -162,14 +84,15 @@ const About: React.FC = () => {
                 glareMaxOpacity={0.3}
                 scale={1.05}
                 transitionSpeed={250}
+                key={skill.name + index}
               >
-                <div key={skill.name}>
+                <div>
                   <motion.div
                     className="flex items-center justify-center w-full h-full"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
-                    variants={hexVariants}
+                    variants={hexVariants(index)}
                     custom={index}
                   >
                     <div className={`${skill.class} develop-icon`}>

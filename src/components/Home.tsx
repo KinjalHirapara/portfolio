@@ -62,7 +62,17 @@ const Home: React.FC = () => {
             </a>
           </motion.div>
         </div>
-        <div className="relative w-[300px] h-[300px]">
+        <motion.div
+          className="relative w-[300px] h-[300px]"
+          initial={{ opacity: 0, scale: 0.8, x: 60 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            type: "spring",
+            stiffness: 80,
+          }}
+        >
           <div className="h-[290px] absolute inset-0 transform -translate-x-4 translate-y-2 rotate-[-4deg] bg-gradient-to-tr from-[#64ffda] to-[#1e2939] rounded-bl-[100px] z-0"></div>
 
           <div className="relative w-full h-full p-[2px] rounded-bl-[100px] z-10 top-[-5px]">
@@ -74,7 +84,7 @@ const Home: React.FC = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

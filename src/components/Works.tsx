@@ -1,39 +1,8 @@
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import profileImg from "../assets/logo.jpeg";
-import { useState } from "react";
-type Project = {
-  title: string;
-  overline: string;
-  description: string;
-  tech: string[];
-  image: string;
-  github: string;
-  external: string;
-};
 
-const projects: Project[] = [
-  {
-    title: "Halcyon Theme",
-    overline: "Featured Project",
-    description:
-      "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on various marketplaces.",
-    tech: ["VS Code", "Sublime Text", "Atom", "iTerm2", "Hyper"],
-    image: profileImg,
-    github: "https://github.com/bchiang7/halcyon-site",
-    external: "https://halcyon-theme.netlify.com/",
-  },
-  {
-    title: "Spotify Profile",
-    overline: "Featured Project",
-    description:
-      "A web app for visualizing personalized Spotify data. View your top artists, tracks, and more.",
-    tech: ["React", "Styled Components", "Express", "Spotify API", "Heroku"],
-    image: profileImg,
-    github: "https://github.com/bchiang7/spotify-profile",
-    external: "https://spotify-profile.herokuapp.com/",
-  },
-];
+import { useState } from "react";
+import { projects } from "../constants";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -46,7 +15,6 @@ const fadeInUp = {
 
 const Works: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState(0);
-  const isEven = selectedProject % 2 === 1;
   return (
     <section
       id="projects"
@@ -62,32 +30,26 @@ const Works: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-5">
           <div>
             <motion.div
-              key={projects[selectedProject].title}
               custom={selectedProject}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={fadeInUp}
-              className={`relative flex flex-col-reverse md:flex-row ${
-                isEven ? "md:flex-row-reverse" : ""
-              } items-center group`}
+              className={`relative flex flex-col-reverse md:flex-row items-center group`}
             >
               {/* Project Content */}
               <div
                 className={`
                   w-full md:w-1/2 z-10
-                  bg-white/90 dark:bg-gray-900/80
-                  p-6 md:p-8 rounded-lg shadow-lg
-                  md:shadow-2xl
-                  ${isEven ? "md:ml-[-4rem]" : "md:mr-[-4rem]"}
+                  md:mr-[-4rem]
                   md:mt-0 mt-[-4rem]
-                  backdrop-blur
+                  
                 `}
               >
-                <p className="text-[#64ffda] text-sm mb-2">
+                <p className={`text-[#64ffda] text-sm mb-2 text-left`}>
                   {projects[selectedProject].overline}
                 </p>
-                <h3 className="text-2xl font-bold mb-4">
+                <h3 className={`text-2xl font-bold mb-4 text-left`}>
                   <a
                     href={projects[selectedProject].external}
                     target="_blank"
@@ -97,42 +59,52 @@ const Works: React.FC = () => {
                     {projects[selectedProject].title}
                   </a>
                 </h3>
-                <div className="mb-4">
+                <div
+                  className="mb-4 bg-white/90 dark:bg-gray-900/80
+                  p-6 md:p-8 rounded-lg shadow-lg
+                  md:shadow-2xl backdrop-blur"
+                >
                   <p className="text-gray-700 dark:text-gray-300">
                     {projects[selectedProject].description}
                   </p>
                 </div>
-                <ul className="flex flex-wrap gap-4 text-sm mb-4">
+                <ul
+                  className={`flex flex-wrap gap-4 text-sm mb-4 justify-start`}
+                >
                   {projects[selectedProject].tech.map((tech) => (
                     <li key={tech} className="text-[#64ffda] font-mono">
                       {tech}
                     </li>
                   ))}
                 </ul>
-                <div className="flex gap-4">
-                  <a
-                    href={projects[selectedProject].github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub Link"
-                  >
-                    <FaGithub className="w-6 h-6 hover:text-[#64ffda] transition" />
-                  </a>
-                  <a
-                    href={projects[selectedProject].external}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="External Link"
-                  >
-                    <FaExternalLinkAlt className="w-6 h-6 hover:text-[#64ffda] transition" />
-                  </a>
+                <div className={`flex gap-4 justify-start`}>
+                  {projects[selectedProject].github && (
+                    <a
+                      href={projects[selectedProject].github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub Link"
+                    >
+                      <FaGithub className="w-6 h-6 hover:text-[#64ffda] transition" />
+                    </a>
+                  )}
+                  {projects[selectedProject].external && (
+                    <a
+                      href={projects[selectedProject].external}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="External Link"
+                    >
+                      <FaExternalLinkAlt className="w-6 h-6 hover:text-[#64ffda] transition" />
+                    </a>
+                  )}
                 </div>
               </div>
               {/* Project Image */}
               <div
                 className={`
                   w-full md:w-1/2 h-64 md:h-[340px] rounded-lg overflow-hidden shadow-lg relative
-                  ${isEven ? "md:justify-end" : "md:justify-start"}
+                  md:justify-start
                   flex items-center
                 `}
               >

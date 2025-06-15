@@ -142,3 +142,16 @@
   background: linear-gradient(to bottom right, #f4511e 0%, #b71c1c 100%);
   color: #c62828;
 }
+
+.tab-active-triangle::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 12px solid #64ffda;
+}

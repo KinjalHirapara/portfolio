@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useTheme } from "./ThemeContext";
 
 import {
@@ -15,7 +14,6 @@ import Works from "../components/Works";
 import Contact from "../components/Contact";
 import { navLinks } from "../constants";
 import Nav from "../components/Nav";
-import ExperiencePanel from "../components/ExperiencePanel";
 
 const SectionRouter = () => {
   const location = useLocation();
@@ -39,7 +37,7 @@ const SectionRouter = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/experience" element={<ExperiencePanel />} />
+              <Route path="/experience" element={<Experience />} />
               <Route path="/works" element={<Works />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>

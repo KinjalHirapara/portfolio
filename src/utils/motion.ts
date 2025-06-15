@@ -26,3 +26,23 @@ export const fadeInUp = (currentIndex: number) => {
     }),
   };
 };
+
+export const hexVariants = (index: number) => {
+  return {
+    hidden: { opacity: 0, scale: 0.7, y: 30 },
+    visible: (index: number) => ({
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { delay: index * 0.12, type: "spring", stiffness: 120 },
+    }),
+  };
+};
+
+export const detailVariants = () => {
+  return {
+    initial: { opacity: 0, x: 40 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -40 },
+  };
+};
