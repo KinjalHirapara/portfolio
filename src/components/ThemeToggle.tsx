@@ -5,9 +5,7 @@ import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
 
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
+  useEffect(() => {}, [theme]);
 
   return (
     <button
