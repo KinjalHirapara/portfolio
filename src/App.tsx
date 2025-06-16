@@ -1,6 +1,6 @@
 import "./App.css";
 import { ThemeProvider } from "./context/ThemeContext";
-import Page from "./context/page";
+import Page from "./components/page";
 function App() {
   return (
     <ThemeProvider>

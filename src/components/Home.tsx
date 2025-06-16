@@ -42,10 +42,10 @@ const Home: React.FC = () => {
             variants={fadeInUp}
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
           >
-            I design and develop modern, high-performance user interfaces using
-            Angular, React, and other front-end technologies. I specialize in
-            writing clean, maintainable code and integrating APIs to deliver
-            responsive, user-friendly web experiences.
+            Passionate about crafting fast, responsive, and visually engaging
+            web apps using Angular, React, and modern UI tools. Dedicated to
+            transforming complex ideas into interactive interfaces that enhance
+            user engagement and usability.
           </motion.div>
           <motion.div
             custom={4}

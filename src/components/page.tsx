@@ -1,4 +1,4 @@
-import { useTheme } from "./ThemeContext";
+import { useTheme } from "../context/ThemeContext";
 
 import {
   BrowserRouter,
@@ -7,15 +7,15 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import Home from "../components/Home";
-import About from "../components/About";
-import Experience from "../components/Experience";
-import Works from "../components/Works";
-import Contact from "../components/Contact";
+import Home from "./Home";
+import About from "./About";
+import Experience from "./Experience";
+import Works from "./Works";
+import Contact from "./Contact";
 import { navLinks } from "../constants";
-import Nav from "../components/Nav";
+import Nav from "./Nav";
 import { useEffect, useState } from "react";
-import HexagonLoader from "../components/HexagonLoader";
+import HexagonLoader from "./Loader";
 
 const SectionRouter: React.FC = () => {
   const location = useLocation();

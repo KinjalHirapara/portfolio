@@ -111,7 +111,7 @@ export const experiences = [
     city: "Christchurch, New Zealand",
     duration: "Dec 2024 - Present",
     responsibilities: [
-      "Actively enhancing my skills through hands-on learning, I created a portfolio website using TypeScript and Tailwind CSS. I'm expanding my understanding of React and building a self-learning full-stack project with Node.js and MongoDB to gain hands-on experience with modern web development practices.",
+      "Actively enhancing my skills through hands-on learning, I created a portfolio website using React and Tailwind CSS. I'm expanding my understanding of React and building a self-learning full-stack project with Node.js and MongoDB to gain hands-on experience with modern web development practices.",
     ],
   },
   {
@@ -120,7 +120,7 @@ export const experiences = [
     city: "Ahmedabad, Gujarat, India",
     duration: "March 2021 - Oct 2024",
     responsibilities: [
-      "In this role, I was responsible for developing interactive and responsive web applications using Angular, HTML, SCSS, and visualization libraries like ECharts and Kendo UI. I transformed static Adobe XD mockups into dynamic, user-friendly web applications, ensuring seamless performance across devices. I integrated RESTful APIs to enable real-time data interaction and ensure smooth communication between the frontend and backend systems. By developing reusable Angular components, I improved code efficiency and consistency across the application. I collaborated closely with designers and backend teams to translate business requirements into functional UI features.",
+      "In this role, I was responsible for developing interactive and responsive web applications using Angular, HTML, SCSS, and visualization libraries like ECharts and Kendo UI. I transformed prototype designs into dynamic, user-friendly web applications, ensuring seamless performance across devices. I integrated RESTful APIs to enable real-time data interaction and ensure smooth communication between the frontend and backend systems. By developing reusable Angular components, I improved code efficiency and consistency across the application. I collaborated closely with designers and backend teams to translate business requirements into functional UI features.",
     ],
   },
   {
@@ -130,7 +130,7 @@ export const experiences = [
     duration: "June 2018 – Feb 2021",
     responsibilities: [
       "Started my career as a Junior Front-End Developer, building interactive and responsive web applications using JavaScript. Focused on writing clean, maintainable code while improving API integration and data handling for smoother user interactions. Gained experience in DOM manipulation, event handling, and optimizing front-end performance to enhance page speed and responsiveness. Worked closely with senior developers and UX teams, translating wireframes into pixel-perfect, cross-browser-compatible applications while debugging and improving front-end workflows.",
-      "As I progressed in my role as a Front-End Developer, I gained hands-on experience in building dynamic and responsive web applications using Angular. I focused on developing reusable Angular components, optimizing data binding, and improving state management for better application performance. I worked on admin panels, theme-based applications, dashboards, and Custom CMS application, focusing on responsive design and functionality. I learned and applied Git version control, contributing to branch management and code synchronization within a collaborative development environment. I utilized Trello and TMetric for task updates, tagging, time tracking, and Agile sprint progress monitoring, improving team communication and workflow efficiency.",
+      " As I progressed in my role as a Front-End Developer, I gained hands-on experience in building dynamic and responsive web applications using Angular. I focused on developing reusable Angular components, optimizing data binding, and improving state management for better application performance. I worked on CMS application, Project Management System, Leave Management System, theme-based applications, and verious dashboard applications focusing on responsive design and functionality. I learned and applied Git version control, contributing to branch management and code synchronization within a collaborative development environment. I utilized Trello and TMetric for task updates, tagging, time tracking, and Agile sprint progress monitoring, improving team communication and workflow efficiency.",
     ],
   },
 ];
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     title: "Circle Vision",
     overline: "Timeloop Technologies",
     description:
-      "This platform allows real estate brokers to list properties for sale or rent through auto-generated websites using their uploaded content—like text, images, videos, and 3D tours. I worked as a Front-End Developer, where I designed and developed new features and integrated APIs to enhance the overall functionality and user experience.",
+      "This platform allows real estate brokers to list properties for sale or rent through auto-generated websites using their uploaded content like text, images, videos, and 3D tours. I worked as a Front-End Developer, where I designed and developed new features and integrated APIs to enhance the overall functionality and user experience.",
     tech: ["Angular", "Bootstrap", "API Integration", "jQuery", "HTML", "CSS"],
     image: circleVisionImg,
   },

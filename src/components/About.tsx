@@ -45,10 +45,17 @@ const About: React.FC = () => {
               variants={fadeInUp}
             >
               <p>
-                I focus on writing clean, efficient code and connecting
+                I specialize in building scalable, maintainable, and accessible
+                UI components, optimizing performance, and ensuring seamless API
+                integrations. Additionally, I bring interfaces to life with
+                Framer Motion, creating smooth, interactive, and visually
+                appealing animations that enhance user experience. I'm currently
+                expanding my skills by learning backend development with Node.js
+                to become a full-stack developer.
+                {/* I focus on writing clean, efficient code and connecting
                 front-end apps with APIs and external services. I'm also
                 learning to build backend APIs using Node.js to help front-end
-                and back-end work together smoothly.
+                and back-end work together smoothly. */}
               </p>
             </motion.div>
             <motion.div
