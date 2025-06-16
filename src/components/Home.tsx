@@ -11,7 +11,7 @@ const Home: React.FC = () => {
             custom={0}
             initial="hidden"
             animate="visible"
-            variants={fadeInUp(0)}
+            variants={fadeInUp}
           >
             <h1 className="text-lg md:text-xl font-mono mb-2 text-textDark dark:text-textLight">
               Hi, my name is
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
             custom={1}
             initial="hidden"
             animate="visible"
-            variants={fadeInUp(1)}
+            variants={fadeInUp}
             className="text-3xl md:text-7xl font-bold text-primary"
           >
             Kinjal Hirapara.
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
             custom={2}
             initial="hidden"
             animate="visible"
-            variants={fadeInUp(2)}
+            variants={fadeInUp}
             className="text-4xl md:text-4xl font-semibold text-textDark dark:text-textLight"
           >
             I build things for the web.
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
             custom={3}
             initial="hidden"
             animate="visible"
-            variants={fadeInUp(3)}
+            variants={fadeInUp}
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
           >
             I design and develop modern, high-performance user interfaces using
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
             custom={4}
             initial="hidden"
             animate="visible"
-            variants={fadeInUp(4)}
+            variants={fadeInUp}
           >
             <a
               href="../assets/Kinjal_Software_developer_Resume.pdf"

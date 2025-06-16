@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
         initial="hidden"
         animate="visible"
       >
-        {contactdetails.map((item, i) => (
+        {contactdetails.map((item) => (
           <motion.div
             key={item.text}
             className="flex items-center gap-3 text-textDark dark:text-textLight"

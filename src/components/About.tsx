@@ -28,7 +28,7 @@ const About: React.FC = () => {
               custom={0}
               initial="hidden"
               animate="visible"
-              variants={fadeInUp(0)}
+              variants={fadeInUp}
             >
               <p>
                 I design and develop modern, high-performance user interfaces
@@ -42,7 +42,7 @@ const About: React.FC = () => {
               custom={1}
               initial="hidden"
               animate="visible"
-              variants={fadeInUp(0)}
+              variants={fadeInUp}
             >
               <p>
                 I focus on writing clean, efficient code and connecting
@@ -55,7 +55,7 @@ const About: React.FC = () => {
               custom={2}
               initial="hidden"
               animate="visible"
-              variants={fadeInUp(0)}
+              variants={fadeInUp}
             >
               <p>
                 Throughout my career, I've contributed to various projects like
@@ -69,7 +69,7 @@ const About: React.FC = () => {
               custom={3}
               initial="hidden"
               animate="visible"
-              variants={fadeInUp(0)}
+              variants={fadeInUp}
             >
               <p>
                 Here are a few technologies I’ve been working with recently:
@@ -101,7 +101,7 @@ const About: React.FC = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
-                    variants={hexVariants(index)}
+                    variants={hexVariants}
                     custom={index}
                   >
                     <div className={`${skill.class} develop-icon`}>

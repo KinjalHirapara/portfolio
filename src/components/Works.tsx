@@ -2,15 +2,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { projects } from "../constants";
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.7, type: "spring" },
-  }),
-};
+import { fadeInUp } from "../utils/motion";
 
 const Works: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState(0);
@@ -35,10 +27,9 @@ const Works: React.FC = () => {
           <div className="hidden lg:block w-full">
             <motion.div
               key={selectedProject}
-              custom={selectedProject}
               initial="hidden"
               animate="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.5 }}
               variants={fadeInUp}
               className={`relative flex flex-col-reverse lg:flex-row items-center group`}
             >
@@ -143,10 +134,9 @@ const Works: React.FC = () => {
           {/* Mobile: Show all projects stacked */}
           <div className="block lg:hidden w-full">
             <div className="flex flex-col gap-8">
-              {projects.map((project, idx) => (
+              {projects.map((project) => (
                 <motion.div
                   key={project.title}
-                  custom={idx}
                   initial="hidden"
                   animate="visible"
                   viewport={{ once: true, amount: 0.3 }}
