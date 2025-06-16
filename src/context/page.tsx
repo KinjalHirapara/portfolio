@@ -14,18 +14,25 @@ import Works from "../components/Works";
 import Contact from "../components/Contact";
 import { navLinks } from "../constants";
 import Nav from "../components/Nav";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import HexagonLoader from "../components/HexagonLoader";
 
-const SectionRouter = () => {
+const SectionRouter: React.FC = () => {
   const location = useLocation();
   const currentPath = location.pathname;
   const navigate = useNavigate();
+
+  const [loading, setLoading] = useState(true);
 
   const { theme } = useTheme();
 
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
+
+  if (loading) {
+    return <HexagonLoader onFinish={() => setLoading(false)} />;
+  }
 
   return (
     <div
