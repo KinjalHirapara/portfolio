@@ -19,12 +19,16 @@ const Works: React.FC = () => {
       id="projects"
       className="max-w-5xl mx-auto flex flex-col px-[60px] py-[30px] lg:px-4 lg:py-[10px] mobile-landscape-padding"
     >
-      <div className="">
-        <h2 className="text-xl lg:text-3xl font-bold text-[#64ffda] flex items-center gap-2">
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-xl lg:text-3xl font-bold text-primary flex items-center gap-2">
           <span className="numbered-heading"> Some Things I've Built</span>
-          <span className="flex-1 h-px bg-gray-300"></span>
+          <span className="flex-1 h-px bg-primary"></span>
         </h2>
-      </div>
+      </motion.div>
       <div className="flex-1 flex mt-8">
         <div className="flex flex-col lg:flex-row gap-5 w-full">
           {/* Desktop: Single project with selector */}
@@ -46,36 +50,28 @@ const Works: React.FC = () => {
                   lg:mt-0 mt-[-4rem]
                 `}
               >
-                <p className={`text-[#64ffda] text-sm mb-2 text-left`}>
+                <p className={`text-primary text-sm mb-2 text-left`}>
                   {projects[selectedProject].overline}
                 </p>
                 <h3 className={`text-2xl font-bold mb-4 text-left`}>
-                  <a
-                    href={projects[selectedProject].external}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    {projects[selectedProject].title}
-                  </a>
+                  {projects[selectedProject].title}
                 </h3>
                 <div
-                  className="mb-4 bg-white/90 dark:bg-gray-900/80
-                  p-6 lg:p-8 rounded-lg backdrop-blur"
+                  className="mb-4 bg-primary
+                  p-4 lg:p-6 rounded-lg backdrop-blur flex flex-col gap-4"
                 >
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <p className="text-textLight">
                     {projects[selectedProject].description}
                   </p>
+                  <ul className={`flex flex-wrap gap-4 text-sm justify-start`}>
+                    {projects[selectedProject].tech.map((tech) => (
+                      <li key={tech} className="text-dark font-mono">
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul
-                  className={`flex flex-wrap gap-4 text-sm mb-4 justify-start`}
-                >
-                  {projects[selectedProject].tech.map((tech) => (
-                    <li key={tech} className="text-[#64ffda] font-mono">
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
+
                 <div className={`flex gap-4 justify-start`}>
                   {projects[selectedProject].github && (
                     <a
@@ -84,7 +80,7 @@ const Works: React.FC = () => {
                       rel="noopener noreferrer"
                       aria-label="GitHub Link"
                     >
-                      <FaGithub className="w-6 h-6 hover:text-[#64ffda] transition" />
+                      <FaGithub className="w-6 h-6 hover:text-primary transition" />
                     </a>
                   )}
                   {projects[selectedProject].external && (
@@ -94,7 +90,7 @@ const Works: React.FC = () => {
                       rel="noopener noreferrer"
                       aria-label="External Link"
                     >
-                      <FaExternalLinkAlt className="w-6 h-6 hover:text-[#64ffda] transition" />
+                      <FaExternalLinkAlt className="w-6 h-6 hover:text-primary transition" />
                     </a>
                   )}
                 </div>
@@ -131,8 +127,8 @@ const Works: React.FC = () => {
                   <div
                     className={`w-[30px] h-[30px] flex justify-center items-center rounded-full border border-white   cursor-pointer ${
                       selectedProject === index
-                        ? "bg-[#64ffda] text-black"
-                        : "bg-transparent text-white"
+                        ? "bg-primary text-textLight"
+                        : "bg-transparent text-textLight"
                     }`}
                   >
                     {index + 1}
@@ -166,31 +162,23 @@ const Works: React.FC = () => {
                     {/* <div className="absolute inset-0"></div> */}
                   </div>
                   <div className="w-full p-4">
-                    <p className="text-[#64ffda] text-sm mb-2 text-left">
+                    <p className="text-primary text-sm mb-2 text-left">
                       {project.overline}
                     </p>
                     <h3 className="text-2xl font-bold mb-4 text-left">
-                      <a
-                        href={project.external}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline"
-                      >
-                        {project.title}
-                      </a>
+                      {project.title}
                     </h3>
-                    <div className="mb-4 bg-white/90 dark:bg-gray-900/80 p-6 rounded-lg backdrop-blur">
-                      <p className="text-gray-700 dark:text-gray-300">
-                        {project.description}
-                      </p>
+                    <div className="mb-4 bg-primary p-6 rounded-lg backdrop-blur flex flex-col gap-4">
+                      <p className="text-textLight">{project.description}</p>
+                      <ul className="flex flex-wrap gap-4 text-sm justify-start">
+                        {project.tech.map((tech) => (
+                          <li key={tech} className="text-dark font-mono">
+                            {tech}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <ul className="flex flex-wrap gap-4 text-sm mb-4 justify-start">
-                      {project.tech.map((tech) => (
-                        <li key={tech} className="text-[#64ffda] font-mono">
-                          {tech}
-                        </li>
-                      ))}
-                    </ul>
+
                     <div className="flex gap-4 justify-start">
                       {project.github && (
                         <a
@@ -199,7 +187,7 @@ const Works: React.FC = () => {
                           rel="noopener noreferrer"
                           aria-label="GitHub Link"
                         >
-                          <FaGithub className="w-6 h-6 hover:text-[#64ffda] transition" />
+                          <FaGithub className="w-6 h-6 hover:text-primary transition" />
                         </a>
                       )}
                       {project.external && (
@@ -209,7 +197,7 @@ const Works: React.FC = () => {
                           rel="noopener noreferrer"
                           aria-label="External Link"
                         >
-                          <FaExternalLinkAlt className="w-6 h-6 hover:text-[#64ffda] transition" />
+                          <FaExternalLinkAlt className="w-6 h-6 hover:text-primary transition" />
                         </a>
                       )}
                     </div>

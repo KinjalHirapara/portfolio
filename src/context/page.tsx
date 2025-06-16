@@ -14,6 +14,7 @@ import Works from "../components/Works";
 import Contact from "../components/Contact";
 import { navLinks } from "../constants";
 import Nav from "../components/Nav";
+import { useEffect } from "react";
 
 const SectionRouter = () => {
   const location = useLocation();
@@ -22,12 +23,16 @@ const SectionRouter = () => {
 
   const { theme } = useTheme();
 
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
   return (
     <div
       className={`${
         theme === "dark"
-          ? "dark:bg-gray-800 dark:text-white"
-          : "bg-white text-black"
+          ? "dark:bg-dark dark:text-textLight"
+          : "bg-light text-textDark"
       } h-screen w-screen `}
     >
       <div className="flex flex-col h-screen">
@@ -43,7 +48,7 @@ const SectionRouter = () => {
             </Routes>
           </div>
           <div className="flex justify-center mb-1">
-            <div className="flex gap-4 bg-black p-2 rounded text-white">
+            <div className="flex gap-4 bg-primary p-2 rounded text-textLight">
               <div className="flex gap-2 justify-center items-center">
                 {navLinks.map((link, index) => {
                   const path = link.id === "home" ? "/" : `/${link.id}`;
@@ -57,7 +62,7 @@ const SectionRouter = () => {
                     >
                       <button
                         onClick={() => navigate(path)}
-                        className={`flex items-center gap-2 px-3 py-1 rounded transition-colors capitalize ${
+                        className={`cursor-pointer text-textDark flex items-center gap-2 px-3 py-1 rounded transition-colors capitalize ${
                           isActive ? "bg-white/20" : "hover:bg-white/10"
                         }`}
                       >

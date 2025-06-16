@@ -9,15 +9,21 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="max-w-5xl mx-auto px-[60px] py-[50px] lg:px-4 lg:py-[10px] flex flex-col mobile-landscape-padding"
+      className="max-w-5xl mx-auto px-[60px] py-[30px] lg:px-4 lg:py-[10px] flex flex-col mobile-landscape-padding"
     >
       <div className="flex flex-col md:flex-row gap-10 items-stretch pb-4">
         <div className="md:w-1/2 flex flex-col h-full">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#64ffda] flex items-center gap-2">
-            <span className="numbered-heading">About Me</span>
-            <span className="flex-1 h-px bg-gray-300"></span>
-          </h2>
-          <div className="space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-primary flex items-center gap-2">
+              <span className="numbered-heading">About Me</span>
+              <span className="flex-1 h-px bg-primary"></span>
+            </h2>
+          </motion.div>
+          <div className="space-y-4 overflow-hidden">
             <motion.div
               custom={0}
               initial="hidden"

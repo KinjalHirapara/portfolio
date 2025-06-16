@@ -2,10 +2,22 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* @theme static {
-  --color-primary: var(--color-red-500);
-  --color-secondary: var(--color-blue-500);
-} */
+@theme static {
+  --color-primary: #438c86;
+  --color-secondary: #64ffda;
+  --color-accent: #1e2939;
+  --color-dark: #1e2939;
+  --color-light: #f8fafc;
+  --color-textDark: #1e2939;
+  --color-textLight: #f8fafc;
+}
+
+.dark {
+  --logo-bg: var(--color-dark);
+}
+.light {
+  --logo-bg: var(--color-light);
+}
 
 *::-webkit-scrollbar {
   width: 8px;
@@ -13,12 +25,12 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: #64ffda;
+  background: var(--color-primary);
   border-radius: 8px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: #43c6ac;
+  background: var(--color-primary);
 }
 
 * {
@@ -34,17 +46,17 @@
 .hex-container {
   clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
   transition: all 0.3s ease-in-out;
-  background-color: #64ffda;
+  background-color: var(--color-primary);
 }
 .logo-container {
   clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
   transition: all 0.3s ease-in-out;
-  background-color: #64ffda;
+  background-color: var(--color-primary);
 }
 .logo-container::before {
   content: "";
+  background-color: var(--logo-bg);
   clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-  background-color: #1e2939;
   width: 95%;
   height: 95%;
   position: absolute;
@@ -53,7 +65,7 @@
 .logo-container:hover {
   transform: translate(-7px, -4px);
 }
-@layer utilities {
+/* @layer utilities {
   .clip-hexagon {
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   }
@@ -70,8 +82,8 @@
       filter: hue-rotate(360deg);
     }
   }
-}
-.skills-main {
+} */
+/* .skills-main {
   display: flex;
   --s: 100px;
   --m: 4px;
@@ -103,7 +115,7 @@
     #0000 0 calc(var(--f) - 3px),
     #000 0 var(--f)
   );
-}
+} */
 
 .develop-icon {
   position: relative;
@@ -152,11 +164,6 @@
   transform: rotate(-30deg);
 }
 
-.develop-icon.red {
-  background: linear-gradient(to bottom right, #f4511e 0%, #b71c1c 100%);
-  color: #c62828;
-}
-
 .tab-active-triangle::after {
   content: "";
   position: absolute;
@@ -167,7 +174,7 @@
   height: 0;
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 12px solid #64ffda;
+  border-left: 12px solid var(--color-primary);
 }
 @media (orientation: landscape) and (max-width: 1023px),
   (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {

@@ -12,9 +12,9 @@ const Experience: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#64ffda] flex items-center gap-2">
-          <span className="numbered-heading"> Where I've Worked</span>
-          <span className="flex-1 h-px bg-gray-300"></span>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-primary flex items-center gap-2">
+          <span className="numbered-heading">Where I've Worked</span>
+          <span className="flex-1 h-px bg-primary"></span>
         </h2>
       </motion.div>
 
@@ -32,7 +32,7 @@ const Experience: React.FC = () => {
                 <button
                   className={`flex items-center gap-2 p-4 cursor-pointer transition w-full ${
                     selectedExperience === index
-                      ? "bg-[#64ffda] text-[#0a192f]"
+                      ? "bg-primary text-textLight"
                       : ""
                   }`}
                 >

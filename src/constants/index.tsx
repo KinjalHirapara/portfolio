@@ -22,7 +22,7 @@ import circleVisionImg from "../assets/Timeloop/175_01.png";
 import portfolioImg from "../assets/Personal/portfolio.png";
 import cfsalesImg from "../assets/CF_Sales/184_Appointment.png";
 import tekwoodImg from "../assets/Tekwoods/180_3.png";
-
+import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 export const navLinks = [
   {
     id: "home",
@@ -126,6 +126,7 @@ export const experiences = [
   {
     title: "Front End Developer",
     company: "Timeloop Technologies",
+    city: "Anand, Gujarat, India",
     duration: "June 2018 – Feb 2021",
     responsibilities: [
       "Started my career as a Junior Front-End Developer, building interactive and responsive web applications using JavaScript. Focused on writing clean, maintainable code while improving API integration and data handling for smoother user interactions. Gained experience in DOM manipulation, event handling, and optimizing front-end performance to enhance page speed and responsiveness. Worked closely with senior developers and UX teams, translating wireframes into pixel-perfect, cross-browser-compatible applications while debugging and improving front-end workflows.",
@@ -193,5 +194,19 @@ export const projects: Project[] = [
       "We built a web-based tool for a client in the Netherlands to help manage their employees, projects, and invoices more easily. My role was to design and develop responsive front-end pages and integrate RESTful APIs to ensure smooth data flow and functionality.",
     tech: ["HTML", "CSS", "jQuery", "Bootstrap", "API Integration"],
     image: tekwoodImg,
+  },
+];
+export const contactdetails = [
+  {
+    icon: <FaEnvelope className="text-primary" />,
+    text: "kinjalhirapara25@gmail.com",
+  },
+  {
+    icon: <FaPhone className="text-primary" />,
+    text: "+64 224154944",
+  },
+  {
+    icon: <FaMapMarkerAlt className="text-primary" />,
+    text: "Christchurch, Canterbury, New Zealand",
   },
 ];

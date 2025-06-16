@@ -11,8 +11,8 @@ const ThemeToggle: React.FC = () => {
 
   return (
     <button
-      className="cursor-pointer px-4 py-2 rounded border border-[#64ffda] bg-transparents transition
-    hover:shadow-[3px_3px_0_0_#64ffda] hover:-translate-x-1 hover:-translate-y-1"
+      className="cursor-pointer px-4 py-2 rounded border-2 border-primary bg-transparents transition
+    hover:shadow-[3px_3px_0_0_var(--color-primary)] hover:-translate-x-1 hover:-translate-y-1"
       onClick={toggleTheme}
     >
       {theme === "light" ? (
