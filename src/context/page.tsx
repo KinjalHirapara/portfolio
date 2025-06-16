@@ -70,7 +70,7 @@ const SectionRouter = () => {
                         <span className="hidden md:inline">{link.title}</span>
                       </button>
                       {index < navLinks.length - 1 && (
-                        <div className="text-white">|</div>
+                        <div className="text-textDark">|</div>
                       )}
                     </div>
                   );
