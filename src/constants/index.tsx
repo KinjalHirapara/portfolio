@@ -111,7 +111,7 @@ export const experiences = [
     city: "Christchurch, New Zealand",
     duration: "Dec 2024 - Present",
     responsibilities: [
-      "Actively enhancing my skills through hands-on learning, I created a portfolio website using React and Tailwind CSS. I'm expanding my understanding of React and building a self-learning full-stack project with Node.js and MongoDB to gain hands-on experience with modern web development practices.",
+      "Actively enhancing my skills through hands-on learning, I created a portfolio website using React and Tailwind CSS. I'm expanding my understanding of React and building a self-learning full-stack project with Node.js to gain hands-on experience with modern web development practices.",
     ],
   },
   {
