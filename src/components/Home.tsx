@@ -24,7 +24,7 @@ const Home: React.FC = () => {
             variants={fadeInUp}
             className="text-3xl md:text-7xl font-bold text-primary"
           >
-            Kinjal Hirapara.
+            Kinjal Hirapara
           </motion.div>
           <motion.div
             custom={2}
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
             variants={fadeInUp}
             className="text-4xl md:text-4xl font-semibold text-textDark dark:text-textLight"
           >
-            I build things for the web.
+            I build things for the web
           </motion.div>
           <motion.div
             custom={3}

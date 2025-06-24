@@ -98,6 +98,7 @@ const Works: React.FC = () => {
                   <img
                     src={projects[selectedProject].image}
                     alt={projects[selectedProject].title}
+                    loading="lazy"
                     className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                   />
                   {/* Overlay for mobile */}
@@ -116,16 +117,16 @@ const Works: React.FC = () => {
                   className="flex flex-col items-center"
                 >
                   <div
-                    className={`w-[30px] h-[30px] flex justify-center items-center rounded-full border border-white   cursor-pointer ${
+                    className={`w-[30px] h-[30px] flex justify-center items-center rounded-full border border-primary cursor-pointer ${
                       selectedProject === index
                         ? "bg-primary text-textLight"
-                        : "bg-transparent text-textLight"
+                        : "bg-transparent"
                     }`}
                   >
                     {index + 1}
                   </div>
                   {index !== projects.length - 1 && (
-                    <div className="w-px h-8 border-r-2 border-dotted border-white"></div>
+                    <div className="w-px h-8 border-r-2 border-dotted border-primary"></div>
                   )}
                 </div>
               ))}
@@ -147,7 +148,8 @@ const Works: React.FC = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                      className="object-cover  w-full h-full transition-transform duration-300 group-hover:scale-105"
                     />
                     {/* <div className="absolute inset-0"></div> */}
                   </div>
