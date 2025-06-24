@@ -4,7 +4,7 @@ import profileImg from "../assets/profile.jpg";
 
 const Home: React.FC = () => {
   return (
-    <section className="max-w-5xl mx-auto px-[60px] py-[50px] lg:px-4 lg:py-[50px] flex flex-col justify-center mobile-landscape-padding">
+    <section className="max-w-5xl mx-auto px-4 py-[50px] lg:py-[50px] flex flex-col justify-center mobile-landscape-padding">
       <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-2 items-center md:items-start">
         <div className="flex flex-col gap-6 flex-1">
           <motion.div

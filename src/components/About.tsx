@@ -9,7 +9,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="max-w-5xl mx-auto px-[60px] py-[30px] lg:px-4 lg:py-[10px] flex flex-col mobile-landscape-padding"
+      className="max-w-5xl mx-auto px-4 py-[30px] lg:py-[10px] flex flex-col mobile-landscape-padding"
     >
       <div className="flex flex-col md:flex-row gap-10 items-stretch pb-4">
         <div className="md:w-1/2 flex flex-col h-full">

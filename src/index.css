@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+:root {
+  --vh: 1vh;
+}
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme static {
@@ -10,6 +12,11 @@
   --color-light: #f8fafc;
   --color-textDark: #1e2939;
   --color-textLight: #f8fafc;
+}
+
+.full-height {
+  height: calc(var(--vh, 1vh) * 100);
+  height: 100dvh;
 }
 
 .dark {

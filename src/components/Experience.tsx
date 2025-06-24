@@ -6,7 +6,7 @@ import { detailVariants } from "../utils/motion";
 const Experience: React.FC = () => {
   const [selectedExperience, setSelectedExperience] = useState(0);
   return (
-    <section className="max-w-5xl mx-auto px-[60px] py-[50px] lg:px-4 lg:py-[10px] flex flex-col mobile-landscape-padding">
+    <section className="max-w-5xl mx-auto px-4 py-[50px] lg:py-[10px] flex flex-col mobile-landscape-padding">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}

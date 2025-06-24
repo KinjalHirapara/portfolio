@@ -19,20 +19,20 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="max-w-5xl mx-auto px-[60px] py-[50px] lg:px-4 lg:py-[10px] h-auto lg:h-full flex flex-col items-center justify-center mobile-landscape-padding"
+      className="gap-8 max-w-5xl mx-auto px-4 py-[50px] lg:py-[10px] h-auto lg:h-full flex flex-col items-center justify-center mobile-landscape-padding"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-2xl md:text-4xl font-bold mb-8 text-primary flex items-center gap-2">
+        <h2 className="text-2xl md:text-4xl font-bold text-primary flex items-center gap-2">
           <span className="numbered-heading"> Get In Touch</span>
           <span className="flex-1 h-px bg-primary"></span>
         </h2>
       </motion.div>
       <motion.p
-        className="mb-8 text-md text-textDark dark:text-textLight"
+        className="text-md text-textDark dark:text-textLight"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
         Open to new opportunities, collaborations, or questions — let's talk!
       </motion.p>
       <motion.div
-        className="mb-8 space-y-3 text-left w-full max-w-md mx-auto"
+        className="space-y-3 text-left w-full max-w-md mx-auto"
         variants={listVariants}
         initial="hidden"
         animate="visible"

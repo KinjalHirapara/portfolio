@@ -40,9 +40,9 @@ const SectionRouter: React.FC = () => {
         theme === "dark"
           ? "dark:bg-dark dark:text-textLight"
           : "bg-light text-textDark"
-      } h-screen w-screen `}
+      } w-screen `}
     >
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col full-height">
         <Nav />
         <div className="flex-1 flex flex-col overflow-auto">
           <div className="flex-1 overflow-auto">
@@ -54,8 +54,8 @@ const SectionRouter: React.FC = () => {
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
-          <div className="flex justify-center mb-1">
-            <div className="flex gap-4 bg-primary p-2 rounded text-textLight">
+          <div className="flex justify-center">
+            <div className="realative w-full flex justify-center gap-4 bg-primary p-2 text-textLight z-9">
               <div className="flex gap-2 justify-center items-center">
                 {navLinks.map((link, index) => {
                   const path = link.id === "home" ? "/" : `/${link.id}`;
