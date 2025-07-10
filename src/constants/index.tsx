@@ -106,6 +106,14 @@ export const skills = [
 
 export const experiences = [
   {
+    title: "Frontend Developer",
+    company: "Predictable Data (USA-based Client)",
+    duration: "June 2025 - Present",
+    responsibilities: [
+      "Worked as a Front-End Developer on a data analytics platform for Predictable Data, a US-based client. Built responsive and reusable UI components using React.js. Integrated and customized Syncfusion Data Grid for dynamic data visualization. Applied TypeScript and Stylegride for type-safe development and consistent styling. Ensured performance optimization and cross-browser compatibility throughout the UI. Collaborated with the backend team to consume REST APIs and deliver seamless user experience.",
+    ],
+  },
+  {
     title: "Software Developer",
     company: "Professional Development",
     city: "Christchurch, New Zealand",

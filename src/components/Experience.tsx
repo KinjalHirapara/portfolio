@@ -69,9 +69,15 @@ const Experience: React.FC = () => {
                 </div>
               </div>
 
-              <p className="mt-2">
-                {experiences[selectedExperience].responsibilities}
-              </p>
+              <div className="mt-2">
+                {experiences[selectedExperience].responsibilities.map(
+                  (item, index) => (
+                    <p key={index} className="mb-2">
+                      {item}
+                    </p>
+                  )
+                )}
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
