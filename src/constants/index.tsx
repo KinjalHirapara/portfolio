@@ -106,20 +106,25 @@ export const skills = [
 
 export const experiences = [
   {
-    title: "Frontend Developer",
-    company: "Predictable Data (USA-based Client)",
+    title: "Software Developer",
+    company: " Predictable Data, USA",
     duration: "June 2025 - Present",
     responsibilities: [
-      "Worked as a Front-End Developer on a data analytics platform for Predictable Data, a US-based client. Built responsive and reusable UI components using React.js. Integrated and customized Syncfusion Data Grid for dynamic data visualization. Applied TypeScript and Stylegride for type-safe development and consistent styling. Ensured performance optimization and cross-browser compatibility throughout the UI. Collaborated with the backend team to consume REST APIs and deliver seamless user experience.",
+      "Built scalable front-end architecture using React functional components, increasing responsiveness by 40%, while developing reusable React components with Jest test structure for maintainability and reliability.",
+      "Integrated Syncfusion Data Grid and Fluent UI for dynamic data visualization.",
+      "Working on RESTful API interactions and designing efficient data-fetching solutions for the frontend.",
+      "Create and maintain documentation of code, resolving bugs and handle their fixes.",
     ],
   },
   {
-    title: "Software Developer",
-    company: "Professional Development",
+    title: "Self Learning & Development",
+    company: "",
     city: "Christchurch, New Zealand",
-    duration: "Dec 2024 - Present",
+    duration: "Dec 2024 - May 2025",
     responsibilities: [
-      "Actively enhancing my skills through hands-on learning, I created a portfolio website using React and Tailwind CSS. I'm expanding my understanding of React and building a self-learning full-stack project with Node.js to gain hands-on experience with modern web development practices.",
+      "Actively enhancing my skills through hands-on learning.",
+      "I'm expanding my understanding of React and building a self-learning full-stack project with Node.js to gain hands-on experience with modern web development practices.",
+      "I created a portfolio website using React and Tailwind CSS.",
     ],
   },
   {
@@ -128,7 +133,10 @@ export const experiences = [
     city: "Ahmedabad, Gujarat, India",
     duration: "March 2021 - Oct 2024",
     responsibilities: [
-      "In this role, I was responsible for developing interactive and responsive web applications using Angular, HTML, SCSS, and visualization libraries like ECharts and Kendo UI. I transformed prototype designs into dynamic, user-friendly web applications, ensuring seamless performance across devices. I integrated RESTful APIs to enable real-time data interaction and ensure smooth communication between the frontend and backend systems. By developing reusable Angular components, I improved code efficiency and consistency across the application. I collaborated closely with designers and backend teams to translate business requirements into functional UI features.",
+      "In this role, I was responsible for developing interactive and responsive web applications using Angular, HTML, SCSS, and visualization libraries like ECharts and Kendo UI.",
+      "I transformed prototype designs into dynamic, user-friendly web applications, ensuring seamless performance across devices.",
+      "I integrated RESTful APIs to enable real-time data interaction and ensure smooth communication between the frontend and backend systems. By developing reusable Angular components, I improved code efficiency and consistency across the application.",
+      "I collaborated closely with designers and backend teams to translate business requirements into functional UI features.",
     ],
   },
   {
@@ -138,7 +146,7 @@ export const experiences = [
     duration: "June 2018 – Feb 2021",
     responsibilities: [
       "Started my career as a Junior Front-End Developer, building interactive and responsive web applications using JavaScript. Focused on writing clean, maintainable code while improving API integration and data handling for smoother user interactions. Gained experience in DOM manipulation, event handling, and optimizing front-end performance to enhance page speed and responsiveness. Worked closely with senior developers and UX teams, translating wireframes into pixel-perfect, cross-browser-compatible applications while debugging and improving front-end workflows.",
-      " As I progressed in my role as a Front-End Developer, I gained hands-on experience in building dynamic and responsive web applications using Angular. I focused on developing reusable Angular components, optimizing data binding, and improving state management for better application performance. I worked on CMS application, Project Management System, Leave Management System, theme-based applications, and verious dashboard applications focusing on responsive design and functionality. I learned and applied Git version control, contributing to branch management and code synchronization within a collaborative development environment. I utilized Trello and TMetric for task updates, tagging, time tracking, and Agile sprint progress monitoring, improving team communication and workflow efficiency.",
+      "As I progressed in my role as a Front-End Developer, I gained hands-on experience in building dynamic and responsive web applications using Angular. I focused on developing reusable Angular components, optimizing data binding, and improving state management for better application performance. I worked on CMS application, Project Management System, Leave Management System, theme-based applications, and verious dashboard applications focusing on responsive design and functionality. I learned and applied Git version control, contributing to branch management and code synchronization within a collaborative development environment. I utilized Trello and TMetric for task updates, tagging, time tracking, and Agile sprint progress monitoring, improving team communication and workflow efficiency.",
     ],
   },
 ];

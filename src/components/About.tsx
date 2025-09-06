@@ -11,18 +11,18 @@ const About: React.FC = () => {
       id="about"
       className="max-w-5xl mx-auto px-4 py-[30px] lg:py-[10px] flex flex-col mobile-landscape-padding"
     >
-      <div className="flex flex-col md:flex-row gap-10 items-stretch pb-4">
-        <div className="md:w-1/2 flex flex-col h-full">
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-primary flex items-center gap-2">
-              <span className="numbered-heading">About Me</span>
-              <span className="flex-1 h-px bg-primary"></span>
-            </h2>
-          </motion.div>
+      <div className="flex flex-col md:flex-col gap-10 items-stretch pb-4 w-full">
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-primary flex items-center gap-2">
+            <span className="numbered-heading">About Me</span>
+            <span className="flex-1 h-px bg-primary"></span>
+          </h2>
+        </motion.div>
+        <div className="flex flex-col h-full">
           <div className="space-y-4 overflow-hidden">
             <motion.div
               custom={0}
@@ -69,7 +69,10 @@ const About: React.FC = () => {
                 content management systems, project management platforms,
                 dashboard applications, and theme-based applications, always
                 focusing on smooth user experience, performance, and responsive
-                design.
+                design. Proven track record in delivering large-scale products,
+                including Predictable Data platforms, NMDC (National Mineral
+                Development Corporation) dashboards, Meter Data Management
+                systems.
               </p>
             </motion.div>
             <motion.div
@@ -92,7 +95,7 @@ const About: React.FC = () => {
             </motion.div>
           </div>
         </div>
-        <div className="md:w-1/2 flex items-center justify-center h-full">
+        <div className="flex items-center justify-center h-full">
           <div className="flex flex-row flex-wrap justify-center gap-6">
             {skills.map((skill, index) => (
               <Tilt
