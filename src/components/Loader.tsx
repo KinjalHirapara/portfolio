@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 const HexagonLoader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
   const [strokeOffset, setStrokeOffset] = useState(300);
   const [fade, setFade] = useState(false);
+  const { theme } = useTheme();
 
   useEffect(() => {
     setStrokeOffset(0);
@@ -16,7 +18,9 @@ const HexagonLoader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center bg-dark z-50 transition-opacity duration-500 ${
+      className={`fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-500 ${
+        theme === "dark" ? "bg-dark text-textLight" : "bg-light text-textDark"
+      } ${
         fade ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
@@ -30,7 +34,7 @@ const HexagonLoader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
         >
           <polygon
             points="55,10 100,35 100,75 55,100 10,75 10,35"
-            stroke="#438c86"
+            stroke="var(--color-primary)"
             strokeWidth="4"
             fill="none"
             strokeDasharray="300"
