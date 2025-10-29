@@ -7,10 +7,23 @@ const HexagonLoader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    setStrokeOffset(0);
-    const fadeTimeout = setTimeout(() => setFade(true), 6500);
-    const finishTimeout = setTimeout(onFinish, 6500);
+    // Reset states and force a reflowed start so the transition reliably retriggers
+    setFade(false);
+    setStrokeOffset(300);
+
+    let raf1 = 0 as number;
+    let raf2 = 0 as number;
+    raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        setStrokeOffset(0);
+      });
+    });
+
+    const fadeTimeout = window.setTimeout(() => setFade(true), 6500);
+    const finishTimeout = window.setTimeout(onFinish, 6500);
     return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
       clearTimeout(fadeTimeout);
       clearTimeout(finishTimeout);
     };
