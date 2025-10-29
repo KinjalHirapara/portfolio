@@ -117,17 +117,6 @@ export const experiences = [
     ],
   },
   {
-    title: "Self Learning & Development",
-    company: "",
-    city: "Christchurch, New Zealand",
-    duration: "Dec 2024 - May 2025",
-    responsibilities: [
-      "Actively enhancing my skills through hands-on learning.",
-      "I'm expanding my understanding of React and building a self-learning full-stack project with Node.js to gain hands-on experience with modern web development practices.",
-      "I created a portfolio website using React and Tailwind CSS.",
-    ],
-  },
-  {
     title: "Software Developer(UI)",
     company: "Amnex Technologies",
     city: "Ahmedabad, Gujarat, India",
