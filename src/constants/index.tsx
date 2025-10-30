@@ -6,7 +6,8 @@ import {
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 
-import { FaHtml5, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
+import { FaHtml5, FaJs, FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
+import { RiClaudeFill } from "react-icons/ri";
 
 import {
   SiTypescript,
@@ -93,9 +94,9 @@ export const skills = [
     class: "bg-gradient-to-tr from-sky-300 via-sky-400 to-sky-700",
   },
   {
-    name: "Git",
-    icon: <SiGit className="text-orange-500 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-orange-300 via-orange-400 to-orange-700",
+    name: "GitHub",
+    icon: <FaGithub className="w-8 h-8 text-[#181717]" />,
+    class: "bg-gradient-to-tr from-[#525252] via-[#181717] to-[#0d0d0d]",
   },
   {
     name: "Node.js",
@@ -104,8 +105,8 @@ export const skills = [
   },
   {
     name: "Claude Code",
-    icon: <FaNodeJs className="text-green-600 w-8 h-8" />,
-    class: "bg-gradient-to-tr from-green-300 via-green-400 to-green-700",
+    icon: <RiClaudeFill className="w-8 h-8 text-[#c6613f]" />,
+    class: "bg-gradient-to-tr from-[#e58b6a] via-[#c6613f] to-[#8f442c]",
   },
 ];
 
