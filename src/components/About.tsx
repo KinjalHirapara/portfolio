@@ -32,7 +32,7 @@ const About: React.FC = () => {
             >
               <p>
                 I design and develop modern, high-performance user interfaces
-                using Angular, React, and other modern front-end technologies.
+                using React, Angular, and other modern front-end technologies.
                 With strong skills in HTML, SCSS, JavaScript, Bootstrap, and
                 Tailwind CSS, I turn ideas into easy-to-use and visually
                 appealing websites.
@@ -45,13 +45,18 @@ const About: React.FC = () => {
               variants={fadeInUp}
             >
               <p>
-                I specialize in building scalable, maintainable, and accessible
+                I specialize in creating scalable and maintainable UI
+                components, optimizing performance, and ensuring smooth API
+                integrations. I also enjoy adding depth and interactivity
+                through Framer Motion, bringing interfaces to life with clean,
+                subtle animations that enhance user experience.
+                {/* I specialize in building scalable, maintainable, and accessible
                 UI components, optimizing performance, and ensuring seamless API
                 integrations. Additionally, I bring interfaces to life with
                 Framer Motion, creating smooth, interactive, and visually
                 appealing animations that enhance user experience. I'm currently
                 expanding my skills by learning backend development with Node.js
-                to become a full-stack developer.
+                to become a full-stack developer. */}
                 {/* I focus on writing clean, efficient code and connecting
                 front-end apps with APIs and external services. I'm also
                 learning to build backend APIs using Node.js to help front-end
@@ -59,20 +64,41 @@ const About: React.FC = () => {
               </p>
             </motion.div>
             <motion.div
+              custom={1}
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+            >
+              <p>
+                In my previous roles, I built a property management platform
+                that allowed clients to manage their property listings, details,
+                and images. I also developed various dashboard applications
+                integrating charts and tabular data for better insights, and
+                created theme-based web applications with a focus on clean,
+                modern UI design. In addition, I worked on eCommerce web
+                applications, improving user experience and interface
+                consistency across multiple platform. My experience includes
+                optimizing component reusability, developing and integrating
+                RESTful APIs, and using third-party libraries to enhance
+                functionality, responsiveness, and user engagement.
+              </p>
+            </motion.div>
+
+            <motion.div
               custom={2}
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
             >
               <p>
-                Throughout my career, I've contributed to various projects like
-                content management systems, project management platforms,
-                dashboard applications, and theme-based applications, always
-                focusing on smooth user experience, performance, and responsive
-                design. Proven track record in delivering large-scale products,
-                including Predictable Data platforms, NMDC (National Mineral
-                Development Corporation) dashboards, Meter Data Management
-                systems.
+                Currently, I’m working on the Predictable Data platform, a data
+                quality solution that helps businesses clean, validate, and
+                organize their data. I’ve built a scalable React front-end
+                architecture, integrated Syncfusion and Fluent UI for dynamic
+                data visualization, and automated AI-powered workflows using
+                Claude Code, where I set up sub-agents and slash commands to
+                manage processes like code review, automated testing, and task
+                implementation, article generation.
               </p>
             </motion.div>
             <motion.div
@@ -81,9 +107,7 @@ const About: React.FC = () => {
               animate="visible"
               variants={fadeInUp}
             >
-              <p>
-                Here are a few technologies I’ve been working with recently:
-              </p>
+              <p>Technologies I’ve been working with recently:</p>
               <div className="flex flex-wrap items-center gap-2">
                 {skills.map((skill) => (
                   <div className="flex items-center gap-2" key={skill.name}>

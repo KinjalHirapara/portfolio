@@ -102,6 +102,11 @@ export const skills = [
     icon: <FaNodeJs className="text-green-600 w-8 h-8" />,
     class: "bg-gradient-to-tr from-green-300 via-green-400 to-green-700",
   },
+  {
+    name: "Claude Code",
+    icon: <FaNodeJs className="text-green-600 w-8 h-8" />,
+    class: "bg-gradient-to-tr from-green-300 via-green-400 to-green-700",
+  },
 ];
 
 export const experiences = [
