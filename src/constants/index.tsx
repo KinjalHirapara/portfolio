@@ -116,10 +116,12 @@ export const experiences = [
     company: " Predictable Data, USA",
     duration: "June 2025 - Present",
     responsibilities: [
-      "Built scalable front-end architecture using React functional components, increasing responsiveness by 40%, while developing reusable React components with Jest test structure for maintainability and reliability.",
-      "Integrated Syncfusion Data Grid and Fluent UI for dynamic data visualization.",
-      "Working on RESTful API interactions and designing efficient data-fetching solutions for the frontend.",
-      "Create and maintain documentation of code, resolving bugs and handle their fixes.",
+      "Built a scalable front-end architecture using React functional components, improving responsiveness and overall performance by 40%.",
+      "Developed reusable React components with Jest testing structure to ensure maintainability, reliability, and consistent quality across the platform.",
+      "Integrated Syncfusion Data Grid and Fluent UI for dynamic data visualization and a modern, consistent user experience.",
+      "Designed and implemented RESTful API interactions to enable efficient, optimized data-fetching and smooth backend integration.",
+      "Created and maintained detailed documentation, tracked and resolved bugs, and delivered timely fixes to improve stability and performance.",
+      "Worked on AI workflow automation using Claude Code, setting up sub-agents and slash commands to coordinate tasks such as code review, testing, and task implementation, streamlining multi-stage development workflows.",
     ],
   },
   {
@@ -128,10 +130,12 @@ export const experiences = [
     city: "Ahmedabad, Gujarat, India",
     duration: "March 2021 - Oct 2024",
     responsibilities: [
-      "In this role, I was responsible for developing interactive and responsive web applications using Angular, HTML, SCSS, and visualization libraries like ECharts and Kendo UI.",
-      "I transformed prototype designs into dynamic, user-friendly web applications, ensuring seamless performance across devices.",
-      "I integrated RESTful APIs to enable real-time data interaction and ensure smooth communication between the frontend and backend systems. By developing reusable Angular components, I improved code efficiency and consistency across the application.",
-      "I collaborated closely with designers and backend teams to translate business requirements into functional UI features.",
+      "Developed interactive and responsive dashboard applications using Angular, HTML, SCSS, and visualization libraries like ECharts and Kendo UI.",
+      "Transformed prototype designs into dynamic, user-friendly web applications, ensuring seamless performance across devices.",
+      "Integrated RESTful APIs to enable real-time data interaction and ensure smooth communication between frontend and backend systems.",
+      "Built reusable Angular components and implemented lazy loading, reactive forms, and state management to enhance performance, streamline workflows, and ensure consistent, maintainable code.",
+      "Collaborated closely with designers and backend teams to translate business requirements into functional UI features.",
+      "Utilized Git for version control, managing code branches, pull requests, and ensuring clean, collaborative development workflows.",
     ],
   },
   {
@@ -140,8 +144,17 @@ export const experiences = [
     city: "Anand, Gujarat, India",
     duration: "June 2018 – Feb 2021",
     responsibilities: [
-      "Started my career as a Junior Front-End Developer, building interactive and responsive web applications using JavaScript. Focused on writing clean, maintainable code while improving API integration and data handling for smoother user interactions. Gained experience in DOM manipulation, event handling, and optimizing front-end performance to enhance page speed and responsiveness. Worked closely with senior developers and UX teams, translating wireframes into pixel-perfect, cross-browser-compatible applications while debugging and improving front-end workflows.",
-      "As I progressed in my role as a Front-End Developer, I gained hands-on experience in building dynamic and responsive web applications using Angular. I focused on developing reusable Angular components, optimizing data binding, and improving state management for better application performance. I worked on CMS application, Project Management System, Leave Management System, theme-based applications, and verious dashboard applications focusing on responsive design and functionality. I learned and applied Git version control, contributing to branch management and code synchronization within a collaborative development environment. I utilized Trello and TMetric for task updates, tagging, time tracking, and Agile sprint progress monitoring, improving team communication and workflow efficiency.",
+      "Started my career as a Junior Front-End Developer, building interactive and responsive web applications using JavaScript.",
+      "Focused on writing clean, maintainable code while improving API integration and data handling for smoother user interactions.",
+      "Gained experience in DOM manipulation, event handling, and front-end performance optimization to enhance page speed and responsiveness.",
+      "Worked closely with senior developers and UX teams to translate wireframes into pixel-perfect, cross-browser-compatible applications.",
+      "Contributed to debugging and improving front-end workflows to ensure consistent performance across different environments.",
+
+      "Advanced into a Front-End Developer role, gaining hands-on experience in building dynamic and responsive web applications using Angular.",
+      "Developed reusable Angular components, optimized data binding, and improved state management for better application performance.",
+      "Worked on multiple projects, including a Property Management Tool, Project Management System, Leave Management System, theme-based web applications, and various dashboard applications, focusing on responsive design and functionality.",
+      "Learned and applied Git version control, contributing to branch management, code synchronization, and collaborative development workflows.",
+      "Used Trello and TMetric for task updates, tagging, time tracking, and Agile sprint progress monitoring, improving team communication and workflow efficiency.",
     ],
   },
 ];

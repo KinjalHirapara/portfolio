@@ -43,13 +43,11 @@ const Experience: React.FC = () => {
                 </span>
               )}
             </div>
-            <div className="mt-2">
+            <ul className="mt-2 list-disc pl-5 space-y-2">
               {exp.responsibilities.map((item, idx) => (
-                <p key={idx} className="mb-2">
-                  {item}
-                </p>
+                <li key={idx}>{item}</li>
               ))}
-            </div>
+            </ul>
           </motion.div>
         ))}
       </div>
@@ -114,15 +112,13 @@ const Experience: React.FC = () => {
               exit="exit"
               transition={{ duration: 0.4 }}
             >
-              <div>
+              <ul className="list-disc pl-5 space-y-2">
                 {experiences[selectedExperience].responsibilities.map(
                   (item, index) => (
-                    <p key={index} className="mb-2">
-                      {item}
-                    </p>
+                    <li key={index}>{item}</li>
                   )
                 )}
-              </div>
+              </ul>
             </motion.div>
           </AnimatePresence>
         </div>
