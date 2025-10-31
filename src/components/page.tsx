@@ -69,7 +69,7 @@ const SectionRouter: React.FC = () => {
                     >
                       <button
                         onClick={() => navigate(path)}
-                        className={`cursor-pointer text-textDark flex items-center gap-2 px-3 py-1 rounded transition-colors capitalize ${
+                        className={`cursor-pointer text-textlight flex items-center gap-2 px-3 py-1 rounded transition-colors capitalize ${
                           isActive ? "bg-white/20" : "hover:bg-white/10"
                         }`}
                       >
@@ -77,7 +77,7 @@ const SectionRouter: React.FC = () => {
                         <span className="hidden md:inline">{link.title}</span>
                       </button>
                       {index < navLinks.length - 1 && (
-                        <div className="text-textDark">|</div>
+                        <div className="text-textlight">|</div>
                       )}
                     </div>
                   );
