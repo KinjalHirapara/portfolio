@@ -17,8 +17,45 @@ const Experience: React.FC = () => {
           <span className="flex-1 h-px bg-primary"></span>
         </h2>
       </motion.div>
+      {/* Mobile & tablet (incl. iPad): stacked cards, no internal scroll */}
+      <div className="flex flex-col gap-4 xl:hidden">
+        {experiences.map((exp) => (
+          <motion.div
+            key={`${exp.title}-${exp.company}`}
+            className="p-4 rounded-lg border border-primary/40 shadow-sm overflow-visible max-h-none"
+            variants={detailVariants()}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.4 }}
+          >
+            <div className="flex items-start justify-between gap-4 mb-2">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-lg font-semibold truncate">{exp.title}</h3>
+                {(exp.company || exp.city) && (
+                  <p className="text-gray-600 dark:text-gray-400 text-sm truncate">
+                    {[exp.company, exp.city].filter(Boolean).join(" • ")}
+                  </p>
+                )}
+              </div>
+              {exp.duration && (
+                <span className="text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
+                  {exp.duration}
+                </span>
+              )}
+            </div>
+            <div className="mt-2">
+              {exp.responsibilities.map((item, idx) => (
+                <p key={idx} className="mb-2">
+                  {item}
+                </p>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
 
-      <div className="flex flex-col md:flex-row gap-2">
+      {/* Desktop (xl+): original tab + details layout */}
+      <div className="hidden xl:flex xl:flex-row gap-2">
         <div className="shrink-0 w-full md:w-[320px]">
           <ul className="border-s-1">
             {experiences.map((exp, index) => (
@@ -70,7 +107,7 @@ const Experience: React.FC = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedExperience}
-              className="p-4 rounded-lg border border-primary/40 shadow-sm overflow-y-auto max-h-[60vh]"
+              className="p-4 rounded-lg border border-primary/40 shadow-sm xl:overflow-y-auto xl:max-h-[60vh]"
               variants={detailVariants()}
               initial="initial"
               animate="animate"
