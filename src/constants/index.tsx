@@ -14,7 +14,6 @@ import {
   SiAngular,
   SiTailwindcss,
   SiBootstrap,
-  SiGit,
   SiSass,
 } from "react-icons/si";
 
