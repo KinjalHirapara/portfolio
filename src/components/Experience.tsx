@@ -19,7 +19,7 @@ const Experience: React.FC = () => {
       </motion.div>
 
       <div className="flex flex-col md:flex-row gap-2">
-        <div className="shrink-0">
+        <div className="shrink-0 w-full md:w-[320px]">
           <ul className="border-s-1">
             {experiences.map((exp, index) => (
               <li
@@ -30,13 +30,37 @@ const Experience: React.FC = () => {
                 onClick={() => setSelectedExperience(index)}
               >
                 <button
-                  className={`flex items-center gap-2 p-4 cursor-pointer transition w-full ${
+                  className={`relative z-[9999999999] flex items-start justify-between gap-2 p-4 cursor-pointer transition w-full rounded-tr-[10px] rounded-br-[10px] ${
                     selectedExperience === index
                       ? "bg-primary text-textLight"
                       : ""
                   }`}
                 >
-                  {exp.title}
+                  <div className="flex flex-col text-left shrink-0">
+                    <span className="font-medium">{exp.title}</span>
+                    {exp.company && (
+                      <span
+                        className={`text-xs ${
+                          selectedExperience === index
+                            ? "opacity-90"
+                            : "text-gray-600 dark:text-gray-400"
+                        }`}
+                      >
+                        {exp.company}
+                      </span>
+                    )}
+                  </div>
+                  {exp.duration && (
+                    <span
+                      className={`text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap ${
+                        selectedExperience === index
+                          ? "border-white/30 bg-white/10 text-textLight"
+                          : "border-primary/40 bg-primary/10 text-primary"
+                      }`}
+                    >
+                      {exp.duration}
+                    </span>
+                  )}
                 </button>
               </li>
             ))}
@@ -53,23 +77,7 @@ const Experience: React.FC = () => {
               exit="exit"
               transition={{ duration: 0.4 }}
             >
-              <div className="flex gap-2 justify-between">
-                <div>
-                  <h3 className="text-lg font-semibold">
-                    {experiences[selectedExperience].company}
-                  </h3>
-                  <p className="text-gray-500">
-                    {experiences[selectedExperience].city}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-400">
-                    {experiences[selectedExperience].duration}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-2">
+              <div>
                 {experiences[selectedExperience].responsibilities.map(
                   (item, index) => (
                     <p key={index} className="mb-2">
