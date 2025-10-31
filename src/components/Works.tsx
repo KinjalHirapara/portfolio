@@ -31,14 +31,12 @@ const Works: React.FC = () => {
               animate="visible"
               viewport={{ once: true, amount: 0.5 }}
               variants={fadeInUp}
-              className={`relative flex flex-col-reverse lg:flex-row items-center group`}
+              className={`relative flex flex-col-reverse gap-5 lg:flex-row items-center group`}
             >
               {/* Project Content */}
               <div
                 className={`
                   w-full lg:w-1/2 z-10
-                  lg:mr-[-4rem]
-                  lg:mt-0 mt-[-4rem]
                 `}
               >
                 <p className={`text-primary text-sm mb-2 text-left`}>
