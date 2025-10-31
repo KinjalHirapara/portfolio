@@ -172,14 +172,7 @@ export const projects: Project[] = [
     overline: "Amnex Technologies",
     description:
       "Worked as a UI Developer on the NMDC project, building a web-based monitoring dashboard for real-time tracking of mining operations. Used Angular, Kendo UI, and ECharts to create responsive, data-driven interfaces, and integrated RESTful APIs to deliver live performance insights for both on-site and admin users.",
-    tech: [
-      "VS Code",
-      "Angular",
-      "Bootstrap",
-      "API Integration",
-      "Kendo UI",
-      "ECharts",
-    ],
+    tech: ["Angular", "Bootstrap", "API Integration", "Kendo UI", "ECharts"],
     image: NMDCImg,
   },
   {
