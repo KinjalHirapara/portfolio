@@ -54,8 +54,8 @@ const Home: React.FC = () => {
             variants={fadeInUp}
           >
             <a
-              href="../assets/Kinjal_Developer_Resume.pdf"
-              download="Kinjal_Developer_Resume"
+              href="../assets/Kinjal_Front-End_Developer.pdf"
+              download="Kinjal_Front-End_Developer"
               target="_blank"
               className="inline-block px-6 py-2 rounded border-2 border-primary bg-transparent text-primary font-semibold transition  hover:shadow-[3px_3px_0_0_var(--color-primary)] hover:-translate-x-1 hover:-translate-y-1"
             >
