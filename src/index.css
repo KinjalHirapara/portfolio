@@ -42,13 +42,13 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
+  /* font-family: "Ubuntu", sans-serif; */
   scroll-behavior: smooth;
 }
 
 .code-block,
 .mono-text {
-  font-family: "IBM Plex Mono", monospace;
+  /* font-family: "IBM Plex Mono", monospace; */
 }
 .hex-container {
   clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);

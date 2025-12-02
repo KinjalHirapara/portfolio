@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="gap-8 max-w-5xl mx-auto px-4 py-[50px] lg:py-[10px] h-auto lg:h-full flex flex-col items-center justify-center mobile-landscape-padding"
+      className="gap-8 max-w-6xl mx-auto px-4 py-[50px] lg:py-[10px] h-auto lg:h-full flex flex-col items-center justify-center mobile-landscape-padding"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}

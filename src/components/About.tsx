@@ -9,7 +9,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="max-w-5xl mx-auto px-4 py-[30px] lg:py-[10px] flex flex-col mobile-landscape-padding"
+      className="max-w-6xl mx-auto px-4 py-[30px] lg:py-[10px] flex flex-col mobile-landscape-padding"
     >
       <div className="flex flex-col md:flex-col gap-10 items-stretch pb-4 w-full">
         <motion.div
@@ -99,6 +99,23 @@ const About: React.FC = () => {
                 Claude Code, where I set up sub-agents and slash commands to
                 manage processes like code review, automated testing, and task
                 implementation, article generation.
+              </p>
+            </motion.div>
+            <motion.div
+              custom={2}
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+            >
+              <p>
+                Also started volunteer work as a Web Developer at Youthline,
+                Christchurch, NZ. Contributing to the ongoing development of the
+                Youthline WordPress platform by building new pages, refining UI
+                components, and improving accessibility. I customize themes and
+                plugins to deliver user-focused experiences and meet project
+                requirements. Working collaboratively in a Scrum environment, I
+                participate in planning, task prioritization, and reviews to
+                ensure consistent delivery and smooth project workflow.
               </p>
             </motion.div>
             <motion.div

@@ -6,7 +6,7 @@ import { detailVariants } from "../utils/motion";
 const Experience: React.FC = () => {
   const [selectedExperience, setSelectedExperience] = useState(0);
   return (
-    <section className="max-w-5xl mx-auto px-4 py-[50px] lg:pt-[10px] lg:pb-[0px] flex flex-col mobile-landscape-padding">
+    <section className="max-w-6xl mx-auto px-4 py-[50px] lg:pt-[10px] lg:pb-[0px] flex flex-col mobile-landscape-padding">
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ const Experience: React.FC = () => {
 
       {/* Desktop (xl+): original tab + details layout */}
       <div className="hidden xl:flex xl:flex-row gap-2">
-        <div className="shrink-0 w-full md:w-[320px]">
+        <div className="shrink-0 w-full md:w-[380px]">
           <ul className="border-s-1">
             {experiences.map((exp, index) => (
               <li

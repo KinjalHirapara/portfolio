@@ -9,7 +9,7 @@ const Works: React.FC = () => {
   return (
     <section
       id="projects"
-      className="max-w-5xl mx-auto flex flex-col px-4 py-[30px] lg:py-[10px] mobile-landscape-padding"
+      className="max-w-6xl mx-auto flex flex-col px-4 py-[30px] lg:py-[10px] mobile-landscape-padding"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
