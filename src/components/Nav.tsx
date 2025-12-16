@@ -1,4 +1,5 @@
 import { useTheme } from "../context/ThemeContext";
+import NavLinks from "./NavLinks";
 import ThemeToggle from "./ThemeToggle";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -22,8 +23,11 @@ const Nav: React.FC = () => {
             </div>
           </div>
         </Link>
+        <div className="xl:flex hidden">
+          <NavLinks />
+        </div>
         <div className="flex items-center gap-4">
-          <div className="md:hidden flex gap-4 justify-center items-center">
+          <div className="xl:hidden flex gap-4 justify-center items-center">
             <div>
               <a
                 href="https://www.linkedin.com/in/kinjalhirapara"
@@ -55,7 +59,7 @@ const Nav: React.FC = () => {
           <ThemeToggle />
         </div>
       </nav>
-      <div className="hidden md:block fixed bottom-10 md:left-[50px] left-[10px] z-9">
+      <div className="hidden xl:block fixed bottom-0 md:left-[50px] left-[10px] z-9">
         <div className="flex flex-col gap-4 justify-center items-center">
           <div>
             <a
