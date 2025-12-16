@@ -14,7 +14,7 @@ const Home: React.FC = () => {
             variants={fadeInUp}
           >
             <h1 className="text-lg md:text-xl font-mono mb-2 text-textDark dark:text-textLight">
-              Hi, my name is
+              Welcome!
             </h1>
           </motion.div>
           <motion.div
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
             variants={fadeInUp}
             className="text-4xl md:text-4xl font-semibold text-textDark dark:text-textLight"
           >
-            I build things for the web
+            Software Developer
           </motion.div>
           <motion.div
             custom={3}
@@ -42,10 +42,10 @@ const Home: React.FC = () => {
             variants={fadeInUp}
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
           >
-            Passionate about crafting fast, responsive, and visually engaging
-            web apps using Angular, React, and modern UI tools. Dedicated to
-            transforming complex ideas into interactive interfaces that enhance
-            user engagement and usability.
+            Passionate about building user-friendly, responsive, and visually
+            engaging web applications using Angular, React, and modern UI tools.
+            Committed to transforming complex concepts into interactive
+            interfaces that enhance usability and drive user engagement.
           </motion.div>
           <motion.div
             custom={4}
