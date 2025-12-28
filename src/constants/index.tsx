@@ -134,7 +134,7 @@ export const experiences = [
     ],
   },
   {
-    title: "Software Developer(UI)",
+    title: "Software Developer",
     company: "Amnex Technologies",
     city: "Ahmedabad, Gujarat, India",
     duration: "March 2021 - Oct 2024",

@@ -42,10 +42,13 @@ const Home: React.FC = () => {
             variants={fadeInUp}
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
           >
-            Specializing in building user-friendly, scalable, and visually
+            {/* Specializing in building user-friendly, scalable, and visually
             engaging web applications using Angular, React, and Node.js.
             Committed to transforming complex concepts into interactive
-            interfaces that enhance usability and drive user engagement.
+            interfaces that enhance usability and drive user engagement. */}
+            I build scalable, user-focused web applications. I enjoy working
+            across the full development lifecycle. Focused on clean code,
+            performance, and usability.
           </motion.div>
           <motion.div
             custom={4}
@@ -56,7 +59,8 @@ const Home: React.FC = () => {
             <a
               href="/Software Developer_Kinjal_Hirapara.pdf"
               download
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-6 py-2 rounded border-2 border-primary bg-transparent text-primary font-semibold transition  hover:shadow-[3px_3px_0_0_var(--color-primary)] hover:-translate-x-1 hover:-translate-y-1"
             >
               Download CV
@@ -91,4 +95,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-

@@ -31,11 +31,12 @@ const About: React.FC = () => {
               variants={fadeInUp}
             >
               <p>
-                I design and develop modern, high-performance user interfaces
-                using React, Angular, and other modern front-end technologies.
-                With strong skills in HTML, SCSS, JavaScript, Bootstrap, and
-                Tailwind CSS, I turn ideas into easy-to-use and visually
-                appealing websites.
+                I design and develop modern, high-performance web applications
+                as a Software Developer, using React and Angular on the front
+                end and Node.js with REST APIs on the back end. With strong
+                skills in HTML, SCSS, JavaScript, Bootstrap, and Tailwind CSS. I
+                build scalable and user-friendly solutions that turn ideas into
+                visually appealing and reliable digital products.
               </p>
             </motion.div>
             <motion.div
@@ -45,11 +46,11 @@ const About: React.FC = () => {
               variants={fadeInUp}
             >
               <p>
-                I specialize in creating scalable and maintainable UI
-                components, optimizing performance, and ensuring smooth API
-                integrations. I also enjoy adding depth and interactivity
-                through Framer Motion, bringing interfaces to life with clean,
-                subtle animations that enhance user experience.
+                I specialize in creating clean and maintainable UI components,
+                optimizing performance, and ensuring smooth API integrations. I
+                also enjoy adding depth and interactivity through Framer Motion,
+                bringing interfaces to life with clean, subtle animations that
+                enhance user experience.
                 {/* I specialize in building scalable, maintainable, and accessible
                 UI components, optimizing performance, and ensuring seamless API
                 integrations. Additionally, I bring interfaces to life with
