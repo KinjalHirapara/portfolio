@@ -47,7 +47,7 @@ const SectionRouter: React.FC = () => {
           {/* nav links  */}
           <div className="xl:hidden md:block">
             <div className="flex justify-center">
-              <div className="realative w-full flex justify-center gap-4 bg-primary p-2 text-textLight z-9">
+              <div className="relative w-full flex justify-center gap-4 bg-primary p-2 text-textLight z-9">
                 <NavLinks />
               </div>
             </div>
@@ -66,3 +66,4 @@ const Page = () => {
   );
 };
 export default Page;
+

@@ -91,9 +91,9 @@ const About: React.FC = () => {
               variants={fadeInUp}
             >
               <p>
-                Currently, I’m working on the Predictable Data platform, a data
+                Currently, I'm working on the Predictable Data platform, a data
                 quality solution that helps businesses clean, validate, and
-                organize their data. I’ve built a scalable React front-end
+                organize their data. I've built a scalable React front-end
                 architecture, integrated Syncfusion and Fluent UI for dynamic
                 data visualization, and automated AI-powered workflows using
                 Claude Code, where I set up sub-agents and slash commands to
@@ -124,7 +124,7 @@ const About: React.FC = () => {
               animate="visible"
               variants={fadeInUp}
             >
-              <p>Technologies I’ve been working with recently:</p>
+              <p>Technologies I've been working with recently:</p>
               <div className="flex flex-wrap items-center gap-2">
                 {skills.map((skill) => (
                   <div className="flex items-center gap-2" key={skill.name}>

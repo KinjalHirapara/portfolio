@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
-        Open to new opportunities, collaborations, or questions — let's talk!
+        Open to new opportunities, collaborations, or questions - let's talk!
       </motion.p>
       <motion.div
         className="space-y-3 text-left w-full max-w-md mx-auto"

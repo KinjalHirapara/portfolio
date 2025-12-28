@@ -42,8 +42,8 @@ const Home: React.FC = () => {
             variants={fadeInUp}
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
           >
-            Passionate about building user-friendly, responsive, and visually
-            engaging web applications using Angular, React, and modern UI tools.
+            Specializing in building user-friendly, scalable, and visually
+            engaging web applications using Angular, React, and Node.js.
             Committed to transforming complex concepts into interactive
             interfaces that enhance usability and drive user engagement.
           </motion.div>
@@ -54,9 +54,9 @@ const Home: React.FC = () => {
             variants={fadeInUp}
           >
             <a
-              href="/Kinjal_Front-End_Developer.pdf"
+              href="/Software Developer_Kinjal_Hirapara.pdf"
               download
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               className="inline-block px-6 py-2 rounded border-2 border-primary bg-transparent text-primary font-semibold transition  hover:shadow-[3px_3px_0_0_var(--color-primary)] hover:-translate-x-1 hover:-translate-y-1"
             >
               Download CV
@@ -91,3 +91,4 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+

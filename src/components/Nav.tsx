@@ -32,7 +32,7 @@ const Nav: React.FC = () => {
               <a
                 href="https://www.linkedin.com/in/kinjalhirapara"
                 className="transition hover:-translate-y-1 hover:text-primary"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 <FaLinkedin className="w-7 h-7 transition hover:-translate-y-1 hover:text-primary" />
               </a>
@@ -41,7 +41,7 @@ const Nav: React.FC = () => {
               <a
                 href="https://github.com/KinjalHirapara"
                 className="transition hover:-translate-y-1 hover:text-primary"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 <FaGithub className="w-7 h-7 transition hover:-translate-y-1 hover:text-primary" />
               </a>
@@ -65,7 +65,7 @@ const Nav: React.FC = () => {
             <a
               href="https://www.linkedin.com/in/kinjalhirapara"
               className="transition hover:-translate-y-1 hover:text-primary"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               <FaLinkedin className="w-7 h-7 transition hover:-translate-y-1 hover:text-primary" />
             </a>
@@ -74,7 +74,7 @@ const Nav: React.FC = () => {
             <a
               href="https://github.com/KinjalHirapara"
               className="transition hover:-translate-y-1 hover:text-primary"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               <FaGithub className="w-7 h-7 transition hover:-translate-y-1 hover:text-primary" />
             </a>
@@ -91,3 +91,4 @@ const Nav: React.FC = () => {
   );
 };
 export default Nav;
+

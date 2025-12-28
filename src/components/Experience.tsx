@@ -33,7 +33,7 @@ const Experience: React.FC = () => {
                 <h3 className="text-lg font-semibold truncate">{exp.title}</h3>
                 {(exp.company || exp.city) && (
                   <p className="text-gray-600 dark:text-gray-400 text-sm truncate">
-                    {[exp.company, exp.city].filter(Boolean).join(" • ")}
+                    {[exp.company, exp.city].filter(Boolean).join(" - ")}
                   </p>
                 )}
               </div>

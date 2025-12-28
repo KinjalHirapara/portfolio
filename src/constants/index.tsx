@@ -151,7 +151,7 @@ export const experiences = [
     title: "Front End Developer",
     company: "Timeloop Technologies",
     city: "Anand, Gujarat, India",
-    duration: "June 2018 – Feb 2021",
+    duration: "June 2018 - Feb 2021",
     responsibilities: [
       "Started my career as a Junior Front-End Developer, building interactive and responsive web applications using JavaScript.",
       "Focused on writing clean, maintainable code while improving API integration and data handling for smoother user interactions.",
