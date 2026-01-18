@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { experiences } from "../constants";
-import { motion, AnimatePresence } from "framer-motion";
-import { detailVariants } from "../utils/motion";
+import { motion } from "framer-motion";
 
 const Experience: React.FC = () => {
-  const [selectedExperience, setSelectedExperience] = useState(0);
+  const cardVariants = {
+    hidden: (direction: number) => ({
+      opacity: 0,
+      x: direction,
+    }),
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
     <section className="max-w-6xl mx-auto px-4 py-[50px] lg:pt-[10px] lg:pb-[0px] flex flex-col mobile-landscape-padding">
       <motion.div
@@ -17,111 +27,178 @@ const Experience: React.FC = () => {
           <span className="flex-1 h-px bg-primary"></span>
         </h2>
       </motion.div>
-      {/* Mobile & tablet (incl. iPad): stacked cards, no internal scroll */}
-      <div className="flex flex-col gap-4 xl:hidden">
-        {experiences.map((exp) => (
-          <motion.div
-            key={`${exp.title}-${exp.company}`}
-            className="p-4 rounded-lg border border-primary/40 shadow-sm overflow-visible max-h-none"
-            variants={detailVariants()}
-            initial="initial"
-            animate="animate"
-            transition={{ duration: 0.4 }}
-          >
-            <div className="flex items-start justify-between gap-4 mb-2">
-              <div className="flex-1 min-w-0">
-                <h3 className="text-lg font-semibold truncate">{exp.title}</h3>
-                {(exp.company || exp.city) && (
-                  <p className="text-gray-600 dark:text-gray-400 text-sm truncate">
-                    {[exp.company, exp.city].filter(Boolean).join(" - ")}
-                  </p>
+      <div className="flex flex-col gap-4 md:hidden">
+        {experiences.map((exp, index) => {
+          const direction = index % 2 === 0 ? -60 : 60;
+          return (
+            <motion.div
+              key={`${exp.title}-${exp.company}`}
+              className="rounded-lg border border-primary/40 p-4 shadow-sm"
+              variants={cardVariants}
+              custom={direction}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <div className="flex items-start justify-between gap-4 mb-2">
+                <div className="flex-1 min-w-0">
+                  {exp.title && (
+                    <h3 className="text-lg font-semibold truncate">
+                      {exp.title}
+                    </h3>
+                  )}
+                  {exp.company && (
+                    <p className="text-sm font-medium text-primary truncate">
+                      {exp.company}
+                    </p>
+                  )}
+                  {exp.city && (
+                    <p className="text-gray-600 dark:text-gray-400 text-sm truncate">
+                      {exp.city}
+                    </p>
+                  )}
+                </div>
+                {exp.duration && (
+                  <span className="text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
+                    {exp.duration}
+                  </span>
                 )}
               </div>
-              {exp.duration && (
-                <span className="text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
-                  {exp.duration}
-                </span>
-              )}
-            </div>
-            <ul className="mt-2 list-disc pl-5 space-y-2">
-              {exp.responsibilities.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Desktop (xl+): original tab + details layout */}
-      <div className="hidden xl:flex xl:flex-row gap-2">
-        <div className="shrink-0 w-full md:w-[380px]">
-          <ul className="border-s-1">
-            {experiences.map((exp, index) => (
-              <li
-                className={`relative tab-menu ${
-                  selectedExperience === index ? "tab-active-triangle" : ""
-                }`}
-                key={exp.title}
-                onClick={() => setSelectedExperience(index)}
-              >
-                <button
-                  className={`relative z-[9999999999] flex items-start justify-between gap-2 p-4 cursor-pointer transition w-full rounded-tr-[10px] rounded-br-[10px] ${
-                    selectedExperience === index
-                      ? "bg-primary text-textLight"
-                      : ""
-                  }`}
-                >
-                  <div className="flex flex-col text-left shrink-0">
-                    <span className="font-medium">{exp.title}</span>
-                    {exp.company && (
-                      <span
-                        className={`text-xs ${
-                          selectedExperience === index
-                            ? "opacity-90"
-                            : "text-gray-600 dark:text-gray-400"
-                        }`}
-                      >
-                        {exp.company}
-                      </span>
-                    )}
-                  </div>
-                  {exp.duration && (
-                    <span
-                      className={`text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap ${
-                        selectedExperience === index
-                          ? "border-white/30 bg-white/10 text-textLight"
-                          : "border-primary/40 bg-primary/10 text-primary"
-                      }`}
-                    >
-                      {exp.duration}
-                    </span>
-                  )}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="pl-4 md:flex-1">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedExperience}
-              className="p-4 rounded-lg border border-primary/40 shadow-sm xl:overflow-y-auto xl:max-h-[60vh]"
-              variants={detailVariants()}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              transition={{ duration: 0.4 }}
-            >
-              <ul className="list-disc pl-5 space-y-2">
-                {experiences[selectedExperience].responsibilities.map(
-                  (item, index) => (
-                    <li key={index}>{item}</li>
-                  )
-                )}
+              <ul className="mt-2 list-disc pl-5 space-y-2">
+                {exp.responsibilities.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
               </ul>
             </motion.div>
-          </AnimatePresence>
-        </div>
+          );
+        })}
+      </div>
+
+      <div className="relative hidden flex-col gap-6 md:flex">
+        <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-primary/40" />
+        {experiences.map((exp, index) => {
+          const direction = index % 2 === 0 ? -60 : 60;
+          const isLeft = index % 2 === 0;
+          const showMeta = exp.title || exp.duration || exp.city;
+          return (
+            <div
+              key={`${exp.title}-${exp.company}`}
+              className="grid w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-6"
+            >
+              {isLeft ? (
+                <>
+                  <div className="flex justify-end">
+                    <motion.div
+                      className="w-full max-w-xl rounded-lg border border-primary/40 p-4 shadow-sm"
+                      variants={cardVariants}
+                      custom={direction}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false, amount: 0.3 }}
+                    >
+                      <ul className="mt-2 list-disc pl-5 space-y-2">
+                        {exp.responsibilities.map((item, idx) => (
+                          <li key={idx}>{item}</li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  </div>
+                  <div className="flex justify-center">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-white text-[10px] font-semibold text-primary dark:bg-black z-[1]">
+                      {index + 1}
+                    </span>
+                  </div>
+                  {showMeta && (
+                    <motion.div
+                      className="text-left"
+                      variants={cardVariants}
+                      custom={direction}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false, amount: 0.3 }}
+                    >
+                      {exp.title && (
+                        <div className="text-base font-semibold text-primary">
+                          {exp.title}
+                        </div>
+                      )}
+                      {exp.company && (
+                        <div className="mt-1 text-sm font-medium text-primary">
+                          {exp.company}
+                        </div>
+                      )}
+                      {exp.duration && (
+                        <span className="mt-1 inline-flex text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
+                          {exp.duration}
+                        </span>
+                      )}
+                      {exp.city && (
+                        <div className="mt-1 text-xs text-gray-600 dark:text-gray-400">
+                          {exp.city}
+                        </div>
+                      )}
+                    </motion.div>
+                  )}
+                </>
+              ) : (
+                <>
+                  {showMeta && (
+                    <motion.div
+                      className="text-right"
+                      variants={cardVariants}
+                      custom={direction}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false, amount: 0.3 }}
+                    >
+                      {exp.title && (
+                        <div className="text-base font-semibold text-primary">
+                          {exp.title}
+                        </div>
+                      )}
+                      {exp.company && (
+                        <div className="mt-1 text-sm font-medium text-primary">
+                          {exp.company}
+                        </div>
+                      )}
+                      {exp.duration && (
+                        <span className="mt-1 inline-flex text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
+                          {exp.duration}
+                        </span>
+                      )}
+                      {exp.city && (
+                        <div className="mt-1 text-xs text-gray-600 dark:text-gray-400">
+                          {exp.city}
+                        </div>
+                      )}
+                    </motion.div>
+                  )}
+                  <div className="flex justify-center">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-white text-[10px] font-semibold text-primary dark:bg-black z-[1]">
+                      {index + 1}
+                    </span>
+                  </div>
+                  <div className="flex justify-start">
+                    <motion.div
+                      className="w-full max-w-xl rounded-lg border border-primary/40 p-4 shadow-sm"
+                      variants={cardVariants}
+                      custom={direction}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false, amount: 0.3 }}
+                    >
+                      <ul className="mt-2 list-disc pl-5 space-y-2">
+                        {exp.responsibilities.map((item, idx) => (
+                          <li key={idx}>{item}</li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  </div>
+                </>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

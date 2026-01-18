@@ -111,18 +111,20 @@ export const skills = [
 
 export const experiences = [
   {
-    title: " Web Developer (Volunteer)",
+    title: "Web Developer (Volunteer)",
     company: "Youthline, Christchurch, NZ",
+    city: "Christchurch, NZ",
     duration: "November 2025 - Present",
     responsibilities: [
-      "Managing and updating  the Youthline WordPress website, adding new pages and features.",
+      "Managing and updating the Youthline WordPress website, adding new pages and features.",
       "Customized themes and plugins to enhance user experience and meet specific site requirements.",
-      "Collaborated with the team using Scrum, ensuring  timely updates, task tracking, and smooth project workflow.",
+      "Collaborated with the team using Scrum, ensuring timely updates, task tracking, and smooth project workflow.",
     ],
   },
   {
     title: "Software Developer",
-    company: " Predictable Data, USA",
+    company: "Predictable Data, USA",
+    city: "USA",
     duration: "June 2025 - Present",
     responsibilities: [
       "Built a scalable front-end architecture using React functional components, improving responsiveness and overall performance by 40%.",
