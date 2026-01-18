@@ -30,11 +30,6 @@ export const navLinks = [
     icon: HomeIcon,
   },
   {
-    id: "about",
-    title: "About",
-    icon: UserIcon,
-  },
-  {
     id: "experience",
     title: "Experience",
     icon: BriefcaseIcon,
@@ -43,6 +38,11 @@ export const navLinks = [
     id: "works",
     title: "Works",
     icon: RectangleStackIcon,
+  },
+  {
+    id: "about",
+    title: "About",
+    icon: UserIcon,
   },
   {
     id: "contact",
