@@ -1,6 +1,5 @@
 import { useTheme } from "../context/ThemeContext";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Experience from "./Experience";
@@ -35,14 +34,12 @@ const SectionRouter: React.FC = () => {
       <div className="flex flex-col full-height">
         <Nav />
         <div className="flex-1 flex flex-col overflow-auto">
-          <div className="flex-1 overflow-auto">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/works" element={<Works />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
+          <div id="page-scroll" className="flex-1 overflow-auto">
+            <Home />
+            <About />
+            <Experience />
+            <Works />
+            <Contact />
           </div>
           {/* nav links  */}
           <div className="xl:hidden md:block">
@@ -59,11 +56,7 @@ const SectionRouter: React.FC = () => {
 };
 
 const Page = () => {
-  return (
-    <BrowserRouter>
-      <SectionRouter />
-    </BrowserRouter>
-  );
+  return <SectionRouter />;
 };
 export default Page;
 

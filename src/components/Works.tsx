@@ -8,7 +8,7 @@ const Works: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState(0);
   return (
     <section
-      id="projects"
+      id="works"
       className="max-w-6xl mx-auto flex flex-col px-4 py-[30px] lg:py-[10px] mobile-landscape-padding"
     >
       <motion.div

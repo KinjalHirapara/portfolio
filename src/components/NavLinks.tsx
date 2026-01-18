@@ -1,32 +1,46 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { navLinks } from "../constants";
 
 const NavLinks: React.FC<{ className?: string }> = (props) => {
-  const location = useLocation();
-  const currentPath = location.pathname;
-  const navigate = useNavigate();
+  const [activeId, setActiveId] = useState(navLinks[0]?.id ?? "");
+
+  useEffect(() => {
+    const setFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash) {
+        setActiveId(hash);
+      }
+    };
+
+    setFromHash();
+    window.addEventListener("hashchange", setFromHash);
+
+    return () => window.removeEventListener("hashchange", setFromHash);
+  }, []);
+
   return (
     <div
       className={`flex gap-2 justify-center items-center ${props.className}`}
     >
       {navLinks.map((link, index) => {
-        const path = link.id === "home" ? "/" : `/${link.id}`;
-        const isActive = currentPath === path;
         const Icon = link.icon;
+        const isActive = link.id === activeId;
 
         return (
           <div className="flex gap-2 justify-center items-center" key={index}>
-            <button
-              onClick={() => navigate(path)}
-              className={`cursor-pointer text-textlight flex items-center gap-2 px-3 py-1 capitalize ${
+            <a
+              href={`#${link.id}`}
+              className={`cursor-pointer text-textlight flex items-center gap-2 px-3 py-1 capitalize border-b-2 transition ${
                 isActive
-                  ? "bg-primary/20 border-b-2 border-primary"
-                  : "hover:bg-white/10"
+                  ? "border-primary"
+                  : "border-transparent hover:bg-white/10"
               }`}
+              aria-current={isActive ? "page" : undefined}
+              onClick={() => setActiveId(link.id)}
             >
               <Icon className="w-5 h-5" />
               <span className="hidden md:inline">{link.title}</span>
-            </button>
+            </a>
             {index < navLinks.length - 1 && (
               <div className="text-textlight">|</div>
             )}

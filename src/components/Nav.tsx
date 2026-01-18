@@ -2,7 +2,6 @@ import { useTheme } from "../context/ThemeContext";
 import NavLinks from "./NavLinks";
 import ThemeToggle from "./ThemeToggle";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
 const Nav: React.FC = () => {
   const { theme } = useTheme();
 
@@ -11,7 +10,7 @@ const Nav: React.FC = () => {
       <nav
         className={`px-[5px] md:px-[50px] py-4 flex justify-between items-center w-full`}
       >
-        <Link to="/">
+        <a href="#home">
           <div className="logo relative w-16 h-16 text-primary">
             <div
               className={`hex-container inset-0 z-0 absolute top-0 left-0  flex items-center justify-center text-2xl font-bold cursor-pointer`}
@@ -22,7 +21,7 @@ const Nav: React.FC = () => {
               K
             </div>
           </div>
-        </Link>
+        </a>
         <div className="xl:flex hidden">
           <NavLinks />
         </div>

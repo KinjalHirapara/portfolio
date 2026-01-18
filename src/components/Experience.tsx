@@ -16,7 +16,10 @@ const Experience: React.FC = () => {
   };
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-[50px] lg:pt-[10px] lg:pb-[0px] flex flex-col mobile-landscape-padding">
+    <section
+      id="experience"
+      className="max-w-6xl mx-auto px-4 py-[50px] lg:pt-[10px] lg:pb-[0px] flex flex-col mobile-landscape-padding"
+    >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
