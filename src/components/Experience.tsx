@@ -1,6 +1,7 @@
 import React from "react";
 import { experiences } from "../constants";
 import { motion } from "framer-motion";
+import { FaBriefcase } from "react-icons/fa";
 
 const Experience: React.FC = () => {
   const cardVariants = {
@@ -107,8 +108,8 @@ const Experience: React.FC = () => {
                     </motion.div>
                   </div>
                   <div className="flex justify-center">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-white text-[10px] font-semibold text-primary dark:bg-black z-[1]">
-                      {index + 1}
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-light text-primary dark:bg-dark z-[1]">
+                      <FaBriefcase className="h-3.5 w-3.5" />
                     </span>
                   </div>
                   {showMeta && (
@@ -177,8 +178,8 @@ const Experience: React.FC = () => {
                     </motion.div>
                   )}
                   <div className="flex justify-center">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-white text-[10px] font-semibold text-primary dark:bg-black z-[1]">
-                      {index + 1}
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-light text-primary dark:bg-dark z-[1]">
+                      <FaBriefcase className="h-3.5 w-3.5" />
                     </span>
                   </div>
                   <div className="flex justify-start">
