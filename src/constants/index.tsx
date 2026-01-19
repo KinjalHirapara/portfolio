@@ -111,9 +111,9 @@ export const skills = [
 
 export const experiences = [
   {
-    title: "Web Developer (Volunteer)",
-    company: "Youthline, Christchurch, NZ",
-    city: "Christchurch, NZ",
+    title: "Volunteer Web Developer",
+    company: "Youthline",
+    city: "Christchurch, New Zealand",
     duration: "November 2025 - Present",
     responsibilities: [
       "Managing and updating the Youthline WordPress website, adding new pages and features.",
@@ -123,7 +123,7 @@ export const experiences = [
   },
   {
     title: "Software Developer",
-    company: "Predictable Data, USA",
+    company: "Predictable Data",
     city: "USA",
     duration: "June 2025 - Present",
     responsibilities: [

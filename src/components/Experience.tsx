@@ -19,7 +19,7 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="mx-auto px-4 py-[50px] lg:pt-[10px] lg:pb-[0px] flex flex-col"
+      className="max-w-6xl mx-auto px-4 py-[50px] lg:pt-[10px] lg:pb-[0px] flex flex-col"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -121,26 +121,34 @@ const Experience: React.FC = () => {
                       whileInView="visible"
                       viewport={{ once: false, amount: 0.3 }}
                     >
-                      {exp.title && (
-                        <div className="text-base font-semibold text-primary">
-                          {exp.title}
+                      <div>
+                        <div className="flex gap-5 items-center">
+                          {exp.title && (
+                            <div className="text-2xl font-semibold text-primary">
+                              {exp.title}
+                            </div>
+                          )}
+                          {exp.duration && (
+                            <div className="mt-1 text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
+                              {exp.duration}
+                            </div>
+                          )}
                         </div>
-                      )}
-                      {exp.company && (
-                        <div className="mt-1 text-sm font-medium text-primary">
-                          {exp.company}
-                        </div>
-                      )}
-                      {exp.duration && (
-                        <span className="mt-1 inline-flex text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
-                          {exp.duration}
-                        </span>
-                      )}
-                      {exp.city && (
-                        <div className="mt-1 text-xs text-gray-600 dark:text-gray-400">
-                          {exp.city}
-                        </div>
-                      )}
+
+                        {exp.company && (
+                          <div className="flex gap-2 items-center ml-1">
+                            <div className="text-sm font-medium text-dark dark:text-textLight">
+                              {exp.company}
+                            </div>
+                            <div>-</div>
+                            {exp.city && (
+                              <div className="text-sm font-medium text-dark dark:text-textLight">
+                                {exp.city}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
                     </motion.div>
                   )}
                 </>
@@ -155,26 +163,36 @@ const Experience: React.FC = () => {
                       whileInView="visible"
                       viewport={{ once: false, amount: 0.3 }}
                     >
-                      {exp.title && (
-                        <div className="text-base font-semibold text-primary">
-                          {exp.title}
+                      <div className="inline-block">
+                        <div className="flex flex-col">
+                          <div className="flex gap-5 items-center">
+                            {exp.title && (
+                              <div className="text-2xl font-semibold text-primary">
+                                {exp.title}
+                              </div>
+                            )}
+                            {exp.duration && (
+                              <div className="mt-1 text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
+                                {exp.duration}
+                              </div>
+                            )}
+                          </div>
+
+                          {exp.company && (
+                            <div className="flex gap-2 items-center ml-1">
+                              <div className="text-sm font-medium text-dark dark:text-textLight">
+                                {exp.company}
+                              </div>
+                              <div>-</div>
+                              {exp.city && (
+                                <div className="text-sm font-medium text-dark dark:text-textLight">
+                                  {exp.city}
+                                </div>
+                              )}
+                            </div>
+                          )}
                         </div>
-                      )}
-                      {exp.company && (
-                        <div className="mt-1 text-sm font-medium text-primary">
-                          {exp.company}
-                        </div>
-                      )}
-                      {exp.duration && (
-                        <span className="mt-1 inline-flex text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
-                          {exp.duration}
-                        </span>
-                      )}
-                      {exp.city && (
-                        <div className="mt-1 text-xs text-gray-600 dark:text-gray-400">
-                          {exp.city}
-                        </div>
-                      )}
+                      </div>
                     </motion.div>
                   )}
                   <div className="flex justify-center">
