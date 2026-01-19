@@ -1,10 +1,10 @@
 import React from "react";
 import { experiences } from "../constants";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { FaBriefcase } from "react-icons/fa";
 
 const Experience: React.FC = () => {
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: (direction: number) => ({
       opacity: 0,
       x: direction,
