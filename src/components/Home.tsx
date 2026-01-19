@@ -49,9 +49,9 @@ const Home: React.FC = () => {
             engaging web applications using Angular, React, and Node.js.
             Committed to transforming complex concepts into interactive
             interfaces that enhance usability and drive user engagement. */}
-            I build scalable, user-focused web applications. I enjoy working
-            across the full development lifecycle. Focused on clean code,
-            performance, and usability.
+            Builds large-scale, data-heavy dashboards and business applications.
+            Strong focus on high-performance user interfaces, complex workflows,
+            and clean, maintainable, production-ready code.
           </motion.div>
           <motion.div
             custom={4}
