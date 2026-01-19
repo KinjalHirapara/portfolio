@@ -5,7 +5,15 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme static {
-  --color-primary: #438c86;
+  /* --color-primary: #438c86;
+  --color-secondary: #64ffda;
+  --color-accent: #1e2939;
+  --color-dark: #1e2939;
+  --color-light: #f8fafc;
+  --color-textDark: #1e2939;
+  --color-textLight: #f8fafc; */
+
+  --color-primary: #0d9488;
   --color-secondary: #64ffda;
   --color-accent: #1e2939;
   --color-dark: #1e2939;
