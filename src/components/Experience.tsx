@@ -19,7 +19,7 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="max-w-6xl mx-auto px-4 py-[50px] lg:pt-[10px] lg:pb-[0px] flex flex-col mobile-landscape-padding"
+      className="mx-auto px-4 py-[50px] lg:pt-[10px] lg:pb-[0px] flex flex-col"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -31,7 +31,7 @@ const Experience: React.FC = () => {
           <span className="flex-1 h-px bg-primary"></span>
         </h2>
       </motion.div>
-      <div className="flex flex-col gap-4 md:hidden">
+      <div className="flex flex-col gap-4 md:hidden overflow-x-hidden">
         {experiences.map((exp, index) => {
           const direction = index % 2 === 0 ? -60 : 60;
           return (
@@ -78,7 +78,7 @@ const Experience: React.FC = () => {
         })}
       </div>
 
-      <div className="relative hidden flex-col gap-6 md:flex">
+      <div className="relative hidden flex-col gap-6 md:flex overflow-x-hidden">
         <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-primary/40" />
         {experiences.map((exp, index) => {
           const direction = index % 2 === 0 ? -60 : 60;
