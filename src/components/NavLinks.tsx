@@ -1,22 +1,52 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { navLinks } from "../constants";
 
 const NavLinks: React.FC<{ className?: string }> = (props) => {
-  const [activeId, setActiveId] = useState(navLinks[0]?.id ?? "");
+  const SECTION_IDS = navLinks.map((link) => link.id);
+  const [activeId, setActiveId] = useState("home");
+
+  const intersections = useRef(new Map<string, IntersectionObserverEntry>());
 
   useEffect(() => {
-    const setFromHash = () => {
-      const hash = window.location.hash.replace("#", "");
-      if (hash) {
-        setActiveId(hash);
+    const sections = SECTION_IDS
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => Boolean(el));
+
+    if (sections.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          intersections.current.set(entry.target.id, entry);
+        });
+
+        const visible = Array.from(intersections.current.values())
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visible?.target?.id) {
+          setActiveId(visible.target.id);
+        }
+      },
+      {
+        root: null,
+        threshold: [0.2, 0.4, 0.6],
       }
-    };
+    );
 
-    setFromHash();
-    window.addEventListener("hashchange", setFromHash);
+    sections.forEach((section) => observer.observe(section));
 
-    return () => window.removeEventListener("hashchange", setFromHash);
+    return () => observer.disconnect();
   }, []);
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <div
@@ -36,7 +66,10 @@ const NavLinks: React.FC<{ className?: string }> = (props) => {
                   : "border-transparent hover:bg-white/10"
               }`}
               aria-current={isActive ? "page" : undefined}
-              onClick={() => setActiveId(link.id)}
+              onClick={(event) => {
+                event.preventDefault();
+                scrollTo(link.id);
+              }}
             >
               <Icon className="w-5 h-5" />
               <span className="hidden md:inline">{link.title}</span>
