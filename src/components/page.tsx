@@ -8,7 +8,6 @@ import Contact from "./Contact";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 import HexagonLoader from "./Loader";
-import NavLinks from "./NavLinks";
 
 const SectionRouter: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -40,14 +39,6 @@ const SectionRouter: React.FC = () => {
             <Experience />
             <Works />
             <Contact />
-          </div>
-          {/* nav links  */}
-          <div className="xl:hidden md:block">
-            <div className="flex justify-center">
-              <div className="relative w-full flex justify-center gap-4 bg-primary p-2 text-textLight z-9">
-                <NavLinks />
-              </div>
-            </div>
           </div>
         </div>
       </div>
