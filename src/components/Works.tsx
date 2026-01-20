@@ -6,7 +6,7 @@ import { fadeInUp } from "../utils/motion";
 const Works: React.FC = () => {
   return (
     <section
-      id="works"
+      id="projects"
       className="max-w-6xl mx-auto flex flex-col px-4 py-[60px] lg:py-[30px] mobile-landscape-padding"
     >
       <motion.div
