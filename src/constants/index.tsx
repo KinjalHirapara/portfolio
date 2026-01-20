@@ -174,28 +174,23 @@ type Project = {
   description: string;
   tech: string[];
   image: string;
+  gallery?: string[];
   github?: string;
   external?: string;
 };
 
 export const projects: Project[] = [
   {
-    title: "Portfolio Website",
-    overline: "Personal Project",
-    description:
-      "Designed and developed a personal portfolio website using TypeScript and Tailwind CSS, focusing on clean layout, responsive design, and smooth user experience to showcase projects and skills effectively.",
-    tech: ["TypeScript", "Tailwind CSS"],
-    image: portfolioImg,
-    github: "https://github.com/KinjalHirapara/monika-portfolio/",
-    external: "https://monika-patel-portfolio.netlify.app/",
-  },
-  {
     title: "NMDC",
     overline: "Amnex Technologies",
     description:
-      "Worked as a UI Developer on the NMDC project, building a web-based monitoring dashboard for real-time tracking of mining operations. Used Angular, Kendo UI, and ECharts to create responsive, data-driven interfaces, and integrated RESTful APIs to deliver live performance insights for both on-site and admin users.",
+      "Worked as a Software Developer on the National Mineral Development Corporation (NMDC) project, building a web-based monitoring dashboard for real-time tracking of mining operations. Used Angular, Kendo UI, and ECharts to create responsive, data-driven interfaces, and integrated RESTful APIs to deliver live performance insights for both on-site and admin users.",
     tech: ["Angular", "Bootstrap", "API Integration", "Kendo UI", "ECharts"],
     image: NMDCImg,
+    gallery: Array.from(
+      { length: 32 },
+      (_, index) => `/assets/NMDC/${index + 1}.png`
+    ),
   },
   {
     title: "Circle Vision",
@@ -220,6 +215,16 @@ export const projects: Project[] = [
       "We built a web-based tool for a client in the Netherlands to help manage their employees, projects, and invoices more easily. My role was to design and develop responsive front-end pages and integrate RESTful APIs to ensure smooth data flow and functionality.",
     tech: ["HTML", "CSS", "jQuery", "Bootstrap", "API Integration"],
     image: tekwoodImg,
+  },
+  {
+    title: "Portfolio Website",
+    overline: "Personal Project",
+    description:
+      "Designed and developed a personal portfolio website using TypeScript and Tailwind CSS, focusing on clean layout, responsive design, and smooth user experience to showcase projects and skills effectively.",
+    tech: ["TypeScript", "Tailwind CSS"],
+    image: portfolioImg,
+    github: "https://github.com/KinjalHirapara/monika-portfolio/",
+    external: "https://monika-patel-portfolio.netlify.app/",
   },
 ];
 export const contactdetails = [
