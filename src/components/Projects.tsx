@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
       return;
     }
     setActiveIndex((prev) =>
-      prev === 0 ? activeGallery.length - 1 : prev - 1
+      prev === 0 ? activeGallery.length - 1 : prev - 1,
     );
   };
 
@@ -60,12 +60,13 @@ const Projects: React.FC = () => {
               variants={fadeInUp}
               className="relative flex flex-col lg:flex-row items-center gap-6 group rounded-lg"
             >
-              <div className="block w-full lg:w-1/3 h-56 lg:h-[260px] rounded-lg overflow-hidden">
+              <div className="flex w-full lg:w-1/3 h-56 lg:h-[260px] rounded-lg overflow-hidden items-center justify-center">
                 <img
                   src={project.image}
                   alt={project.title}
                   loading="lazy"
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                  className="object-contain w-4/5 h-4/5"
+                  style={{ transform: "rotate(360deg)" }}
                 />
               </div>
               <div className="w-full lg:w-2/3 p-4 lg:p-6">
@@ -126,10 +127,7 @@ const Projects: React.FC = () => {
         </div>
       </div>
       {activeGallery && (
-        <div
-          className="fixed inset-0 z-50 bg-black/90"
-          onClick={closeGallery}
-        >
+        <div className="fixed inset-0 z-50 bg-black/90" onClick={closeGallery}>
           <div
             className="relative w-full h-full flex items-center justify-center"
             onClick={(event) => event.stopPropagation()}
