@@ -2,24 +2,25 @@ import Tilt from "react-parallax-tilt";
 
 import { motion } from "framer-motion";
 import { CgEditNoise } from "react-icons/cg";
-import { fadeInUp, hexVariants } from "../utils/motion";
+import { fadeInUp } from "../utils/motion";
 import { skills } from "../constants";
 
 const About: React.FC = () => {
+  const marqueeSkills = [...skills, ...skills, ...skills];
+
   return (
     <section
       id="about"
-      className="max-w-6xl mx-auto px-4 py-[30px] lg:py-[10px] flex flex-col mobile-landscape-padding"
+      className="w-full px-4 py-[60px] lg:py-[30px] flex flex-col mobile-landscape-padding"
     >
-      <div className="flex flex-col md:flex-col gap-10 items-stretch pb-4 w-full">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-col gap-10 items-stretch pb-4 w-full">
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-primary flex items-center gap-2">
-            <span className="numbered-heading">About Me</span>
-            <span className="flex-1 h-px bg-primary"></span>
+          <h2 className="text-2xl md:text-3xl font-bold text-primary text-center">
+            <span className="numbered-heading">What I do</span>
           </h2>
         </motion.div>
         <div className="flex flex-col h-full">
@@ -31,101 +32,25 @@ const About: React.FC = () => {
               variants={fadeInUp}
             >
               <p>
-                I design and develop modern, high-performance web applications
-                as a Software Developer, using React and Angular on the front
-                end and Node.js with REST APIs on the back end. With strong
-                skills in HTML, SCSS, JavaScript, Bootstrap, and Tailwind CSS. I
-                build scalable and user-friendly solutions that turn ideas into
-                visually appealing and reliable digital products.
-              </p>
-            </motion.div>
-            <motion.div
-              custom={1}
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-            >
-              <p>
-                I specialize in creating clean and maintainable UI components,
-                optimizing performance, and ensuring smooth API integrations. I
-                also enjoy adding depth and interactivity through Framer Motion,
-                bringing interfaces to life with clean, subtle animations that
-                enhance user experience.
-                {/* I specialize in building scalable, maintainable, and accessible
-                UI components, optimizing performance, and ensuring seamless API
-                integrations. Additionally, I bring interfaces to life with
-                Framer Motion, creating smooth, interactive, and visually
-                appealing animations that enhance user experience. I'm currently
-                expanding my skills by learning backend development with Node.js
-                to become a full-stack developer. */}
-                {/* I focus on writing clean, efficient code and connecting
-                front-end apps with APIs and external services. I'm also
-                learning to build backend APIs using Node.js to help front-end
-                and back-end work together smoothly. */}
-              </p>
-            </motion.div>
-            <motion.div
-              custom={1}
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-            >
-              <p>
-                In my previous roles, I built a property management platform
-                that allowed clients to manage their property listings, details,
-                and images. I also developed various dashboard applications
-                integrating charts and tabular data for better insights, and
-                created theme-based web applications with a focus on clean,
-                modern UI design. In addition, I worked on eCommerce web
-                applications, improving user experience and interface
-                consistency across multiple platform. My experience includes
-                optimizing component reusability, developing and integrating
-                RESTful APIs, and using third-party libraries to enhance
-                functionality, responsiveness, and user engagement.
+                I design and build modern, high-performance web applications
+                using React, Angular, and TypeScript, with strong skills in
+                HTML, SCSS, JavaScript, Bootstrap, and Tailwind CSS. I focus on
+                clean, maintainable UI components, performance optimization,
+                smooth API integrations, and subtle Framer Motion interactions.
+                My experience spans data-heavy dashboards, analytics platforms,
+                business applications, and responsive web experiences where I
+                prioritize clarity, usability, and scalable front-end
+                architecture.
               </p>
             </motion.div>
 
             <motion.div
-              custom={2}
+              custom={1}
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
             >
-              <p>
-                Currently, I'm working on the Predictable Data platform, a data
-                quality solution that helps businesses clean, validate, and
-                organize their data. I've built a scalable React front-end
-                architecture, integrated Syncfusion and Fluent UI for dynamic
-                data visualization, and automated AI-powered workflows using
-                Claude Code, where I set up sub-agents and slash commands to
-                manage processes like code review, automated testing, and task
-                implementation, article generation.
-              </p>
-            </motion.div>
-            <motion.div
-              custom={2}
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-            >
-              <p>
-                Also started volunteer work as a Web Developer at Youthline,
-                Christchurch, NZ. Contributing to the ongoing development of the
-                Youthline WordPress platform by building new pages, refining UI
-                components, and improving accessibility. I customize themes and
-                plugins to deliver user-focused experiences and meet project
-                requirements. Working collaboratively in a Scrum environment, I
-                participate in planning, task prioritization, and reviews to
-                ensure consistent delivery and smooth project workflow.
-              </p>
-            </motion.div>
-            <motion.div
-              custom={3}
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-            >
-              <p>Technologies I've been working with recently:</p>
+              <p>Technologies I have been working with recently:</p>
               <div className="flex flex-wrap items-center gap-2">
                 {skills.map((skill) => (
                   <div className="flex items-center gap-2" key={skill.name}>
@@ -137,35 +62,31 @@ const About: React.FC = () => {
             </motion.div>
           </div>
         </div>
-        <div className="flex items-center justify-center h-full">
-          <div className="flex flex-row flex-wrap justify-center gap-6">
-            {skills.map((skill, index) => (
-              <Tilt
-                glareEnable={false}
-                glareMaxOpacity={0.3}
-                scale={1.05}
-                transitionSpeed={250}
-                key={skill.name + index}
-              >
-                <div>
-                  <motion.div
-                    className="flex items-center justify-center w-full h-full"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
-                    variants={hexVariants}
-                    custom={index}
-                  >
-                    <div className={`${skill.class} develop-icon`}>
-                      <div className="circle flex items-center justify-center">
-                        {skill.icon}
-                      </div>
+      </div>
+      <div className="about-icons-marquee">
+        <div
+          className="about-icons-track"
+          style={{ "--marquee-count": 3 } as React.CSSProperties}
+        >
+          {/* {marqueeSkills.map((skill, index) => (
+            <Tilt
+              glareEnable={false}
+              glareMaxOpacity={0.3}
+              scale={1.05}
+              transitionSpeed={250}
+              key={`${skill.name}-${index}`}
+            >
+              <div>
+                <div className="flex items-center justify-center w-full h-full">
+                  <div className={`${skill.class} develop-icon`}>
+                    <div className="circle flex items-center justify-center">
+                      {skill.icon}
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
-              </Tilt>
-            ))}
-          </div>
+              </div>
+            </Tilt>
+          ))} */}
         </div>
       </div>
     </section>

@@ -116,9 +116,7 @@ export const experiences = [
     city: "Christchurch, New Zealand",
     duration: "November 2025 - Present",
     responsibilities: [
-      "Managing and updating the Youthline WordPress website, adding new pages and features.",
-      "Customized themes and plugins to enhance user experience and meet specific site requirements.",
-      "Collaborated with the team using Scrum, ensuring timely updates, task tracking, and smooth project workflow.",
+      "Managing and maintaining the Youthline WordPress website by adding new pages, updating content, and implementing new features. Customized themes and plugins to improve user experience and meet specific functional requirements. Worked closely with the team using Scrum practices to ensure timely updates, effective task tracking, and smooth project delivery",
     ],
   },
   {

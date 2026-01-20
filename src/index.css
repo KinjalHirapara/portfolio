@@ -54,6 +54,11 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .code-block,
 .mono-text {
   /* font-family: "IBM Plex Mono", monospace; */
@@ -138,6 +143,36 @@
   margin: auto;
   text-align: center;
   transform: rotate(-30deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-icons-track {
+    animation: none;
+  }
+}
+
+.about-icons-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+.about-icons-track {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  animation: about-icons-marquee 18s linear infinite;
+  will-change: transform;
+}
+
+@keyframes about-icons-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / var(--marquee-count, 2)));
+  }
 }
 
 .tab-active-triangle::after {

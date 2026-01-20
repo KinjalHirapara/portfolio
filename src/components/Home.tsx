@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="xl:h-full max-w-6xl mx-auto px-4 py-[50px] lg:py-[50px] flex flex-col justify-center mobile-landscape-padding"
+      className="xl:h-full max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col justify-center mobile-landscape-padding"
     >
       <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-2 items-center md:items-start">
         <div className="flex flex-col gap-6 flex-1">

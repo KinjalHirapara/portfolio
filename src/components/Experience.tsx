@@ -19,16 +19,15 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="max-w-6xl mx-auto px-4 py-[50px] lg:pt-[10px] lg:pb-[0px] flex flex-col"
+      className="max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-primary flex items-center gap-2">
-          <span className="numbered-heading">Where I've Worked</span>
-          <span className="flex-1 h-px bg-primary"></span>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-primary text-center">
+          <span className="numbered-heading">Where I have Worked</span>
         </h2>
       </motion.div>
       <div className="flex flex-col gap-4 md:hidden overflow-x-hidden">
@@ -68,7 +67,7 @@ const Experience: React.FC = () => {
                   </span>
                 )}
               </div>
-              <ul className="mt-2 list-disc pl-5 space-y-2">
+              <ul className="space-y-2 text-xs">
                 {exp.responsibilities.map((item, idx) => (
                   <li key={idx}>{item}</li>
                 ))}
@@ -100,7 +99,7 @@ const Experience: React.FC = () => {
                       whileInView="visible"
                       viewport={{ once: false, amount: 0.3 }}
                     >
-                      <ul className="mt-2 list-disc pl-5 space-y-2">
+                      <ul className="space-y-2 text-xs">
                         {exp.responsibilities.map((item, idx) => (
                           <li key={idx}>{item}</li>
                         ))}
@@ -209,7 +208,7 @@ const Experience: React.FC = () => {
                       whileInView="visible"
                       viewport={{ once: false, amount: 0.3 }}
                     >
-                      <ul className="mt-2 list-disc pl-5 space-y-2">
+                      <ul className="space-y-2 text-xs">
                         {exp.responsibilities.map((item, idx) => (
                           <li key={idx}>{item}</li>
                         ))}

@@ -9,16 +9,15 @@ const Works: React.FC = () => {
   return (
     <section
       id="works"
-      className="max-w-6xl mx-auto flex flex-col px-4 py-[30px] lg:py-[10px] mobile-landscape-padding"
+      className="max-w-6xl mx-auto flex flex-col px-4 py-[60px] lg:py-[30px] mobile-landscape-padding"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-xl lg:text-3xl font-bold text-primary flex items-center gap-2">
-          <span className="numbered-heading"> Some Things I've Built</span>
-          <span className="flex-1 h-px bg-primary"></span>
+        <h2 className="text-xl lg:text-3xl font-bold text-primary text-center">
+          <span className="numbered-heading">Some Things I've Built</span>
         </h2>
       </motion.div>
       <div className="flex-1 flex mt-8">

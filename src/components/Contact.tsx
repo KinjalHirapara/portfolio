@@ -19,16 +19,15 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="gap-8 max-w-6xl mx-auto px-4 py-[50px] lg:py-[10px] h-auto lg:h-full flex flex-col items-center justify-center mobile-landscape-padding"
+      className="gap-8 max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] h-auto lg:h-full flex flex-col items-center justify-center mobile-landscape-padding"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-2xl md:text-4xl font-bold text-primary flex items-center gap-2">
-          <span className="numbered-heading"> Get In Touch</span>
-          <span className="flex-1 h-px bg-primary"></span>
+        <h2 className="text-2xl md:text-4xl font-bold text-primary text-center">
+          <span className="numbered-heading">Get In Touch</span>
         </h2>
       </motion.div>
       <motion.p
