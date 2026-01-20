@@ -32,25 +32,78 @@ const About: React.FC = () => {
               variants={fadeInUp}
             >
               <p>
-                I design and build modern, high-performance web applications
-                using React, Angular, and TypeScript, with strong skills in
-                HTML, SCSS, JavaScript, Bootstrap, and Tailwind CSS. I focus on
-                clean, maintainable UI components, performance optimization,
-                smooth API integrations, and subtle Framer Motion interactions.
-                My experience spans data-heavy dashboards, analytics platforms,
-                business applications, and responsive web experiences where I
-                prioritize clarity, usability, and scalable front-end
-                architecture.
+                I build modern, production-ready web applications with a focus
+                on with code quality and maintainability. I work primarily with
+                React, Angular, TypeScript and Node.js. I have solid experience
+                across HTML, SCSS, JavaScript, Bootstrap, and Tailwind CSS.
+              </p>
+            </motion.div>
+            <motion.div
+              custom={0}
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+            >
+              <p>
+                I have built scalable dashboard applications, CMS systems, and
+                business applications, handling large datasets, complex UI
+                workflows, and state management. I have integrated RESTful APIs
+                to handle data fetching, authentication, and CRUD operations,
+                and use libraries like Fluent UI, Kendo UI, and ECharts to build
+                rich, interactive, and data-driven user interfaces.
               </p>
             </motion.div>
 
+            <motion.div
+              custom={0}
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+            >
+              <p>
+                I focus on building scalable UI systems, writing clean and
+                well-tested code, and creating responsive, user-friendly
+                interfaces. I enjoy turning prototype designs and complex
+                requirements into clean, production-ready applications.
+              </p>
+            </motion.div>
+            <motion.div
+              custom={0}
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+            >
+              <p>
+                I work closely with designers, backend developers, and product
+                teams using Git and modern development workflows. I work in a
+                collaborative, sprint-based development process with regular
+                planning, reviews, and continuous improvement.
+              </p>
+            </motion.div>
+            <motion.div
+              custom={0}
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+            >
+              <p>
+                I leverage AI-assisted tools such as Claude Code to improve
+                productivity and streamline daily workflows. I use them to
+                support code reviews, testing, documentation, and task
+                execution, as well as to automate repetitive work. I also design
+                custom automated commands and sub-agent workflows for tasks like
+                content generation, code review, and testing, and continuously
+                explore agentic workflows to make development more efficient,
+                reliable, and consistent.
+              </p>
+            </motion.div>
             <motion.div
               custom={1}
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
             >
-              <p>Technologies I have been working with recently:</p>
+              <p>Technologies I have been working with:</p>
               <div className="flex flex-wrap items-center gap-2">
                 {skills.map((skill) => (
                   <div className="flex items-center gap-2" key={skill.name}>

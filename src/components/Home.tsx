@@ -45,13 +45,15 @@ const Home: React.FC = () => {
             variants={fadeInUp}
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
           >
+            Crafting modern web applications with a focus on clean architecture,
+            performance, and great user experience.
             {/* Specializing in building user-friendly, scalable, and visually
             engaging web applications using Angular, React, and Node.js.
             Committed to transforming complex concepts into interactive
             interfaces that enhance usability and drive user engagement. */}
-            Builds large-scale, data-heavy dashboards and business applications.
+            {/* Builds large-scale, data-heavy dashboards and business applications.
             Strong focus on high-performance user interfaces, complex workflows,
-            and clean, maintainable, production-ready code.
+            and clean, maintainable, production-ready code. */}
           </motion.div>
           <motion.div
             custom={4}
