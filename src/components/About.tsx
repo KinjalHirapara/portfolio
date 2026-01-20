@@ -20,7 +20,7 @@ const About: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-2xl md:text-3xl font-bold text-primary text-center">
-            <span className="numbered-heading">What I do</span>
+            <span className="numbered-heading">About Me</span>
           </h2>
         </motion.div>
         <div className="flex flex-col h-full">

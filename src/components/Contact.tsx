@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-2xl md:text-4xl font-bold text-primary text-center">
-          <span className="numbered-heading">Get In Touch</span>
+          <span className="numbered-heading">Contact</span>
         </h2>
       </motion.div>
       <motion.p

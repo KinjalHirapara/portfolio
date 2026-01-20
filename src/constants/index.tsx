@@ -40,8 +40,8 @@ export const navLinks = [
     icon: BriefcaseIcon,
   },
   {
-    id: "works",
-    title: "Works",
+    id: "projects",
+    title: "Projects",
     icon: RectangleStackIcon,
   },
   {

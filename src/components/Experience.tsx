@@ -27,7 +27,7 @@ const Experience: React.FC = () => {
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-2xl md:text-3xl font-bold mb-8 text-primary text-center">
-          <span className="numbered-heading">Where I have Worked</span>
+          <span className="numbered-heading">Experience</span>
         </h2>
       </motion.div>
       <div className="flex flex-col gap-4 md:hidden overflow-x-hidden">

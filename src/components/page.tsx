@@ -3,7 +3,7 @@ import { useTheme } from "../context/ThemeContext";
 import Home from "./Home";
 import About from "./About";
 import Experience from "./Experience";
-import Works from "./Works";
+import Projects from "./Projects";
 import Contact from "./Contact";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
@@ -37,7 +37,7 @@ const SectionRouter: React.FC = () => {
             <Home />
             <About />
             <Experience />
-            <Works />
+            <Projects />
             <Contact />
           </div>
         </div>
