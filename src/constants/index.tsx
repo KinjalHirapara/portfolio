@@ -199,6 +199,14 @@ export const projects: Project[] = [
       "This platform allows real estate brokers to list properties for sale or rent through auto-generated websites using their uploaded content like text, images, videos, and 3D tours. I worked as a Front-End Developer, where I designed and developed new features and integrated APIs to enhance the overall functionality and user experience.",
     tech: ["Angular", "Bootstrap", "API Integration", "jQuery", "HTML", "CSS"],
     image: circleVisionImg,
+    gallery: [
+      "/assets/circlevision/175_01.png",
+      "/assets/circlevision/176_02.png",
+      "/assets/circlevision/177_03.png",
+      "/assets/circlevision/178_04.png",
+      "/assets/circlevision/theme1.png",
+      "/assets/circlevision/theme2.png",
+    ],
   },
   {
     title: "CF Sales Portal",
@@ -207,6 +215,13 @@ export const projects: Project[] = [
       "CF Sales Portal is a web-based tool specially developed for the sales team of our client to manage their processes in a simplified manner. This portal is a central point of all the sales information, forecasting and management applications.",
     tech: ["HTML", "CSS", "jQuery", "Bootstrap", "API Integration"],
     image: cfsalesImg,
+    gallery: [
+      "/assets/cfsales/184_Appointment.png",
+      "/assets/cfsales/185_Audit.png",
+      "/assets/cfsales/186_Customers_Data.png",
+      "/assets/cfsales/190_Dashboard.png",
+      "/assets/cfsales/191_Question_Sets.png",
+    ],
   },
   {
     title: "Tekwoods",
@@ -215,6 +230,13 @@ export const projects: Project[] = [
       "We built a web-based tool for a client in the Netherlands to help manage their employees, projects, and invoices more easily. My role was to design and develop responsive front-end pages and integrate RESTful APIs to ensure smooth data flow and functionality.",
     tech: ["HTML", "CSS", "jQuery", "Bootstrap", "API Integration"],
     image: tekwoodImg,
+    gallery: [
+      "/assets/techwood/17.png",
+      "/assets/techwood/180_3.png",
+      "/assets/techwood/181_1.png",
+      "/assets/techwood/182_4.png",
+      "/assets/techwood/183_5.png",
+    ],
   },
   {
     title: "Portfolio Website",

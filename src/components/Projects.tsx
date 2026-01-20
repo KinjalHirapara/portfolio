@@ -135,7 +135,7 @@ const Projects: React.FC = () => {
             <button
               type="button"
               onClick={closeGallery}
-              className="absolute top-4 right-4 text-white text-2xl hover:text-white/80"
+              className="absolute top-4 right-4 text-white text-2xl hover:text-white/80 cursor-pointer"
               aria-label="Close gallery"
             >
               <FaTimes />
@@ -150,7 +150,7 @@ const Projects: React.FC = () => {
                 <button
                   type="button"
                   onClick={showPrev}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-white/80"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-white/80 cursor-pointer"
                   aria-label="Previous image"
                 >
                   <FaChevronLeft />
@@ -158,7 +158,7 @@ const Projects: React.FC = () => {
                 <button
                   type="button"
                   onClick={showNext}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-white/80"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-white/80 cursor-pointer"
                   aria-label="Next image"
                 >
                   <FaChevronRight />
