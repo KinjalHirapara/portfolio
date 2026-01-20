@@ -30,14 +30,14 @@ const Contact: React.FC = () => {
           <span className="numbered-heading">Contact</span>
         </h2>
       </motion.div>
-      <motion.p
+      {/* <motion.p
         className="text-md text-textDark dark:text-textLight"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
         Open to new opportunities, collaborations, or questions - let's talk!
-      </motion.p>
+      </motion.p> */}
       <motion.div
         className="space-y-3 text-left w-full max-w-md mx-auto"
         variants={listVariants}
