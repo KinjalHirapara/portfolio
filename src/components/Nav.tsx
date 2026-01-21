@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useTheme } from "../context/ThemeContext";
+// import { useTheme } from "../context/ThemeContext";
 import NavLinks from "./NavLinks";
 import ThemeToggle from "./ThemeToggle";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { LuMenu, LuX } from "react-icons/lu";
 const Nav: React.FC = () => {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
