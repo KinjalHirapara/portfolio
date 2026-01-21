@@ -1,4 +1,4 @@
-import Tilt from "react-parallax-tilt";
+// import Tilt from "react-parallax-tilt";
 
 import { motion } from "framer-motion";
 import { CgEditNoise } from "react-icons/cg";
@@ -6,7 +6,7 @@ import { fadeInUp } from "../utils/motion";
 import { skills } from "../constants";
 
 const About: React.FC = () => {
-  const marqueeSkills = [...skills, ...skills, ...skills];
+  // const marqueeSkills = [...skills, ...skills, ...skills];
 
   return (
     <section

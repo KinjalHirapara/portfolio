@@ -55,21 +55,6 @@ const Contact: React.FC = () => {
           </motion.div>
         ))}
       </motion.div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.9, duration: 0.4 }}
-        className="px-4 py-2 rounded border-2 border-primary bg-transparent transition
-    hover:shadow-[3px_3px_0_0_var(--color-primary)] hover:-translate-x-1 hover:-translate-y-1"
-      >
-        <a
-          href="mailto:kinjalhirapara25@gmail.com"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Say Hello
-        </a>
-      </motion.div>
     </section>
   );
 };
