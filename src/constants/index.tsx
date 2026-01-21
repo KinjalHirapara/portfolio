@@ -116,7 +116,7 @@ export const experiences = [
     city: "Christchurch, New Zealand",
     duration: "November 2025 - Present",
     responsibilities: [
-      "Managing and maintaining the Youthline WordPress website by adding new pages, updating content, and implementing new features. Customized themes and plugins to improve user experience and meet specific functional requirements. Worked closely with the team using Scrum practices to ensure timely updates, effective task tracking, and smooth project delivery",
+      "Contribute to the ongoing development and maintenance of the Youthline WordPress platform by building new service pages, updating content, and implementing new features. Customize themes and plugins to improve user experience and meet project requirements. Work closely with the team in a Scrum-based workflow to ensure timely delivery, effective task tracking, and smooth project execution.",
     ],
   },
   {
@@ -189,7 +189,7 @@ export const projects: Project[] = [
     image: NMDCImg,
     gallery: Array.from(
       { length: 32 },
-      (_, index) => `/assets/NMDC/${index + 1}.png`
+      (_, index) => `/assets/NMDC/${index + 1}.png`,
     ),
   },
   {

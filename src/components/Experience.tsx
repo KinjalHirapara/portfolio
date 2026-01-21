@@ -30,13 +30,13 @@ const Experience: React.FC = () => {
           <span className="numbered-heading">Experience</span>
         </h2>
       </motion.div>
-      <div className="flex flex-col gap-4 md:hidden overflow-x-hidden">
+      <div className="mt-4 flex flex-col gap-4 md:hidden overflow-x-hidden">
         {experiences.map((exp, index) => {
           const direction = index % 2 === 0 ? -60 : 60;
           return (
             <motion.div
               key={`${exp.title}-${exp.company}`}
-              className="rounded-lg border border-primary/40 p-4 shadow-sm"
+              className="rounded-lg border border-primary/40 bg-primary/10 p-4 shadow-sm"
               variants={cardVariants}
               custom={direction}
               initial="hidden"
@@ -67,7 +67,7 @@ const Experience: React.FC = () => {
                   </span>
                 )}
               </div>
-              <ul className="space-y-2 text-xs">
+              <ul className="space-y-2 text-base">
                 {exp.responsibilities.map((item, idx) => (
                   <li key={idx}>{item}</li>
                 ))}
@@ -77,7 +77,7 @@ const Experience: React.FC = () => {
         })}
       </div>
 
-      <div className="relative hidden flex-col gap-6 md:flex overflow-x-hidden">
+      <div className="relative mt-4 hidden flex-col gap-6 md:flex overflow-x-hidden">
         <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-primary/40" />
         {experiences.map((exp, index) => {
           const direction = index % 2 === 0 ? -60 : 60;
@@ -92,14 +92,14 @@ const Experience: React.FC = () => {
                 <>
                   <div className="flex justify-end">
                     <motion.div
-                      className="w-full max-w-xl rounded-lg border border-primary/40 p-4 shadow-sm"
+                      className="w-full max-w-xl rounded-lg border border-primary/40 bg-primary/10 p-4 shadow-sm"
                       variants={cardVariants}
                       custom={direction}
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: false, amount: 0.3 }}
                     >
-                      <ul className="space-y-2 text-xs">
+                      <ul className="space-y-2 text-base">
                         {exp.responsibilities.map((item, idx) => (
                           <li key={idx}>{item}</li>
                         ))}
@@ -201,14 +201,14 @@ const Experience: React.FC = () => {
                   </div>
                   <div className="flex justify-start">
                     <motion.div
-                      className="w-full max-w-xl rounded-lg border border-primary/40 p-4 shadow-sm"
+                      className="w-full max-w-xl rounded-lg border border-primary/40 bg-primary/10 p-4 shadow-sm"
                       variants={cardVariants}
                       custom={direction}
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: false, amount: 0.3 }}
                     >
-                      <ul className="space-y-2 text-xs">
+                      <ul className="space-y-2 text-base">
                         {exp.responsibilities.map((item, idx) => (
                           <li key={idx}>{item}</li>
                         ))}

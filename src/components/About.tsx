@@ -32,10 +32,11 @@ const About: React.FC = () => {
               variants={fadeInUp}
             >
               <p>
-                I build modern, production-ready web applications with a focus
-                on with code quality and maintainability. I work primarily with
-                React, Angular, TypeScript and Node.js. I have solid experience
-                across HTML, SCSS, JavaScript, Bootstrap, and Tailwind CSS.
+                I build modern, production-ready web applications with a strong
+                focus on performance, code quality, and long-term
+                maintainability. My core expertise is in React, Angular,
+                TypeScript, and Node.js, with a solid foundation in HTML, SCSS,
+                JavaScript, Tailwind, and Bootstrap.
               </p>
             </motion.div>
             <motion.div
@@ -47,10 +48,10 @@ const About: React.FC = () => {
               <p>
                 I have built scalable dashboard applications, CMS systems, and
                 business applications, handling large datasets, complex UI
-                workflows, and state management. I have integrated RESTful APIs
-                to handle data fetching, authentication, and CRUD operations,
-                and use libraries like Fluent UI, Kendo UI, and ECharts to build
-                rich, interactive, and data-driven user interfaces.
+                workflows, and state management. I have extensive experience
+                integrating REST APIs for data handling, authentication, and
+                CRUD operations, and building rich, data-driven interfaces using
+                tools like Fluent UI, Kendo UI, and ECharts.
               </p>
             </motion.div>
 
@@ -61,10 +62,10 @@ const About: React.FC = () => {
               variants={fadeInUp}
             >
               <p>
-                I focus on building scalable UI systems, writing clean and
-                well-tested code, and creating responsive, user-friendly
-                interfaces. I enjoy turning prototype designs and complex
-                requirements into clean, production-ready applications.
+                My work focuses on clean architecture, reusable UI systems,
+                well-tested code, and responsive user experiences. I enjoy
+                turning Figma designs and complex requirements into polished,
+                production-ready applications used by real users.
               </p>
             </motion.div>
             <motion.div
