@@ -153,7 +153,7 @@ export const experiences = [
     city: "Anand, Gujarat, India",
     duration: "June 2018 - Feb 2021",
     responsibilities: [
-      "Started as a Junior Frontend Developer, building interactive and responsive web applications using JavaScript, focusing on clean, maintainable code and smooth API-based data handling.",
+      "Started as a Junior Frontend Developer, building interactive and responsive web applications using HTML, CSS and JavaScript, focusing on clean, maintainable code and smooth API-based data handling.",
       "Gained strong experience in DOM manipulation, event handling, and frontend performance optimization to improve page speed and responsiveness.",
       "Worked closely with senior developers and UX designers to translate wireframes into pixel-perfect, cross-browser-compatible user interfaces.",
       "Progressed into a Frontend Developer role, working extensively with Angular to build dynamic, responsive, and scalable web applications.",
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     title: "Circle Vision",
     overline: "Timeloop Technologies",
     description:
-      "This platform allows real estate brokers to list properties for sale or rent through auto-generated websites using their uploaded content like text, images, videos, and 3D tours. I worked as a Front-End Developer, where I designed and developed new features and integrated APIs to enhance the overall functionality and user experience.",
+      "This is a CMS-based property management and website generation platform built for real estate brokers. The tool allows users to manage property listings and content and generate public-facing websites by selecting a theme. Once a theme is selected, the system automatically displays uploaded content such as images, videos, and text inside the chosen layout, making it easy to publish professional property websites without manual design work. I worked as a Frontend Developer on this platform, where I built and enhanced core features using Angular and designed multiple responsive UI themes. I implemented dynamic content rendering so platform data could be mapped seamlessly to different themes, improving flexibility, usability, and overall user experience.",
     tech: ["Angular", "Bootstrap", "API Integration", "jQuery", "HTML", "CSS"],
     image: circleVisionImg,
     gallery: [
@@ -210,7 +210,7 @@ export const projects: Project[] = [
     title: "CF Sales Portal",
     overline: "Timeloop Technologies",
     description:
-      "CF Sales Portal is a web-based tool specially developed for the sales team of our client to manage their processes in a simplified manner. This portal is a central point of all the sales information, forecasting and management applications.",
+      "CF Sales Portal is a web-based tool specially developed for the sales team of our client to manage their processes in a simplified manner. This portal is a central point of all the sales information, forecasting and management applications. Worked as a Frontend Developer, Developed responsive, user-friendly interfaces and integrated backend services to deliver a smooth and efficient user experience across the portal.",
     tech: ["HTML", "CSS", "jQuery", "Bootstrap", "API Integration"],
     image: cfsalesImg,
     gallery: [
@@ -225,7 +225,7 @@ export const projects: Project[] = [
     title: "Tekwoods",
     overline: "Timeloop Technologies",
     description:
-      "We built a web-based tool for a client in the Netherlands to help manage their employees, projects, and invoices more easily. My role was to design and develop responsive front-end pages and integrate RESTful APIs to ensure smooth data flow and functionality.",
+      "Worked as a Frontend Developer on a web-based management system for a client in the Netherlands, designed to manage employees, projects, and invoices. Built responsive, user-friendly interfaces and integrated RESTful APIs to ensure smooth data flow and reliable application functionality.",
     tech: ["HTML", "CSS", "jQuery", "Bootstrap", "API Integration"],
     image: tekwoodImg,
     gallery: [
