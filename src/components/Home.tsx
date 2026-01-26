@@ -55,7 +55,7 @@ const Home: React.FC = () => {
             Strong focus on high-performance user interfaces, complex workflows,
             and clean, maintainable, production-ready code. */}
           </motion.div>
-          <motion.div
+          {/* <motion.div
             custom={4}
             initial="hidden"
             animate="visible"
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
             >
               Download CV
             </a>
-          </motion.div>
+          </motion.div> */}
         </div>
         <motion.div
           className="relative w-full max-w-[300px] h-[300px] mx-auto md:mx-0"
