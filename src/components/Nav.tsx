@@ -1,11 +1,9 @@
 import { useState } from "react";
-// import { useTheme } from "../context/ThemeContext";
 import NavLinks from "./NavLinks";
 import ThemeToggle from "./ThemeToggle";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { LuMenu, LuX } from "react-icons/lu";
 const Nav: React.FC = () => {
-  // const { theme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -33,21 +31,21 @@ const Nav: React.FC = () => {
             <div>
               <a
                 href="https://www.linkedin.com/in/kinjalhirapara"
-                className="transition hover:-translate-y-1 hover:text-primary"
+                className="text-primary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin className="w-7 h-7 transition hover:-translate-y-1 hover:text-primary" />
+                <FaLinkedin className="w-7 h-7" />
               </a>
             </div>
             <div>
               <a
                 href="https://github.com/KinjalHirapara"
-                className="transition hover:-translate-y-1 hover:text-primary"
+                className="text-primary"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub className="w-7 h-7 transition hover:-translate-y-1 hover:text-primary" />
+                <FaGithub className="w-7 h-7" />
               </a>
             </div>
           </div>

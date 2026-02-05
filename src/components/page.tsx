@@ -6,17 +6,13 @@ import Experience from "./Experience";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Nav from "./Nav";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import HexagonLoader from "./Loader";
 
 const SectionRouter: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   const { theme } = useTheme();
-
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
 
   if (loading) {
     return <HexagonLoader onFinish={() => setLoading(false)} />;

@@ -20,7 +20,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       if (typeof window !== "undefined") {
         const stored = window.localStorage.getItem("theme");
         if (stored === "light" || stored === "dark") return stored;
-        const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+        const prefersDark =
+          window.matchMedia?.("(prefers-color-scheme: dark)").matches;
         return prefersDark ? "dark" : "light";
       }
     } catch {}
@@ -33,8 +34,18 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     } catch {}
   }, [theme]);
 
+  useEffect(() => {
+    if (typeof document === "undefined") {
+      return;
+    }
+    const root = document.documentElement;
+    root.classList.remove(theme === "dark" ? "light" : "dark");
+    root.classList.add(theme);
+    root.style.colorScheme = theme;
+  }, [theme]);
+
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   return (

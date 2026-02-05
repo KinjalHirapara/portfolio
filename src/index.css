@@ -59,6 +59,10 @@ body {
   overflow-x: hidden;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .code-block,
 .mono-text {
   /* font-family: "IBM Plex Mono", monospace; */

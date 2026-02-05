@@ -1,13 +1,9 @@
-// import Tilt from "react-parallax-tilt";
-
 import { motion } from "framer-motion";
 import { CgEditNoise } from "react-icons/cg";
 import { fadeInUp } from "../utils/motion";
 import { skills } from "../constants";
 
 const About: React.FC = () => {
-  // const marqueeSkills = [...skills, ...skills, ...skills];
-
   return (
     <section
       id="about"
@@ -122,25 +118,6 @@ const About: React.FC = () => {
           className="about-icons-track"
           style={{ "--marquee-count": 3 } as React.CSSProperties}
         >
-          {/* {marqueeSkills.map((skill, index) => (
-            <Tilt
-              glareEnable={false}
-              glareMaxOpacity={0.3}
-              scale={1.05}
-              transitionSpeed={250}
-              key={`${skill.name}-${index}`}
-            >
-              <div>
-                <div className="flex items-center justify-center w-full h-full">
-                  <div className={`${skill.class} develop-icon`}>
-                    <div className="circle flex items-center justify-center">
-                      {skill.icon}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Tilt>
-          ))} */}
         </div>
       </div>
     </section>
