@@ -48,6 +48,46 @@
   background: rgba(240, 91, 42, 0.6);
 }
 
+html {
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.custom-scrollbar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+.custom-scrollbar-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.custom-scrollbar-thumb {
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(240, 91, 42, 0.95),
+    rgba(255, 170, 90, 0.7)
+  );
+  box-shadow:
+    0 0 10px rgba(240, 91, 42, 0.35),
+    0 0 18px rgba(255, 170, 90, 0.25);
+  transition: height 120ms ease;
+}
+
 .skills-scroll {
   overflow-x: auto;
   scrollbar-width: none;

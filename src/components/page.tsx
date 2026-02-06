@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import HexagonLoader from "./Loader";
 import PointerDot from "./PointerDot";
 import Lenis from "lenis";
+import CustomScrollbar from "./CustomScrollbar";
 
 const SectionRouter: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,9 @@ const SectionRouter: React.FC = () => {
       easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
       smoothTouch: true,
+      syncTouch: true,
+      touchMultiplier: 1.1,
+      wheelMultiplier: 1,
       gestureOrientation: "vertical",
     });
 
@@ -55,6 +59,7 @@ const SectionRouter: React.FC = () => {
       } w-screen `}
     >
       <PointerDot />
+      <CustomScrollbar />
       <div>
         <Nav />
         <div className="flex-1 flex flex-col">
