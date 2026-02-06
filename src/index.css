@@ -95,6 +95,29 @@ html::-webkit-scrollbar {
   }
 }
 
+@keyframes loader-word {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 24px));
+    filter: blur(6px);
+  }
+  25% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    filter: blur(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 24px));
+    filter: blur(6px);
+  }
+}
+
 .scroll-top-vertical {
   position: fixed;
   right: 24px;

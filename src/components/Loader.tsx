@@ -1,67 +1,53 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useTheme } from "../context/ThemeContext";
 import PointerDot from "./PointerDot";
 
 const HexagonLoader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
-  const [strokeOffset, setStrokeOffset] = useState(300);
-  const [fade, setFade] = useState(false);
   const { theme } = useTheme();
+  const words = useMemo(() => ["Loading..."], []);
 
   useEffect(() => {
     // Reset states and force a reflowed start so the transition reliably retriggers
-    setFade(false);
-    setStrokeOffset(300);
-
     let raf1 = 0 as number;
     let raf2 = 0 as number;
     raf1 = requestAnimationFrame(() => {
       raf2 = requestAnimationFrame(() => {
-        setStrokeOffset(0);
+        // allow CSS animations to restart
       });
     });
 
-    const fadeTimeout = window.setTimeout(() => setFade(true), 6500);
-    const finishTimeout = window.setTimeout(onFinish, 6500);
+    const wordDuration = 1800;
+    const wordStagger = 750;
+    const holdAfter = 0;
+    const totalDuration =
+      wordDuration + wordStagger * (words.length - 1) + holdAfter;
+    const finishTimeout = window.setTimeout(onFinish, totalDuration);
     return () => {
       cancelAnimationFrame(raf1);
       cancelAnimationFrame(raf2);
-      clearTimeout(fadeTimeout);
       clearTimeout(finishTimeout);
     };
-  }, [onFinish]);
+  }, [onFinish, words]);
 
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-500 ${
+      className={`fixed inset-0 flex items-center justify-center z-50 ${
         theme === "dark" ? "bg-dark text-textLight" : "bg-light text-textDark"
-      } ${
-        fade ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
       <PointerDot />
-      <div className="relative w-[100px] h-[100px] flex items-center justify-center">
-        <svg
-          viewBox="0 0 110 110"
-          width={100}
-          height={100}
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute left-0 top-0"
-        >
-          <polygon
-            points="55,10 100,35 100,75 55,100 10,75 10,35"
-            stroke="var(--color-primary)"
-            strokeWidth="4"
-            fill="none"
-            strokeDasharray="300"
-            strokeDashoffset={strokeOffset}
+      <div className="relative h-20 w-[min(85vw,640px)] overflow-hidden">
+        {words.map((word, index) => (
+          <span
+            key={word}
+            className="absolute left-1/2 top-1/2 text-primary text-4xl md:text-6xl font-semibold tracking-[0.45em] uppercase opacity-0 select-none animate-[loader-word_1800ms_ease-in-out_1] [animation-fill-mode:both] will-change-[opacity,transform,filter]"
             style={{
-              transition: "stroke-dashoffset 6s linear",
+              animationDelay: `${index * 750}ms`,
             }}
-          />
-        </svg>
-        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-primary text-3xl font-bold z-10 select-none">
-          K
-        </span>
+          >
+            {word}
+          </span>
+        ))}
       </div>
     </div>
   );
