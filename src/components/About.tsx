@@ -2,13 +2,12 @@ import { motion } from "framer-motion";
 import { CgEditNoise } from "react-icons/cg";
 import { fadeInUp } from "../utils/motion";
 import { skills } from "../constants";
-import ScrollButton from "./ScrollButton";
 
 const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative w-full px-4 py-[60px] lg:py-[30px] flex flex-col mobile-landscape-padding"
+      className="relative w-full min-h-[100dvh] px-4 py-[60px] lg:py-[30px] flex flex-col mobile-landscape-padding"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-col gap-10 items-stretch pb-4 w-full">
         <motion.div
@@ -121,7 +120,6 @@ const About: React.FC = () => {
         >
         </div>
       </div>
-      <ScrollButton targetId="experience" />
     </section>
   );
 };

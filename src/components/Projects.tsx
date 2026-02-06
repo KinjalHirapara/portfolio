@@ -9,7 +9,6 @@ import {
 import { motion } from "framer-motion";
 import { projects } from "../constants";
 import { fadeInUp } from "../utils/motion";
-import ScrollButton from "./ScrollButton";
 
 const Projects: React.FC = () => {
   const [activeGallery, setActiveGallery] = useState<string[] | null>(null);
@@ -39,7 +38,7 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="relative max-w-6xl mx-auto flex flex-col px-4 py-[60px] lg:py-[30px] mobile-landscape-padding"
+      className="relative min-h-[100dvh] max-w-6xl mx-auto flex flex-col px-4 py-[60px] lg:py-[30px] mobile-landscape-padding"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -172,7 +171,6 @@ const Projects: React.FC = () => {
           </div>
         </div>
       )}
-      <ScrollButton targetId="contact" />
     </section>
   );
 };

@@ -33,7 +33,6 @@ const ChevronIcon: React.FC<{
 import { fadeInUp } from "../utils/motion";
 import profileImg from "../assets/profile.jpg";
 import { skills } from "../constants";
-import ScrollButton from "./ScrollButton";
 
 const Home: React.FC = () => {
   const featuredSkills = skills.slice(0, 8);
@@ -41,9 +40,9 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative xl:h-full max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col justify-center mobile-landscape-padding"
+      className="relative min-h-[100dvh] max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col justify-center mobile-landscape-padding"
     >
-      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-2 items-center md:items-start">
+      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-2 items-center md:items-center">
         <div className="flex flex-col gap-6 flex-1">
           <motion.div
             custom={0}
@@ -154,7 +153,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </motion.div>
-      <ScrollButton targetId="about" />
     </section>
   );
 };

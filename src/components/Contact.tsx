@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { contactdetails } from "../constants";
-import ScrollButton from "./ScrollButton";
 import { FaChevronUp } from "react-icons/fa";
 
 const listVariants = {
@@ -21,7 +20,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative gap-8 max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] h-auto lg:h-full flex flex-col items-center justify-center mobile-landscape-padding"
+      className="relative min-h-[100dvh] gap-8 max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col items-center justify-center mobile-landscape-padding"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -57,11 +56,6 @@ const Contact: React.FC = () => {
           </motion.div>
         ))}
       </motion.div>
-      <ScrollButton
-        targetId="home"
-        ariaLabel="Scroll to top"
-        icon={<FaChevronUp className="h-4 w-4" />}
-      />
     </section>
   );
 };

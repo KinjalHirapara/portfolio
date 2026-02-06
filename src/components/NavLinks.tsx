@@ -45,8 +45,15 @@ const NavLinks: React.FC<{
   }, []);
 
   const scrollTo = (id: string) => {
+    const lenis = (window as Window & {
+      lenis?: { scrollTo: (target: string, opts?: { duration?: number }) => void };
+    }).lenis;
+    if (lenis?.scrollTo) {
+      lenis.scrollTo(`#${id}`, { duration: 2.8 });
+      return;
+    }
     document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
+      behavior: "auto",
       block: "start",
     });
     setActiveId(id);

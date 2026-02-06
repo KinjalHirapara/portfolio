@@ -11,6 +11,7 @@ import HexagonLoader from "./Loader";
 import PointerDot from "./PointerDot";
 import Lenis from "lenis";
 import CustomScrollbar from "./CustomScrollbar";
+import SectionScrollControl from "./SectionScrollControl";
 
 const SectionRouter: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -23,15 +24,16 @@ const SectionRouter: React.FC = () => {
     }
 
     const lenis = new Lenis({
-      duration: 1.6,
+      lerp: 0.08,
       easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
       smoothTouch: true,
       syncTouch: true,
-      touchMultiplier: 1.1,
-      wheelMultiplier: 1,
+      touchMultiplier: 1.2,
+      wheelMultiplier: 0.8,
       gestureOrientation: "vertical",
     });
+    (window as Window & { lenis?: Lenis }).lenis = lenis;
 
     let frameId = 0;
     const raf = (time: number) => {
@@ -43,6 +45,7 @@ const SectionRouter: React.FC = () => {
     return () => {
       cancelAnimationFrame(frameId);
       lenis.destroy();
+      (window as Window & { lenis?: Lenis }).lenis = undefined;
     };
   }, [loading]);
 
@@ -60,6 +63,7 @@ const SectionRouter: React.FC = () => {
     >
       <PointerDot />
       <CustomScrollbar />
+      <SectionScrollControl />
       <div>
         <Nav />
         <div className="flex-1 flex flex-col">
