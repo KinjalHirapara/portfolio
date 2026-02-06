@@ -2,6 +2,7 @@ import React from "react";
 import { experiences } from "../constants";
 import { motion, type Variants } from "framer-motion";
 import { FaBriefcase } from "react-icons/fa";
+import ScrollButton from "./ScrollButton";
 
 const Experience: React.FC = () => {
   const cardVariants: Variants = {
@@ -19,7 +20,7 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col"
+      className="relative max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col"
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -221,6 +222,7 @@ const Experience: React.FC = () => {
           );
         })}
       </div>
+      <ScrollButton targetId="projects" />
     </section>
   );
 };

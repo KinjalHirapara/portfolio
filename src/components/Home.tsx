@@ -1,12 +1,47 @@
 import { motion } from "framer-motion";
+const ChevronIcon: React.FC<{
+  direction: "left" | "right";
+  className?: string;
+}> = ({ direction, className }) => (
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className={className}
+    fill="transparent"
+  >
+    {direction === "left" ? (
+      <path
+        d="M18 4 L6 12 L18 20 L18 16 L11 12 L18 8 L18 4 Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+      />
+    ) : (
+      <path
+        d="M6 4 L18 12 L6 20 L6 16 L13 12 L6 8 L6 4 Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
+      />
+    )}
+  </svg>
+);
 import { fadeInUp } from "../utils/motion";
 import profileImg from "../assets/profile.jpg";
+import { skills } from "../constants";
+import ScrollButton from "./ScrollButton";
 
 const Home: React.FC = () => {
+  const featuredSkills = skills.slice(0, 8);
+
   return (
     <section
       id="home"
-      className="xl:h-full max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col justify-center mobile-landscape-padding"
+      className="relative xl:h-full max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col justify-center mobile-landscape-padding"
     >
       <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-2 items-center md:items-start">
         <div className="flex flex-col gap-6 flex-1">
@@ -72,20 +107,24 @@ const Home: React.FC = () => {
             </a>
           </motion.div> */}
         </div>
-        <motion.div
-          className="relative w-full max-w-[300px] h-[300px] mx-auto md:mx-0"
-          initial={{ opacity: 0, scale: 0.8, x: 60 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.5,
-            type: "spring",
-            stiffness: 80,
-          }}
-        >
-          <div className="h-[90%] absolute inset-0 transform -translate-x-2 sm:-translate-x-4 translate-y-1 sm:translate-y-2 rotate-[-4deg] bg-gradient-to-tr from-secondary to-accent rounded-bl-[60px] sm:rounded-bl-[100px] z-0"></div>
-          <div className="relative w-full h-full p-[2px] rounded-bl-[60px] sm:rounded-bl-[100px] z-10 top-[-5px]">
-            <div className="w-full h-full overflow-hidden rounded-bl-[60px] sm:rounded-bl-[100px]">
+        <div className="relative w-full max-w-[320px] h-[320px] mx-auto md:mx-0">
+          <div>
+            <div className="absolute inset-0 hero-glow-1 pointer-events-none" />
+            <div className="absolute inset-0 hero-glow-2 pointer-events-none" />
+            <div className="absolute inset-0 hero-glow-3 pointer-events-none" />
+            <div className="absolute h-[100%] w-[100%] rounded-full border-[2px] border-primary/80 ring-slow-spin z-10" />
+            <div className="absolute -top-10 -left-20 text-primary text-5xl md:text-6xl z-20">
+              <ChevronIcon direction="left" className="block h-[2em] w-[2em]" />
+            </div>
+            <div className="absolute -bottom-10 -right-20 text-primary text-5xl md:text-6xl z-20">
+              <ChevronIcon
+                direction="right"
+                className="block h-[2em] w-[2em]"
+              />
+            </div>
+          </div>
+          <div className="relative w-full h-full p-[10px] z-10">
+            <div className="w-full h-full overflow-hidden rounded-full border-4 border-light dark:border-dark bg-light dark:bg-dark">
               <img
                 src={profileImg}
                 alt="Profile"
@@ -93,8 +132,29 @@ const Home: React.FC = () => {
               />
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
+      <motion.div
+        custom={4}
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+        className="mt-10 w-full"
+      >
+        <div className="w-full bg-accent/5 dark:bg-accent/20 px-6 py-4">
+          <div className="skills-scroll flex flex-nowrap items-center gap-x-8 text-sm md:text-base text-textDark/80 dark:text-textLight/70">
+            {featuredSkills.map((skill) => (
+              <div
+                className="flex items-center gap-3 whitespace-nowrap"
+                key={skill.name}
+              >
+                <span className="tracking-wide">{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+      <ScrollButton targetId="about" />
     </section>
   );
 };
