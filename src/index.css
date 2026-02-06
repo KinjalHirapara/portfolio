@@ -40,30 +40,12 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 8px;
+  background: rgba(240, 91, 42, 0.35);
+  height: auto;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: transparent;
-}
-
-#page-scroll {
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-}
-
-#page-scroll::-webkit-scrollbar {
-  width: 8px;
-}
-
-#page-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-#page-scroll::-webkit-scrollbar-thumb {
-  background: transparent;
+  background: rgba(240, 91, 42, 0.6);
 }
 
 .skills-scroll {

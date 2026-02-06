@@ -6,14 +6,41 @@ import Experience from "./Experience";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Nav from "./Nav";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HexagonLoader from "./Loader";
 import PointerDot from "./PointerDot";
+import Lenis from "lenis";
 
 const SectionRouter: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   const { theme } = useTheme();
+
+  useEffect(() => {
+    if (loading) {
+      return;
+    }
+
+    const lenis = new Lenis({
+      duration: 1.6,
+      easing: (t) => 1 - Math.pow(1 - t, 3),
+      smoothWheel: true,
+      smoothTouch: true,
+      gestureOrientation: "vertical",
+    });
+
+    let frameId = 0;
+    const raf = (time: number) => {
+      lenis.raf(time);
+      frameId = requestAnimationFrame(raf);
+    };
+    frameId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      lenis.destroy();
+    };
+  }, [loading]);
 
   if (loading) {
     return <HexagonLoader onFinish={() => setLoading(false)} />;
@@ -28,10 +55,10 @@ const SectionRouter: React.FC = () => {
       } w-screen `}
     >
       <PointerDot />
-      <div className="flex flex-col full-height">
+      <div>
         <Nav />
-        <div className="flex-1 flex flex-col overflow-auto">
-          <div id="page-scroll" className="flex-1 overflow-auto">
+        <div className="flex-1 flex flex-col">
+          <div className="flex-1">
             <Home />
             <About />
             <Experience />
@@ -48,4 +75,3 @@ const Page = () => {
   return <SectionRouter />;
 };
 export default Page;
-

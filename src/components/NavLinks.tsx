@@ -19,7 +19,6 @@ const NavLinks: React.FC<{
       return;
     }
 
-    const scrollRoot = document.getElementById("page-scroll");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,7 +34,7 @@ const NavLinks: React.FC<{
         }
       },
       {
-        root: scrollRoot ?? null,
+        root: null,
         threshold: [0.2, 0.4, 0.6],
       },
     );
