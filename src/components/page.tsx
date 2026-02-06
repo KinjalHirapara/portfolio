@@ -7,7 +7,7 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
-import HexagonLoader from "./Loader";
+import Loader from "./Loader";
 import PointerDot from "./PointerDot";
 import Lenis from "lenis";
 import CustomScrollbar from "./CustomScrollbar";
@@ -50,7 +50,7 @@ const SectionRouter: React.FC = () => {
   }, [loading]);
 
   if (loading) {
-    return <HexagonLoader onFinish={() => setLoading(false)} />;
+    return <Loader onFinish={() => setLoading(false)} />;
   }
 
   return (

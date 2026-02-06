@@ -1,33 +1,47 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 import PointerDot from "./PointerDot";
 
-const HexagonLoader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
+const animationDuration = 2600;
+const transitionDuration = 800;
+
+const Loader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
   const { theme } = useTheme();
-  const words = useMemo(() => ["Loading..."], []);
+  const controls = useAnimation();
+  const label = "Loading...";
 
   useEffect(() => {
-    // Reset states and force a reflowed start so the transition reliably retriggers
     let raf1 = 0 as number;
     let raf2 = 0 as number;
     raf1 = requestAnimationFrame(() => {
       raf2 = requestAnimationFrame(() => {
-        // allow CSS animations to restart
+        /* allow CSS animations to restart */
       });
     });
 
-    const wordDuration = 1800;
-    const wordStagger = 750;
-    const holdAfter = 0;
-    const totalDuration =
-      wordDuration + wordStagger * (words.length - 1) + holdAfter;
-    const finishTimeout = window.setTimeout(onFinish, totalDuration);
+    controls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: transitionDuration / 1000, ease: "easeOut" },
+    });
+
+    const hideTimer = window.setTimeout(() => {
+      controls
+        .start({
+          opacity: 0,
+          y: -60,
+          transition: { duration: transitionDuration / 1000, ease: "easeIn" },
+        })
+        .then(() => onFinish());
+    }, animationDuration);
+
     return () => {
       cancelAnimationFrame(raf1);
       cancelAnimationFrame(raf2);
-      clearTimeout(finishTimeout);
+      clearTimeout(hideTimer);
     };
-  }, [onFinish, words]);
+  }, [controls, onFinish]);
 
   return (
     <div
@@ -36,21 +50,17 @@ const HexagonLoader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
       }`}
     >
       <PointerDot />
-      <div className="relative h-20 w-[min(85vw,640px)] overflow-hidden">
-        {words.map((word, index) => (
-          <span
-            key={word}
-            className="absolute left-1/2 top-1/2 text-primary text-4xl md:text-6xl font-semibold tracking-[0.45em] uppercase opacity-0 select-none animate-[loader-word_1800ms_ease-in-out_1] [animation-fill-mode:both] will-change-[opacity,transform,filter]"
-            style={{
-              animationDelay: `${index * 750}ms`,
-            }}
-          >
-            {word}
-          </span>
-        ))}
+      <div className="relative h-[120px] w-[min(85vw,640px)] flex items-center justify-center overflow-visible">
+        <motion.span
+          className="text-primary text-4xl md:text-6xl font-semibold tracking-[0.45em] uppercase select-none"
+          initial={{ opacity: 0, y: 40 }}
+          animate={controls}
+        >
+          {label}
+        </motion.span>
       </div>
     </div>
   );
 };
 
-export default HexagonLoader;
+export default Loader;
