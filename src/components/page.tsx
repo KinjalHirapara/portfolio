@@ -11,7 +11,7 @@ import HexagonLoader from "./Loader";
 import PointerDot from "./PointerDot";
 import Lenis from "lenis";
 import CustomScrollbar from "./CustomScrollbar";
-import SectionScrollControl from "./SectionScrollControl";
+import ScrollToTop from "./ScrollToTop";
 
 const SectionRouter: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -63,7 +63,7 @@ const SectionRouter: React.FC = () => {
     >
       <PointerDot />
       <CustomScrollbar />
-      <SectionScrollControl />
+      <ScrollToTop />
       <div>
         <Nav />
         <div className="flex-1 flex flex-col">

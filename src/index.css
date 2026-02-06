@@ -22,11 +22,6 @@
   --color-textLight: #f8fafc;
 }
 
-.full-height {
-  height: calc(var(--vh, 1vh) * 100);
-  height: 100dvh;
-}
-
 .dark {
   --logo-bg: var(--color-dark);
 }
@@ -88,84 +83,63 @@ html::-webkit-scrollbar {
   transition: height 120ms ease;
 }
 
-.section-scroll-control {
+@keyframes scroll-top-arrow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.scroll-top-vertical {
   position: fixed;
   right: 24px;
   bottom: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 0;
   border: none;
   background: transparent;
-  color: var(--color-textLight);
+  color: rgba(255, 255, 255, 0.85);
   z-index: 9997;
-  transition:
-    transform 180ms ease,
-    color 180ms ease;
-}
-
-.section-scroll-control:hover {
-  transform: translateY(-2px);
-}
-
-.section-scroll-next-btn {
-  border: none;
-  background: transparent;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
   cursor: pointer;
-  color: inherit;
+  transition:
+    opacity 420ms ease,
+    transform 420ms ease;
 }
 
-.section-scroll-label {
+.scroll-top-vertical.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-top-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-size: 16px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
 }
 
-.section-scroll-next {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.section-scroll-arrow {
+.scroll-top-arrow {
   font-size: 22px;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.75);
-  animation: section-arrow 1.6s ease-in-out infinite;
+  animation: scroll-top-arrow 1.6s ease-in-out infinite;
 }
 
-.light .section-scroll-control .section-scroll-label,
-.light .section-scroll-control .section-scroll-arrow {
+.light .scroll-top-vertical {
   color: rgba(30, 41, 57, 0.85);
-}
-
-.light .section-scroll-control .section-scroll-next {
-  color: rgba(30, 41, 57, 0.5);
-}
-
-@keyframes section-arrow {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(4px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 .skills-scroll {
@@ -176,69 +150,6 @@ html::-webkit-scrollbar {
 
 .skills-scroll::-webkit-scrollbar {
   height: 0;
-}
-
-.pointer-dot {
-  position: fixed;
-  z-index: 9999;
-  width: 8px;
-  height: 8px;
-  border-radius: 9999px;
-  background: var(--color-primary);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: opacity 160ms ease;
-  box-shadow:
-    0 0 10px rgba(240, 91, 42, 0.6),
-    0 0 22px rgba(240, 91, 42, 0.35);
-}
-
-.pointer-dot.is-visible {
-  opacity: 1;
-}
-
-.hero-animated-bg {
-  background:
-    radial-gradient(
-      900px 500px at 15% 0%,
-      rgba(240, 91, 42, 0.22),
-      transparent 60%
-    ),
-    radial-gradient(
-      700px 420px at 95% 10%,
-      rgba(255, 170, 90, 0.16),
-      transparent 55%
-    ),
-    radial-gradient(
-      900px 700px at 60% 120%,
-      rgba(80, 140, 255, 0.12),
-      transparent 60%
-    ),
-    linear-gradient(120deg, rgba(10, 16, 24, 0.9), rgba(18, 28, 40, 0.9));
-  background-size: 140% 140%;
-  animation: heroGlow 14s ease-in-out infinite;
-}
-
-@keyframes heroGlow {
-  0% {
-    background-position:
-      0% 0%,
-      100% 0%,
-      50% 100%;
-  }
-  50% {
-    background-position:
-      10% 10%,
-      90% 15%,
-      55% 90%;
-  }
-  100% {
-    background-position:
-      0% 0%,
-      100% 0%,
-      50% 100%;
-  }
 }
 
 * {
@@ -259,10 +170,6 @@ body.modal-open {
   overflow: hidden;
 }
 
-.code-block,
-.mono-text {
-  /* font-family: "IBM Plex Mono", monospace; */
-}
 .hex-container {
   clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
   transition: all 0.3s ease-in-out;
@@ -286,24 +193,8 @@ body.modal-open {
   transform: translate(-7px, -4px);
 }
 
-@keyframes spin-slow {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.animate-spin-slow {
-  animation: spin-slow 2s linear infinite;
-}
-
 .ring-slow-spin {
   animation: ring-spin 16s linear infinite;
-}
-
-.ring-pulse {
-  animation: ring-pulse 6s ease-in-out infinite;
 }
 
 .hero-glow-1,
@@ -353,21 +244,6 @@ body.modal-open {
   }
 }
 
-@keyframes ring-pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.03);
-    opacity: 0.45;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-}
-
 @keyframes glow-drift-1 {
   0% {
     transform: translate(-6%, -4%) scale(0.95);
@@ -404,52 +280,6 @@ body.modal-open {
   }
 }
 
-.develop-icon {
-  position: relative;
-  margin: 0 20px;
-  width: 56px;
-  height: 87px;
-  border-radius: 10px;
-  display: inline-block;
-  top: 0;
-  transform: rotate(30deg);
-}
-.develop-icon::before,
-.develop-icon::after {
-  content: "";
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-  background: inherit;
-  content: "";
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-.develop-icon::before {
-  transform: rotate(60deg);
-}
-.develop-icon::after {
-  transform: rotate(-60deg);
-}
-.develop-icon .circle {
-  width: 53px;
-  height: 53px;
-  position: absolute;
-  background: #fff;
-  z-index: 10;
-  border-radius: 50%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  text-align: center;
-  transform: rotate(-30deg);
-}
 
 @media (prefers-reduced-motion: reduce) {
   .about-icons-track {
@@ -481,17 +311,6 @@ body.modal-open {
   }
 }
 
-.tab-active-triangle::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -6px;
-  width: 50px;
-  height: 50px;
-  background: var(--color-primary);
-  border-radius: 3px;
-  transform: translateY(-50%) rotate(45deg);
-}
 @media (orientation: landscape) and (max-width: 1023px),
   (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   .mobile-landscape-padding {

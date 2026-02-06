@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
+import PointerDot from "./PointerDot";
 
 const HexagonLoader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
   const [strokeOffset, setStrokeOffset] = useState(300);
@@ -37,6 +38,7 @@ const HexagonLoader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
         fade ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
+      <PointerDot />
       <div className="relative w-[100px] h-[100px] flex items-center justify-center">
         <svg
           viewBox="0 0 110 110"
