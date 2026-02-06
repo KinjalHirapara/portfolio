@@ -66,13 +66,19 @@ const SectionScrollControl: React.FC = () => {
       return;
     }
     const target = document.getElementById(nextSection.id);
-    const lenis = (window as Window & {
-      lenis?: {
-        scrollTo: (target: string | HTMLElement, opts?: { offset?: number; duration?: number }) => void;
-      };
-    }).lenis;
+    const lenis = (
+      window as Window & {
+        lenis?: {
+          scrollTo: (
+            target: string | HTMLElement,
+            opts?: { offset?: number; duration?: number },
+          ) => void;
+        };
+      }
+    ).lenis;
+    const navHeight = document.querySelector("nav")?.clientHeight ?? 0;
     if (lenis?.scrollTo && target) {
-      lenis.scrollTo(target, { duration: 2.8 });
+      lenis.scrollTo(target, { duration: 2.8, offset: -navHeight });
       return;
     }
     target?.scrollIntoView({

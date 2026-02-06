@@ -9,7 +9,7 @@ const Nav: React.FC = () => {
   return (
     <>
       <nav
-        className={`relative px-[5px] md:px-[50px] py-4 flex justify-between items-center w-full`}
+        className={`fixed top-0 z-50 px-[5px] md:px-[50px] py-4 flex justify-between items-center w-full bg-light dark:bg-dark backdrop-blur`}
       >
         <a href="#home" className="flex items-center gap-3">
           <div className="logo relative w-16 h-16 text-primary">

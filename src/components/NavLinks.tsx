@@ -48,8 +48,13 @@ const NavLinks: React.FC<{
     const lenis = (window as Window & {
       lenis?: { scrollTo: (target: string, opts?: { duration?: number }) => void };
     }).lenis;
+    const navHeight = document.querySelector("nav")?.clientHeight ?? 0;
     if (lenis?.scrollTo) {
-      lenis.scrollTo(`#${id}`, { duration: 2.8 });
+      if (id === "contact") {
+        lenis.scrollTo("bottom", { duration: 2.8 });
+        return;
+      }
+      lenis.scrollTo(`#${id}`, { duration: 2.8, offset: -navHeight - 8 });
       return;
     }
     document.getElementById(id)?.scrollIntoView({
