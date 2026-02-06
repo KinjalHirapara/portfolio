@@ -76,6 +76,26 @@
   height: 0;
 }
 
+.pointer-dot {
+  position: fixed;
+  z-index: 9999;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--color-primary);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 160ms ease;
+  box-shadow:
+    0 0 10px rgba(240, 91, 42, 0.6),
+    0 0 22px rgba(240, 91, 42, 0.35);
+}
+
+.pointer-dot.is-visible {
+  opacity: 1;
+}
+
 .hero-animated-bg {
   background:
     radial-gradient(

@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import Nav from "./Nav";
 import { useState } from "react";
 import HexagonLoader from "./Loader";
+import PointerDot from "./PointerDot";
 
 const SectionRouter: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ const SectionRouter: React.FC = () => {
           : "bg-light text-textDark"
       } w-screen `}
     >
+      <PointerDot />
       <div className="flex flex-col full-height">
         <Nav />
         <div className="flex-1 flex flex-col overflow-auto">
