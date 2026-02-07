@@ -53,36 +53,6 @@ html::-webkit-scrollbar {
   height: 0;
 }
 
-.custom-scrollbar {
-  position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 8px;
-  z-index: 9998;
-  pointer-events: none;
-}
-
-.custom-scrollbar-track {
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.custom-scrollbar-thumb {
-  width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(240, 91, 42, 0.95),
-    rgba(255, 170, 90, 0.7)
-  );
-  box-shadow:
-    0 0 10px rgba(240, 91, 42, 0.35),
-    0 0 18px rgba(255, 170, 90, 0.25);
-  transition: height 120ms ease;
-}
-
 @keyframes scroll-top-arrow {
   0% {
     transform: translateY(0);
@@ -93,63 +63,6 @@ html::-webkit-scrollbar {
   100% {
     transform: translateY(0);
   }
-}
-
-.scroll-top-vertical {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 0;
-  border: none;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.85);
-  z-index: 9997;
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-  cursor: pointer;
-  transition:
-    opacity 420ms ease,
-    transform 420ms ease;
-}
-
-.scroll-top-vertical.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.scroll-top-text {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  font-size: 16px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.scroll-top-arrow {
-  font-size: 22px;
-  line-height: 1;
-  animation: scroll-top-arrow 1.6s ease-in-out infinite;
-}
-
-.light .scroll-top-vertical {
-  color: rgba(30, 41, 57, 0.85);
-}
-
-.skills-scroll {
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.skills-scroll::-webkit-scrollbar {
-  height: 0;
 }
 
 * {

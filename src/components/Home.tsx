@@ -141,7 +141,10 @@ const Home: React.FC = () => {
         className="mt-10 w-full"
       >
         <div className="w-full bg-accent/5 dark:bg-accent/20 px-6 py-4">
-          <div className="skills-scroll flex flex-nowrap items-center gap-x-8 text-sm md:text-base text-textDark/80 dark:text-textLight/70">
+          <div
+            className="flex w-full flex-nowrap items-center gap-x-8 overflow-x-auto text-sm md:text-base text-textDark/80 dark:text-textLight/70"
+            style={{ scrollbarWidth: "none" }}
+          >
             {featuredSkills.map((skill) => (
               <div
                 className="flex items-center gap-3 whitespace-nowrap"
