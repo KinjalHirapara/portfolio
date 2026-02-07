@@ -31,8 +31,8 @@ const Experience: React.FC = () => {
         </h2>
       </motion.div>
       <div className="mt-4 flex flex-col gap-4 md:hidden overflow-x-hidden">
-        {experiences.map((exp, index) => {
-          const direction = index % 2 === 0 ? -60 : 60;
+        {experiences.map((exp) => {
+          const direction = 60;
           return (
             <motion.div
               key={`${exp.title}-${exp.company}`}
@@ -78,145 +78,84 @@ const Experience: React.FC = () => {
       </div>
 
       <div className="relative mt-4 hidden flex-col gap-6 md:flex overflow-x-hidden">
-        <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-primary/40" />
-        {experiences.map((exp, index) => {
-          const direction = index % 2 === 0 ? -60 : 60;
-          const isLeft = index % 2 === 0;
+        <div className="pointer-events-none absolute inset-0 grid grid-cols-[minmax(0,0.6fr)_56px_minmax(0,1.4fr)] gap-6">
+          <div />
+          <div className="flex justify-center">
+            <div className="h-full w-px bg-primary/40" />
+          </div>
+          <div />
+        </div>
+        {experiences.map((exp) => {
+          const direction = 60;
           const showMeta = exp.title || exp.duration || exp.city;
           return (
             <div
               key={`${exp.title}-${exp.company}`}
-              className="grid w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-6"
+              className="grid w-full grid-cols-[minmax(0,0.6fr)_56px_minmax(0,1.4fr)] items-start gap-6"
             >
-              {isLeft ? (
-                <>
-                  <div className="flex justify-end">
-                    <motion.div
-                      className="w-full max-w-xl rounded-lg border border-primary/40 bg-primary/10 p-4 shadow-sm"
-                      variants={cardVariants}
-                      custom={direction}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: false, amount: 0.3 }}
-                    >
-                      <ul className="space-y-2 text-base">
-                        {exp.responsibilities.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  </div>
-                  <div className="flex justify-center">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-light text-primary dark:bg-dark z-[1]">
-                      <FaBriefcase className="h-3.5 w-3.5" />
-                    </span>
-                  </div>
-                  {showMeta && (
-                    <motion.div
-                      className="text-left"
-                      variants={cardVariants}
-                      custom={direction}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: false, amount: 0.3 }}
-                    >
-                      <div>
-                        <div className="flex gap-5 items-center">
-                          {exp.title && (
-                            <div className="text-2xl font-semibold text-primary">
-                              {exp.title}
-                            </div>
-                          )}
-                          {exp.duration && (
-                            <div className="mt-1 text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
-                              {exp.duration}
-                            </div>
-                          )}
-                        </div>
-
-                        {exp.company && (
-                          <div className="flex gap-2 items-center ml-1">
-                            <div className="text-sm font-medium text-dark dark:text-textLight">
-                              {exp.company}
-                            </div>
-                            <div>-</div>
-                            {exp.city && (
-                              <div className="text-sm font-medium text-dark dark:text-textLight">
-                                {exp.city}
-                              </div>
-                            )}
+              {showMeta ? (
+                <motion.div
+                  className="text-left pr-2"
+                  variants={cardVariants}
+                  custom={direction}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.3 }}
+                >
+                  <div className="inline-block">
+                    <div className="flex flex-col items-start gap-2">
+                      <div className="flex gap-3 items-center justify-start">
+                        {exp.title && (
+                          <div className="text-2xl font-semibold text-primary">
+                            {exp.title}
                           </div>
                         )}
                       </div>
-                    </motion.div>
-                  )}
-                </>
-              ) : (
-                <>
-                  {showMeta && (
-                    <motion.div
-                      className="text-right"
-                      variants={cardVariants}
-                      custom={direction}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: false, amount: 0.3 }}
-                    >
-                      <div className="inline-block">
-                        <div className="flex flex-col">
-                          <div className="flex gap-5 items-center">
-                            {exp.title && (
-                              <div className="text-2xl font-semibold text-primary">
-                                {exp.title}
-                              </div>
-                            )}
-                            {exp.duration && (
-                              <div className="mt-1 text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
-                                {exp.duration}
-                              </div>
-                            )}
+                      {exp.company && (
+                        <div className="flex gap-2 items-center">
+                          <div className="text-sm font-medium text-dark dark:text-textLight">
+                            {exp.company}
                           </div>
-
-                          {exp.company && (
-                            <div className="flex gap-2 items-center ml-1">
-                              <div className="text-sm font-medium text-dark dark:text-textLight">
-                                {exp.company}
-                              </div>
-                              <div>-</div>
-                              {exp.city && (
-                                <div className="text-sm font-medium text-dark dark:text-textLight">
-                                  {exp.city}
-                                </div>
-                              )}
+                          <div>-</div>
+                          {exp.city && (
+                            <div className="text-sm font-medium text-dark dark:text-textLight">
+                              {exp.city}
                             </div>
                           )}
                         </div>
-                      </div>
-                    </motion.div>
-                  )}
-                  <div className="flex justify-center">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-light text-primary dark:bg-dark z-[1]">
-                      <FaBriefcase className="h-3.5 w-3.5" />
-                    </span>
+                      )}
+                      {exp.duration && (
+                        <div className="text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
+                          {exp.duration}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <div className="flex justify-start">
-                    <motion.div
-                      className="w-full max-w-xl rounded-lg border border-primary/40 bg-primary/10 p-4 shadow-sm"
-                      variants={cardVariants}
-                      custom={direction}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: false, amount: 0.3 }}
-                    >
-                      <ul className="space-y-2 text-base">
-                        {exp.responsibilities.map((item, idx) => (
-                          <li key={idx}>{item}</li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  </div>
-                </>
+                </motion.div>
+              ) : (
+                <div />
               )}
+              <div className="flex justify-center">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-light text-primary dark:bg-dark z-[1]">
+                  <FaBriefcase className="h-3.5 w-3.5" />
+                </span>
+              </div>
+              <div className="flex justify-start">
+                <motion.div
+                  className="w-full rounded-lg border border-primary/40 bg-primary/10 p-4 shadow-sm"
+                  variants={cardVariants}
+                  custom={direction}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.3 }}
+                >
+                  <ul className="space-y-2 text-base">
+                    {exp.responsibilities.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </div>
             </div>
           );
         })}
