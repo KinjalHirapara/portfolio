@@ -48,9 +48,9 @@ const Project1: React.FC = () => {
         gsap.set(card, {
           zIndex: index + 1,
           opacity: 1,
-          yPercent: index === 0 ? 0 : 22,
-          scale: index === 0 ? 1 : 0.98,
-          filter: index === 0 ? "brightness(1)" : "brightness(0.85)",
+          yPercent: index === 0 ? 0 : 70,
+          scale: index === 0 ? 1 : 1,
+          filter: index === 0 ? "brightness(1)" : "brightness(1)",
         });
       });
 
@@ -77,8 +77,8 @@ const Project1: React.FC = () => {
           .to(
             card,
             {
-              yPercent: -32,
-              scale: 0.92,
+              yPercent: 0,
+              scale: 0.7,
               opacity: 1,
               filter: "brightness(0.75)",
               duration: 1,
@@ -110,8 +110,9 @@ const Project1: React.FC = () => {
 
   return (
     <section
+      ref={pinRef}
       id="projects"
-      className="relative z-10 min-h-[100dvh] max-w-6xl mx-auto flex flex-col px-4 py-[60px] lg:py-[40px] mobile-landscape-padding"
+      className="relative z-10 min-h-[100dvh] max-w-6xl mx-auto flex flex-col px-4"
     >
       <div className="text-center">
         <h2 className="text-xl lg:text-3xl font-bold text-primary">
@@ -123,11 +124,8 @@ const Project1: React.FC = () => {
       </div>
 
       <div
-        ref={pinRef}
-        className={`relative mt-10 ${
-          reduceMotion
-            ? "flex flex-col gap-8"
-            : "h-[82vh] lg:h-[86vh] z-20"
+        className={`relative ${
+          reduceMotion ? "flex flex-col gap-8" : "h-[100vh] lg:h-[100vh] z-20"
         }`}
       >
         {projects.map((project, index) => (
@@ -140,9 +138,9 @@ const Project1: React.FC = () => {
               reduceMotion
                 ? "relative"
                 : "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-            } w-full rounded-[28px] overflow-hidden border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.45)] bg-[#0e0e0e]`}
+            } w-full rounded-[28px] overflow-hidden border border-white bg-[#0e0e0e] p-4`}
           >
-            <div className="relative h-[62vh] min-h-[380px] max-h-[520px]">
+            <div className="relative h-[70vh]">
               <img
                 src={project.image}
                 alt={project.title}
