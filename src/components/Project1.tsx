@@ -162,15 +162,12 @@ const Project1: React.FC = () => {
     <section
       ref={pinRef}
       id="projects"
-      className={`relative z-10 min-h-[100dvh] ${PROJECT1_CONFIG.sectionMaxWidthClass} mx-auto flex flex-col px-4`}
+      className={`relative z-10 min-h-[100dvh] ${PROJECT1_CONFIG.sectionMaxWidthClass} mx-auto flex flex-col px-4 pt-[100px]`}
     >
-      <div className="text-center">
+      <div className="text-center mb-[30px]">
         <h2 className="text-xl lg:text-3xl font-bold text-primary">
           <span className="numbered-heading">Projects</span>
         </h2>
-        <p className="text-textLight/70 mt-2">
-          Scroll to reveal each project card.
-        </p>
       </div>
 
       <div
