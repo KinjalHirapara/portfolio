@@ -23,7 +23,7 @@ type Project1Config = {
 };
 
 const PROJECT1_CONFIG: Project1Config = {
-  initialYOffsetPercent: 70,
+  initialYOffsetPercent: 110,
   inactiveScale: 0.7,
   inactiveBrightness: 0.75,
   transitionDuration: 1,
@@ -90,7 +90,7 @@ const Project1: React.FC = () => {
     const ctx = gsap.context(() => {
       cards.forEach((card, index) => {
         gsap.set(card, {
-          zIndex: index + 1,
+          zIndex: cards.length - index,
           opacity: 1,
           yPercent: index === 0 ? 0 : PROJECT1_CONFIG.initialYOffsetPercent,
           scale: 1,
@@ -177,7 +177,7 @@ const Project1: React.FC = () => {
         className={`relative ${
           reduceMotion
             ? "flex flex-col gap-8"
-            : `${PROJECT1_CONFIG.pinnedHeightClass} z-20 pt-4 md:pt-6`
+            : `${PROJECT1_CONFIG.pinnedHeightClass} z-20 pt-4 md:pt-6 overflow-hidden`
         }`}
       >
         {projects.map((project, index) => (
