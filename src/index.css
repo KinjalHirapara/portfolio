@@ -17,7 +17,7 @@
   --color-secondary: #64ffda;
   --color-accent: #1e2939;
   --color-dark: #1e2939;
-  --color-light: #f8fafc;
+  --color-light: #f2f2f2;
   --color-textDark: #1e2939;
   --color-textLight: #f8fafc;
 }
@@ -204,7 +204,6 @@ body.modal-open {
     transform: translate(-4%, 6%) scale(0.92);
   }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   .about-icons-track {
