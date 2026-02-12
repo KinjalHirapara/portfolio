@@ -49,8 +49,8 @@ const Project1: React.FC = () => {
           zIndex: index + 1,
           opacity: 1,
           yPercent: index === 0 ? 0 : 70,
-          scale: index === 0 ? 1 : 1,
-          filter: index === 0 ? "brightness(1)" : "brightness(1)",
+          scale: 1,
+          filter: "brightness(1)",
         });
       });
 
@@ -101,8 +101,6 @@ const Project1: React.FC = () => {
             index,
           );
       });
-
-      ScrollTrigger.refresh();
     }, pin);
 
     return () => ctx.revert();
@@ -125,19 +123,21 @@ const Project1: React.FC = () => {
 
       <div
         className={`relative ${
-          reduceMotion ? "flex flex-col gap-8" : "h-[100vh] lg:h-[100vh] z-20"
+          reduceMotion
+            ? "flex flex-col gap-8"
+            : "h-[100vh] lg:h-[100vh] z-20 pt-4 md:pt-6"
         }`}
       >
         {projects.map((project, index) => (
           <article
-            key={project.title}
+            key={`${project.title}-${index}`}
             ref={(el) => {
               cardRefs.current[index] = el;
             }}
             className={`${
               reduceMotion
                 ? "relative"
-                : "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                : "absolute left-1/2 top-0 -translate-x-1/2"
             } w-full rounded-[28px] overflow-hidden border border-white bg-[#0e0e0e] p-4`}
           >
             <div className="relative h-[70vh]">
@@ -164,9 +164,9 @@ const Project1: React.FC = () => {
                     {project.description}
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
+                    {project.tech.map((tech, techIndex) => (
                       <span
-                        key={tech}
+                        key={`${tech}-${techIndex}`}
                         className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-textLight"
                       >
                         {tech}
