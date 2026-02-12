@@ -44,26 +44,6 @@ const NavLinks: React.FC<{
     return () => observer.disconnect();
   }, []);
 
-  const scrollTo = (id: string) => {
-    const lenis = (window as Window & {
-      lenis?: { scrollTo: (target: string, opts?: { duration?: number }) => void };
-    }).lenis;
-    const navHeight = document.querySelector("nav")?.clientHeight ?? 0;
-    if (lenis?.scrollTo) {
-      if (id === "contact") {
-        lenis.scrollTo("bottom", { duration: 2.8 });
-        return;
-      }
-      lenis.scrollTo(`#${id}`, { duration: 2.8, offset: -navHeight - 8 });
-      return;
-    }
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "auto",
-      block: "start",
-    });
-    setActiveId(id);
-  };
-
   return (
     <div
       className={`flex gap-2 justify-center items-center ${props.className}`}
@@ -82,11 +62,6 @@ const NavLinks: React.FC<{
                   : "border-transparent hover:bg-white/10"
               }`}
               aria-current={isActive ? "page" : undefined}
-              onClick={(event) => {
-                event.preventDefault();
-                scrollTo(link.id);
-                props.onLinkClick?.();
-              }}
             >
               <Icon className="w-5 h-5" />
               <span className="md:inline">{link.title}</span>

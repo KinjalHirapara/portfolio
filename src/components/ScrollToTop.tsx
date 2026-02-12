@@ -19,47 +19,35 @@ const ScrollToTop: React.FC = () => {
     controls.start(
       visible
         ? { opacity: 1, y: 0, scale: 1, transition: { duration: 0.35 } }
-        : { opacity: 0, y: 12, scale: 0.95, transition: { duration: 0.25 } }
+        : { opacity: 0, y: 12, scale: 0.95, transition: { duration: 0.25 } },
     );
   }, [controls, visible]);
 
-  const handleClick = () => {
-    const lenis = (window as Window & {
-      lenis?: {
-        scrollTo: (target: string | number, opts?: { duration?: number }) => void;
-      };
-    }).lenis;
-    if (lenis?.scrollTo) {
-      lenis.scrollTo(0, { duration: 2.2 });
-      return;
-    }
-    window.scrollTo({ top: 0, behavior: "auto" });
-  };
-
   return (
-    <motion.button
-      type="button"
-      aria-label="Scroll to top"
-      initial={{ opacity: 0, y: 12, scale: 0.95 }}
-      animate={controls}
-      style={{ pointerEvents: visible ? "auto" : "none" }}
-      onClick={handleClick}
-      className="fixed right-6 bottom-6 z-[9997] flex flex-col items-center justify-center gap-2 p-0 border-none rounded-none text-primary cursor-pointer"
-    >
-      <span
-        className="text-[28px] leading-none text-current font-bold"
-        aria-hidden="true"
-        style={{ animation: "scroll-top-arrow 1.6s ease-in-out infinite" }}
+    <a href={`#home`}>
+      <motion.button
+        type="button"
+        aria-label="Scroll to top"
+        initial={{ opacity: 0, y: 12, scale: 0.95 }}
+        animate={controls}
+        style={{ pointerEvents: visible ? "auto" : "none" }}
+        className="fixed right-6 bottom-6 z-[9997] flex flex-col items-center justify-center gap-2 p-0 border-none rounded-none text-primary cursor-pointer"
       >
-        <FiChevronsUp />
-      </span>
-      <span
-        className="text-sm tracking-[0.18em] uppercase text-current font-semibold"
-        style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
-      >
-        Back To Top
-      </span>
-    </motion.button>
+        <span
+          className="text-[28px] leading-none text-current font-bold"
+          aria-hidden="true"
+          style={{ animation: "scroll-top-arrow 1.6s ease-in-out infinite" }}
+        >
+          <FiChevronsUp />
+        </span>
+        <span
+          className="text-sm tracking-[0.18em] uppercase text-current font-semibold"
+          style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
+        >
+          Back To Top
+        </span>
+      </motion.button>
+    </a>
   );
 };
 
