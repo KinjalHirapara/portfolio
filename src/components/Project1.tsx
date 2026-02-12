@@ -5,9 +5,43 @@ import { projects } from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
+type Project1Config = {
+  initialYOffsetPercent: number;
+  inactiveScale: number;
+  inactiveBrightness: number;
+  transitionDuration: number;
+  zIndexLead: number;
+  zIndexSwapOffset: number;
+  scrollPaddingPercent: number;
+  minScrollPerCardPercent: number;
+  maxScrollPerCardPercent: number;
+  sectionMaxWidthClass: string;
+  cardBgClass: string;
+  cardRadiusClass: string;
+  pinnedHeightClass: string;
+  imageHeightClass: string;
+};
+
+const PROJECT1_CONFIG: Project1Config = {
+  initialYOffsetPercent: 70,
+  inactiveScale: 0.7,
+  inactiveBrightness: 0.75,
+  transitionDuration: 1,
+  zIndexLead: 2,
+  zIndexSwapOffset: 0.01,
+  scrollPaddingPercent: 20,
+  minScrollPerCardPercent: 90,
+  maxScrollPerCardPercent: 180,
+  sectionMaxWidthClass: "max-w-6xl",
+  cardBgClass: "bg-[#0e0e0e]",
+  cardRadiusClass: "rounded-[clamp(18px,2.5vw,28px)]",
+  pinnedHeightClass: "min-h-[100svh]",
+  imageHeightClass: "min-h-[22rem] h-[clamp(22rem,70vh,48rem)]",
+};
+
 const Project1: React.FC = () => {
   const pinRef = useRef<HTMLDivElement | null>(null);
-  const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const cardRefs = useRef<Array<HTMLElement | null>>([]);
   const [reduceMotion, setReduceMotion] = useState(() => {
     if (typeof window === "undefined") {
       return false;
@@ -38,17 +72,27 @@ const Project1: React.FC = () => {
     if (!pin) {
       return;
     }
-    const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
+    const cards = cardRefs.current.filter(Boolean) as HTMLElement[];
     if (!cards.length) {
       return;
     }
+
+    const pinHeight = pin.clientHeight || window.innerHeight;
+    const cardHeight = cards[0]?.clientHeight || pinHeight;
+    const measuredScrollPerCard =
+      (cardHeight / pinHeight) * 100 + PROJECT1_CONFIG.scrollPaddingPercent;
+    const scrollPerCardPercent = gsap.utils.clamp(
+      PROJECT1_CONFIG.minScrollPerCardPercent,
+      PROJECT1_CONFIG.maxScrollPerCardPercent,
+      measuredScrollPerCard,
+    );
 
     const ctx = gsap.context(() => {
       cards.forEach((card, index) => {
         gsap.set(card, {
           zIndex: index + 1,
           opacity: 1,
-          yPercent: index === 0 ? 0 : 70,
+          yPercent: index === 0 ? 0 : PROJECT1_CONFIG.initialYOffsetPercent,
           scale: 1,
           filter: "brightness(1)",
         });
@@ -58,7 +102,7 @@ const Project1: React.FC = () => {
         scrollTrigger: {
           trigger: pin,
           start: "top top",
-          end: () => `+=${cards.length * 120}%`,
+          end: () => `+=${cards.length * scrollPerCardPercent}%`,
           scrub: true,
           pin: true,
           pinSpacing: true,
@@ -72,22 +116,30 @@ const Project1: React.FC = () => {
           return;
         }
         const next = cards[index + 1];
-        const baseZ = cards.length + index + 2;
+        const baseZ = cards.length + index + PROJECT1_CONFIG.zIndexLead;
         timeline
           .to(
             card,
             {
               yPercent: 0,
-              scale: 0.7,
+              scale: PROJECT1_CONFIG.inactiveScale,
               opacity: 1,
-              filter: "brightness(0.75)",
-              duration: 1,
+              filter: `brightness(${PROJECT1_CONFIG.inactiveBrightness})`,
+              duration: PROJECT1_CONFIG.transitionDuration,
               ease: "none",
             },
             index,
           )
-          .set(card, { zIndex: baseZ - 1 }, index + 0.01)
-          .set(next, { zIndex: baseZ }, index + 0.01)
+          .set(
+            card,
+            { zIndex: baseZ - 1 },
+            index + PROJECT1_CONFIG.zIndexSwapOffset,
+          )
+          .set(
+            next,
+            { zIndex: baseZ },
+            index + PROJECT1_CONFIG.zIndexSwapOffset,
+          )
           .to(
             next,
             {
@@ -95,7 +147,7 @@ const Project1: React.FC = () => {
               opacity: 1,
               scale: 1,
               filter: "brightness(1)",
-              duration: 1,
+              duration: PROJECT1_CONFIG.transitionDuration,
               ease: "none",
             },
             index,
@@ -110,7 +162,7 @@ const Project1: React.FC = () => {
     <section
       ref={pinRef}
       id="projects"
-      className="relative z-10 min-h-[100dvh] max-w-6xl mx-auto flex flex-col px-4"
+      className={`relative z-10 min-h-[100dvh] ${PROJECT1_CONFIG.sectionMaxWidthClass} mx-auto flex flex-col px-4`}
     >
       <div className="text-center">
         <h2 className="text-xl lg:text-3xl font-bold text-primary">
@@ -125,7 +177,7 @@ const Project1: React.FC = () => {
         className={`relative ${
           reduceMotion
             ? "flex flex-col gap-8"
-            : "h-[100vh] lg:h-[100vh] z-20 pt-4 md:pt-6"
+            : `${PROJECT1_CONFIG.pinnedHeightClass} z-20 pt-4 md:pt-6`
         }`}
       >
         {projects.map((project, index) => (
@@ -138,9 +190,9 @@ const Project1: React.FC = () => {
               reduceMotion
                 ? "relative"
                 : "absolute left-1/2 top-0 -translate-x-1/2"
-            } w-full rounded-[28px] overflow-hidden border border-white bg-[#0e0e0e] p-4`}
+            } w-full ${PROJECT1_CONFIG.cardRadiusClass} overflow-hidden border border-white ${PROJECT1_CONFIG.cardBgClass} p-4`}
           >
-            <div className="relative h-[70vh]">
+            <div className={`relative ${PROJECT1_CONFIG.imageHeightClass}`}>
               <img
                 src={project.image}
                 alt={project.title}
