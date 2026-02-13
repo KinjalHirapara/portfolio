@@ -109,8 +109,9 @@ const Home: React.FC = () => {
             variants={fadeInUp}
             className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
           >
-            Crafting modern web applications with a focus on clean architecture,
-            performance, and great user experience.
+            I build scalable, user-centric web applications using modern
+            technologies and clean architecture, with a strong focus on user
+            experience and usability.
           </motion.div>
           <div className="flex flex-wrap gap-4 mt-2">
             <button
