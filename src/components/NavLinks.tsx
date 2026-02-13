@@ -49,21 +49,22 @@ const NavLinks: React.FC<{
       className={`flex gap-2 justify-center items-center ${props.className}`}
     >
       {navLinks.map((link, index) => {
-        const Icon = link.icon;
         const isActive = link.id === activeId;
 
         return (
-          <div className="flex gap-2 justify-center items-center" key={index}>
+          <div
+            className="flex gap-2 justify-center items-center px-3"
+            key={index}
+          >
             <a
               href={`#${link.id}`}
-              className={`cursor-pointer text-textDark dark:text-textLight flex items-center gap-2 px-3 py-1 capitalize border-b-2 transition ${
+              className={`cursor-pointer text-textDark dark:text-textLight relative inline-flex items-center px-1 py-1 capitalize transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-primary after:origin-left after:transition-transform after:duration-300 ${
                 isActive
-                  ? "border-primary"
-                  : "border-transparent hover:bg-white/10"
+                  ? "after:scale-x-100"
+                  : "after:scale-x-0 hover:after:scale-x-100"
               }`}
               aria-current={isActive ? "page" : undefined}
             >
-              <Icon className="w-5 h-5" />
               <span className="md:inline">{link.title}</span>
             </a>
             {/* {index < navLinks.length - 1 && (
