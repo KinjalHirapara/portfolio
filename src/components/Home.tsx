@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { fadeInUp } from "../utils/motion";
 import profileImg from "../assets/profile.jpg";
 import { BsArrowRight } from "react-icons/bs";
+import { skills } from "../constants";
 
 const ChevronIcon: React.FC<{
   direction: "left" | "right";
@@ -60,12 +61,14 @@ const ChevronIcon: React.FC<{
 };
 
 const Home: React.FC = () => {
+  const marqueeTechStack = [...skills, ...skills];
+
   return (
     <section
       id="home"
-      className="relative min-h-[100dvh] max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col justify-center mobile-landscape-padding"
+      className="relative min-h-[100dvh] flex flex-col justify-center"
     >
-      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-2 items-center md:items-center">
+      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-2 items-center md:items-center flex-1 max-w-6xl mobile-landscape-padding mx-auto px-4 py-[60px] lg:py-[30px]">
         <div className="flex flex-col gap-6 flex-1">
           <motion.div
             custom={0}
@@ -143,6 +146,28 @@ const Home: React.FC = () => {
               />
             </div>
           </div>
+        </div>
+      </div>
+      <div className="home-stack-marquee mt-8" aria-label="Tech stack marquee">
+        <div className="home-stack-track">
+          {marqueeTechStack.map((tech, index) => (
+            <div key={`${tech.name}-${index}`} className="home-stack-entry">
+              <span
+                className="home-stack-item"
+                aria-hidden={index >= skills.length}
+              >
+                <span className="home-stack-icon" aria-hidden="true">
+                  {tech.icon}
+                </span>
+                <span>{tech.name}</span>
+              </span>
+              {index !== marqueeTechStack.length - 1 ? (
+                <span className="home-stack-dot" aria-hidden="true">
+                  •
+                </span>
+              ) : null}
+            </div>
+          ))}
         </div>
       </div>
     </section>
