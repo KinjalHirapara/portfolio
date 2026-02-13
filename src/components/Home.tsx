@@ -68,7 +68,7 @@ const Home: React.FC = () => {
       id="home"
       className="relative min-h-[100dvh] flex flex-col justify-center"
     >
-      <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-2 items-center md:items-center flex-1 max-w-6xl mobile-landscape-padding mx-auto px-4 py-[60px] lg:py-[30px]">
+      <div className="flex flex-col-reverse md:flex-row gap-[30px] md:gap-[100px] items-center md:items-center flex-1 max-w-6xl mobile-landscape-padding mx-auto px-4 pt-[60px] lg:py-[30px]">
         <div className="flex flex-col gap-6 flex-1">
           <motion.div
             custom={0}
@@ -141,10 +141,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div
-        className="home-stack-marquee mt-8 pb-8"
-        aria-label="Tech stack marquee"
-      >
+      <div className="home-stack-marquee pb-8" aria-label="Tech stack marquee">
         <div className="home-stack-track">
           {marqueeTechStack.map((tech, index) => (
             <div key={`${tech.name}-${index}`} className="home-stack-entry">
