@@ -6,7 +6,14 @@ import {
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 
-import { FaHtml5, FaJs, FaReact, FaNodeJs, FaGithub } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGithub,
+  FaServer,
+} from "react-icons/fa";
 import { RiClaudeFill } from "react-icons/ri";
 
 import {
@@ -15,6 +22,9 @@ import {
   SiTailwindcss,
   SiBootstrap,
   SiSass,
+  SiPostgresql,
+  SiCanva,
+  SiFigma,
 } from "react-icons/si";
 
 import NMDCImg from "../assets/NMDC/1.png";
@@ -101,6 +111,26 @@ export const skills = [
     name: "Node.js",
     icon: <FaNodeJs className="text-green-600 w-8 h-8" />,
     class: "bg-gradient-to-tr from-green-300 via-green-400 to-green-700",
+  },
+  {
+    name: "PostgreSQL",
+    icon: <SiPostgresql className="text-blue-700 w-8 h-8" />,
+    class: "bg-gradient-to-tr from-blue-300 via-blue-400 to-blue-700",
+  },
+  {
+    name: "RESTful API",
+    icon: <FaServer className="text-emerald-600 w-8 h-8" />,
+    class: "bg-gradient-to-tr from-emerald-300 via-emerald-400 to-emerald-700",
+  },
+  {
+    name: "Canva",
+    icon: <SiCanva className="text-cyan-500 w-8 h-8" />,
+    class: "bg-gradient-to-tr from-cyan-300 via-cyan-400 to-cyan-700",
+  },
+  {
+    name: "Figma",
+    icon: <SiFigma className="text-fuchsia-500 w-8 h-8" />,
+    class: "bg-gradient-to-tr from-fuchsia-300 via-fuchsia-400 to-fuchsia-700",
   },
   {
     name: "Claude Code",

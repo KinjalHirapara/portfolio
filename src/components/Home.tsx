@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { fadeInUp } from "../utils/motion";
 import profileImg from "../assets/profile.jpg";
 import { BsArrowRight } from "react-icons/bs";
@@ -61,7 +61,7 @@ const ChevronIcon: React.FC<{
 };
 
 const Home: React.FC = () => {
-  const marqueeTechStack = [...skills, ...skills];
+  const marqueeTechStack = [...skills, ...skills, ...skills];
 
   return (
     <section
@@ -120,13 +120,6 @@ const Home: React.FC = () => {
               View Projects
               <BsArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
-            {/* <button
-              type="button"
-              className="cursor-pointer group px-6 py-3 rounded-full border border-[var(--color-primary)] text-[var(--color-primary)] font-semibold transition active:translate-y-0.5 flex items-center gap-2"
-            >
-              View Works
-              <BsArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button> */}
           </div>
         </div>
         <div className="relative w-full max-w-[320px] h-[320px] mx-auto md:mx-0 overflow-visible">
@@ -148,7 +141,10 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="home-stack-marquee mt-8" aria-label="Tech stack marquee">
+      <div
+        className="home-stack-marquee mt-8 pb-8"
+        aria-label="Tech stack marquee"
+      >
         <div className="home-stack-track">
           {marqueeTechStack.map((tech, index) => (
             <div key={`${tech.name}-${index}`} className="home-stack-entry">
@@ -161,11 +157,9 @@ const Home: React.FC = () => {
                 </span>
                 <span>{tech.name}</span>
               </span>
-              {index !== marqueeTechStack.length - 1 ? (
-                <span className="home-stack-dot" aria-hidden="true">
-                  •
-                </span>
-              ) : null}
+              <span className="home-stack-dot" aria-hidden="true">
+                •
+              </span>
             </div>
           ))}
         </div>
