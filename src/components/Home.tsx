@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { fadeInUp } from "../utils/motion";
 import profileImg from "../assets/profile.jpg";
 import { BsArrowRight } from "react-icons/bs";
-import { skills } from "../constants";
 
 const ChevronIcon: React.FC<{
   direction: "left" | "right";
@@ -61,8 +60,6 @@ const ChevronIcon: React.FC<{
 };
 
 const Home: React.FC = () => {
-  const featuredSkills = skills.slice(0, 8);
-
   return (
     <section
       id="home"
@@ -126,29 +123,6 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="relative w-full max-w-[320px] h-[320px] mx-auto md:mx-0 overflow-visible">
-          <motion.div
-            className="absolute -inset-6 rounded-[50%] z-0"
-            initial={{ opacity: 0.5, scale: 1, backgroundPosition: "0% 40%" }}
-            animate={{
-              opacity: [0.5, 0.85, 0.5],
-              backgroundPosition: ["0% 40%", "100% 60%", "0% 40%"],
-              scale: [1, 1.08, 1],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            style={{
-              background:
-                "radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--color-primary) 90%, #000000) 0%, transparent 55%), radial-gradient(circle at 65% 70%, color-mix(in srgb, var(--color-primary) 60%, #ffffff) 0%, transparent 70%)",
-              backgroundSize: "220% 220%",
-              backgroundBlendMode: "screen",
-            }}
-          />
-          <div className="absolute inset-0 hero-glow-1 pointer-events-none" />
-          <div className="absolute inset-0 hero-glow-2 pointer-events-none" />
-          <div className="absolute inset-0 hero-glow-3 pointer-events-none" />
           <div className="absolute h-[100%] w-[100%] rounded-full border-[2px] border-primary/80 ring-slow-spin z-10" />
           <div className="absolute -top-10 -left-20 text-primary text-5xl md:text-6xl z-20">
             <ChevronIcon direction="left" className="block h-[2em] w-[2em]" />

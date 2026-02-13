@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { contactdetails } from "../constants";
-import { FaChevronUp } from "react-icons/fa";
 
 const listVariants = {
   hidden: {},

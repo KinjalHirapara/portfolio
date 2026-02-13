@@ -12,7 +12,7 @@ const getFinePointer = () => {
     .matches;
 };
 
-export const usePointerDot = (dotRef: RefObject<HTMLDivElement>) => {
+export const usePointerDot = (dotRef: RefObject<HTMLDivElement | null>) => {
   const [isFinePointer, setIsFinePointer] = useState(() => getFinePointer());
   const visibleRef = useRef(false);
   const frameRef = useRef<number | null>(null);

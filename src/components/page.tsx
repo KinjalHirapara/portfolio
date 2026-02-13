@@ -27,7 +27,6 @@ const SectionRouter: React.FC = () => {
       lerp: 0.08,
       easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
-      smoothTouch: true,
       syncTouch: true,
       touchMultiplier: 1.2,
       wheelMultiplier: 0.8,
