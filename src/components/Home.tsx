@@ -73,8 +73,12 @@ const Home: React.FC = () => {
             animate="visible"
             variants={fadeInUp}
           >
-            <h1 className="text-lg md:text-xl font-mono mb-2 text-textDark dark:text-textLight">
-              Welcome!
+            <h1 className="text-lg md:text-3xl font-mono mb-2 text-textDark dark:text-textLight">
+              Hello
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full bg-primary ml-2"
+                aria-hidden="true"
+              ></span>
             </h1>
           </motion.div>
           <motion.div
@@ -82,7 +86,7 @@ const Home: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-3xl md:text-7xl font-bold text-primary"
+            className="relative text-4xl md:text-4xl pl-2 font-bold text-primary before:content-[''] before:absolute before:left-[-500px] before:bottom-[5px] before:w-[500px] before:h-[2px] before:bg-primary"
           >
             Kinjal Hirapara
           </motion.div>
@@ -91,7 +95,7 @@ const Home: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-4xl md:text-4xl font-semibold text-textDark dark:text-textLight"
+            className="text-5xl md:text-5xl font-semibold text-textDark dark:text-textLight"
           >
             Software Developer
           </motion.div>
@@ -110,16 +114,16 @@ const Home: React.FC = () => {
               type="button"
               className="cursor-pointer group px-6 py-3 rounded-full bg-[var(--color-primary)] text-white font-semibold transition active:translate-y-0.5  flex items-center gap-2"
             >
-              What I Do
+              View Projects
               <BsArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
-            <button
+            {/* <button
               type="button"
               className="cursor-pointer group px-6 py-3 rounded-full border border-[var(--color-primary)] text-[var(--color-primary)] font-semibold transition active:translate-y-0.5 flex items-center gap-2"
             >
               View Works
               <BsArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </button> */}
           </div>
         </div>
         <div className="relative w-full max-w-[320px] h-[320px] mx-auto md:mx-0 overflow-visible">
