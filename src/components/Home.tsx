@@ -68,7 +68,7 @@ const Home: React.FC = () => {
       id="home"
       className="relative min-h-[100dvh] flex flex-col justify-between"
     >
-      <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-12 lg:gap-20 items-center md:items-center flex-1 max-w-6xl mx-auto px-4 pt-[110px] pb-6">
+      <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-12 lg:gap-20 items-center md:items-center flex-1 max-w-6xl mx-auto px-4 pt-[110px] pb-6 mobile-landscape-padding">
         <div className="flex flex-col gap-4 md:gap-6 flex-1 w-full">
           <motion.div
             custom={0}
