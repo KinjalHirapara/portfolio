@@ -152,7 +152,7 @@ export const experiences = [
   {
     title: "Software Developer",
     company: "Predictable Data",
-    city: "USA",
+    city: "USA (Remote)",
     duration: "June 2025 - Present",
     responsibilities: [
       "Developed scalable, reusable frontend components using React, ensuring responsive design and cross-device compatibility.",
@@ -166,7 +166,7 @@ export const experiences = [
   {
     title: "Software Developer",
     company: "Amnex Technologies",
-    city: "Ahmedabad, Gujarat, India",
+    city: "Ahmedabad, India",
     duration: "March 2021 - Oct 2024",
     responsibilities: [
       "Developed interactive, responsive dashboard applications using Angular, HTML, SCSS, and visualization libraries such as ECharts and Kendo UI.",
@@ -180,7 +180,7 @@ export const experiences = [
   {
     title: "Front End Developer",
     company: "Timeloop Technologies",
-    city: "Anand, Gujarat, India",
+    city: "Anand, India",
     duration: "June 2018 - Feb 2021",
     responsibilities: [
       "Started as a Junior Frontend Developer, building interactive and responsive web applications using HTML, CSS and JavaScript, focusing on clean, maintainable code and smooth API-based data handling.",

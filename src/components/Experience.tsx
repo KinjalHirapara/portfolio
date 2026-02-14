@@ -50,22 +50,17 @@ const Experience: React.FC = () => {
                       {exp.title}
                     </h3>
                   )}
-                  {exp.company && (
+                  {(exp.company || exp.city) && (
                     <p className="text-sm font-medium text-primary truncate">
-                      {exp.company}
+                      {[exp.company, exp.city].filter(Boolean).join(" - ")}
                     </p>
                   )}
-                  {exp.city && (
-                    <p className="text-gray-600 dark:text-gray-400 text-sm truncate">
-                      {exp.city}
-                    </p>
+                  {exp.duration && (
+                    <span className="mt-1 inline-flex text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
+                      {exp.duration}
+                    </span>
                   )}
                 </div>
-                {exp.duration && (
-                  <span className="text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
-                    {exp.duration}
-                  </span>
-                )}
               </div>
               <ul className="space-y-2 text-base">
                 {exp.responsibilities.map((item, idx) => (
@@ -111,17 +106,9 @@ const Experience: React.FC = () => {
                           </div>
                         )}
                       </div>
-                      {exp.company && (
-                        <div className="flex gap-2 items-center">
-                          <div className="text-sm font-medium text-dark dark:text-textLight">
-                            {exp.company}
-                          </div>
-                          <div>-</div>
-                          {exp.city && (
-                            <div className="text-sm font-medium text-dark dark:text-textLight">
-                              {exp.city}
-                            </div>
-                          )}
+                      {(exp.company || exp.city) && (
+                        <div className="text-sm font-medium text-dark dark:text-textLight">
+                          {[exp.company, exp.city].filter(Boolean).join(" - ")}
                         </div>
                       )}
                       {exp.duration && (
