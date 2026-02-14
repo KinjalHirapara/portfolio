@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "../constants";
+import ProjectGallery from "./ProjectGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,7 +34,7 @@ const PROJECT1_CONFIG: Project1Config = {
   minScrollPerCardPercent: 90,
   maxScrollPerCardPercent: 180,
   sectionMaxWidthClass: "max-w-6xl",
-  cardBgClass: "bg-[#0e0e0e]",
+  cardBgClass: "bg-dark",
   cardRadiusClass: "rounded-[clamp(18px,2.5vw,28px)]",
   pinnedHeightClass: "min-h-[100svh]",
   imageHeightClass: "min-h-[22rem] h-[clamp(22rem,70vh,48rem)]",
@@ -190,20 +191,18 @@ const Project1: React.FC = () => {
             } w-full ${PROJECT1_CONFIG.cardRadiusClass} overflow-hidden border border-white ${PROJECT1_CONFIG.cardBgClass} p-4`}
           >
             <div className={`relative ${PROJECT1_CONFIG.imageHeightClass}`}>
-              <img
-                src={project.image}
-                alt={project.title}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/60" />
-
-              <div className="relative z-10 flex h-full items-end p-6 md:p-10">
-                <div className="max-w-2xl">
-                  <p className="text-4xl md:text-5xl font-bold text-textLight/90">
-                    #{String(index + 1).padStart(2, "0")}
-                  </p>
-                  <h3 className="text-2xl md:text-3xl font-bold text-textLight mt-2">
+              <div className="h-full grid grid-cols-1 lg:grid-cols-12">
+                <ProjectGallery
+                  title={project.title}
+                  images={
+                    project.gallery && project.gallery.length > 0
+                      ? project.gallery
+                      : [project.image]
+                  }
+                  className="h-full lg:col-span-8"
+                />
+                <div className="flex-1 min-h-0 overflow-y-auto p-5 md:p-6 lg:col-span-4">
+                  <h3 className="text-xl md:text-2xl font-bold text-textLight mt-2">
                     {project.title}
                   </h3>
                   <p className="text-primary text-sm md:text-base mt-1">
@@ -216,7 +215,7 @@ const Project1: React.FC = () => {
                     {project.tech.map((tech, techIndex) => (
                       <span
                         key={`${tech}-${techIndex}`}
-                        className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-textLight"
+                        className="rounded-full border border-dark/20 bg-dark/10 px-3 py-1 text-xs text-textLight"
                       >
                         {tech}
                       </span>
