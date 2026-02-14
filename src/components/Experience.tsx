@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { experiences } from "../constants";
 import { motion, type Variants } from "framer-motion";
 import { FaBriefcase } from "react-icons/fa";
@@ -30,6 +30,7 @@ const Experience: React.FC = () => {
           <span className="numbered-heading">Experience</span>
         </h2>
       </motion.div>
+
       <div className="mt-4 flex flex-col gap-4 md:hidden overflow-x-hidden">
         {experiences.map((exp) => {
           const direction = 60;
@@ -56,13 +57,28 @@ const Experience: React.FC = () => {
                     </p>
                   )}
                   {exp.duration && (
-                    <span className="mt-1 inline-flex text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
+                    <span className="mt-1 inline-flex text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-black/15 bg-black/5 text-black/65 dark:border-white/25 dark:bg-white/10 dark:text-white/85">
                       {exp.duration}
                     </span>
                   )}
                 </div>
               </div>
+
               <ul className="space-y-2 text-base">
+                {(exp.summary || exp.learningNote) && (
+                  <li className="space-y-2 mb-3 border-b border-primary/20 pb-3 list-none">
+                    {exp.summary && (
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
+                        {exp.summary}
+                      </p>
+                    )}
+                    {exp.learningNote && (
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
+                        - {exp.learningNote}
+                      </p>
+                    )}
+                  </li>
+                )}
                 {exp.responsibilities.map((item, idx) => (
                   <li key={idx}>{item}</li>
                 ))}
@@ -80,6 +96,7 @@ const Experience: React.FC = () => {
           </div>
           <div />
         </div>
+
         {experiences.map((exp) => {
           const direction = 60;
           const showMeta = exp.title || exp.duration || exp.city;
@@ -112,7 +129,7 @@ const Experience: React.FC = () => {
                         </div>
                       )}
                       {exp.duration && (
-                        <div className="text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/40 bg-primary/10 text-primary">
+                        <div className="text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-black/15 bg-black/5 text-black/65 dark:border-white/25 dark:bg-white/10 dark:text-white/85">
                           {exp.duration}
                         </div>
                       )}
@@ -122,11 +139,13 @@ const Experience: React.FC = () => {
               ) : (
                 <div />
               )}
+
               <div className="flex justify-center">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full border-2 border-primary bg-light text-primary dark:bg-dark z-[1]">
                   <FaBriefcase className="h-3.5 w-3.5" />
                 </span>
               </div>
+
               <div className="flex justify-start">
                 <motion.div
                   className="w-full rounded-lg border border-primary/40 bg-primary/10 p-4 shadow-sm"
@@ -137,8 +156,24 @@ const Experience: React.FC = () => {
                   viewport={{ once: false, amount: 0.3 }}
                 >
                   <ul className="space-y-2 text-base">
+                    {(exp.summary || exp.learningNote) && (
+                      <li className="space-y-2 mb-3 list-none">
+                        {exp.summary && (
+                          <p className="text-sm text-gray-700 dark:text-gray-300">
+                            {exp.summary}
+                          </p>
+                        )}
+                        {exp.learningNote && (
+                          <p className="text-sm text-gray-700 dark:text-gray-300">
+                            {exp.learningNote}
+                          </p>
+                        )}
+                      </li>
+                    )}
                     {exp.responsibilities.map((item, idx) => (
-                      <li key={idx}>{item}</li>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
+                        <li key={idx}>{item}</li>
+                      </p>
                     ))}
                   </ul>
                 </motion.div>

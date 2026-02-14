@@ -145,6 +145,10 @@ export const experiences = [
     company: "Youthline",
     city: "Christchurch, New Zealand",
     duration: "November 2025 - Present",
+    summary:
+      "Support and extend Youthline's WordPress platform with new pages, feature updates, and UX-focused improvements.",
+    learningNote:
+      "Strengthened collaboration in Scrum workflows while balancing delivery speed with maintainable implementation.",
     responsibilities: [
       "Contribute to the ongoing development and maintenance of the Youthline WordPress platform by building new service pages, updating content, and implementing new features. Customize themes and plugins to improve user experience and meet project requirements. Work closely with the team in a Scrum-based workflow to ensure timely delivery, effective task tracking, and smooth project execution.",
     ],
@@ -154,6 +158,10 @@ export const experiences = [
     company: "Predictable Data",
     city: "USA (Remote)",
     duration: "June 2025 - Present",
+    summary:
+      "Build scalable frontend systems with React and modern UI libraries, focusing on reliability and product quality.",
+    learningNote:
+      "Improved end-to-end ownership by combining testing discipline, performance tuning, and workflow automation.",
     responsibilities: [
       "Developed scalable, reusable frontend components using React, ensuring responsive design and cross-device compatibility.",
       "Integrated Syncfusion Data Grid and Fluent UI component libraries to build interactive, user-friendly interfaces and rich data-driven features.",
@@ -168,6 +176,10 @@ export const experiences = [
     company: "Amnex Technologies",
     city: "Ahmedabad, India",
     duration: "March 2021 - Oct 2024",
+    summary:
+      "Delivered complex Angular dashboard applications with real-time data, reusable components, and strong API integration.",
+    learningNote:
+      "Gained deep experience in translating business-heavy requirements into scalable, maintainable frontend architecture.",
     responsibilities: [
       "Developed interactive, responsive dashboard applications using Angular, HTML, SCSS, and visualization libraries such as ECharts and Kendo UI.",
       "Translated design prototypes and requirements into dynamic, user-friendly web applications with consistent performance across devices.",
@@ -182,6 +194,10 @@ export const experiences = [
     company: "Timeloop Technologies",
     city: "Anand, India",
     duration: "June 2018 - Feb 2021",
+    summary:
+      "Progressed from junior to frontend developer while building responsive web products across multiple client domains.",
+    learningNote:
+      "Built a strong foundation in core frontend principles, performance optimization, and collaborative delivery.",
     responsibilities: [
       "Started as a Junior Frontend Developer, building interactive and responsive web applications using HTML, CSS and JavaScript, focusing on clean, maintainable code and smooth API-based data handling.",
       "Gained strong experience in DOM manipulation, event handling, and frontend performance optimization to improve page speed and responsiveness.",
