@@ -1,7 +1,15 @@
 @import "tailwindcss";
 :root {
   --vh: 1vh;
+  --nav-offset: 50px;
 }
+
+@media (max-width: 768px) {
+  :root {
+    --nav-offset: 76px;
+  }
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme static {
@@ -72,6 +80,11 @@ html::-webkit-scrollbar {
 
 html {
   scroll-behavior: auto;
+  scroll-padding-top: var(--nav-offset);
+}
+
+section[id] {
+  scroll-margin-top: var(--nav-offset);
 }
 
 html,

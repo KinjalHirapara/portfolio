@@ -66,17 +66,17 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[100dvh] flex flex-col justify-center"
+      className="relative min-h-[100dvh] flex flex-col justify-between"
     >
-      <div className="flex flex-col-reverse md:flex-row gap-[30px] md:gap-[100px] items-center md:items-center flex-1 max-w-6xl mobile-landscape-padding mx-auto px-4 pt-[60px] lg:py-[30px]">
-        <div className="flex flex-col gap-6 flex-1">
+      <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-12 lg:gap-20 items-center md:items-center flex-1 max-w-6xl mx-auto px-4 pt-[110px] pb-6">
+        <div className="flex flex-col gap-4 md:gap-6 flex-1 w-full">
           <motion.div
             custom={0}
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
           >
-            <h1 className="text-lg md:text-3xl font-mono mb-2 text-textDark dark:text-textLight">
+            <h1 className="text-sm sm:text-base md:text-2xl lg:text-3xl font-mono mb-1 md:mb-2 text-textDark dark:text-textLight">
               Hello
               <span
                 className="inline-block h-1.5 w-1.5 rounded-full bg-primary ml-2"
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="relative text-4xl md:text-4xl pl-2 font-bold text-primary before:content-[''] before:absolute before:left-[-500px] before:bottom-[5px] before:w-[500px] before:h-[2px] before:bg-primary"
+            className="relative text-3xl sm:text-4xl md:text-4xl pl-2 font-bold text-primary before:content-[''] before:absolute before:left-[-500px] before:bottom-[5px] before:w-[500px] before:h-[2px] before:bg-primary"
           >
             Kinjal Hirapara
           </motion.div>
@@ -98,7 +98,7 @@ const Home: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-5xl md:text-5xl font-semibold text-textDark dark:text-textLight"
+            className="text-4xl sm:text-5xl md:text-5xl font-semibold leading-tight text-textDark dark:text-textLight"
           >
             Software Developer
           </motion.div>
@@ -107,28 +107,28 @@ const Home: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
+            className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl"
           >
             I build scalable, user-centric web applications using modern
             technologies and clean architecture, with a strong focus on user
             experience and usability.
           </motion.div>
-          <div className="flex flex-wrap gap-4 mt-2">
+          <div className="flex flex-wrap gap-3 md:gap-4 mt-1 md:mt-2">
             <button
               type="button"
-              className="cursor-pointer group px-6 py-3 rounded-full bg-[var(--color-primary)] text-white font-semibold transition active:translate-y-0.5  flex items-center gap-2"
+              className="cursor-pointer group px-4 sm:px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-[var(--color-primary)] text-sm md:text-base text-white font-semibold transition active:translate-y-0.5 flex items-center gap-2"
             >
               View Projects
               <BsArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
         </div>
-        <div className="relative w-full max-w-[320px] h-[320px] mx-auto md:mx-0 overflow-visible">
+        <div className="relative w-full max-w-[220px] h-[220px] sm:max-w-[260px] sm:h-[260px] md:max-w-[300px] md:h-[300px] lg:max-w-[340px] lg:h-[340px] mx-auto md:mx-0 overflow-visible shrink-0">
           <div className="absolute h-[100%] w-[100%] rounded-full border-[2px] border-primary/80 ring-slow-spin z-10" />
-          <div className="absolute -top-10 -left-20 text-primary text-5xl md:text-6xl z-20">
+          <div className="hidden sm:block absolute -top-10 -left-20 text-primary text-5xl md:text-6xl z-20">
             <ChevronIcon direction="left" className="block h-[2em] w-[2em]" />
           </div>
-          <div className="absolute -bottom-10 -right-20 text-primary text-5xl md:text-6xl z-20">
+          <div className="hidden sm:block absolute -bottom-10 -right-20 text-primary text-5xl md:text-6xl z-20">
             <ChevronIcon direction="right" className="block h-[2em] w-[2em]" />
           </div>
           <div className="relative w-full h-full p-[10px] z-10">
