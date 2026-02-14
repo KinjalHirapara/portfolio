@@ -127,7 +127,7 @@ const Projects: React.FC = () => {
         </div>
       </div>
       {activeGallery && (
-        <div className="fixed inset-0 z-50 bg-black/90" onClick={closeGallery}>
+        <div className="fixed inset-0 z-[1200] bg-black/90" onClick={closeGallery}>
           <div
             className="relative w-full h-full flex items-center justify-center"
             onClick={(event) => event.stopPropagation()}

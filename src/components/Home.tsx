@@ -1,7 +1,7 @@
 ﻿import { motion } from "framer-motion";
 import { fadeInUp } from "../utils/motion";
 import profileImg from "../assets/profile.jpg";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsDot } from "react-icons/bs";
 import { skills } from "../constants";
 
 const ChevronIcon: React.FC<{
@@ -156,7 +156,7 @@ const Home: React.FC = () => {
                 <span>{tech.name}</span>
               </span>
               <span className="home-stack-dot" aria-hidden="true">
-                •
+                <BsDot className="h-4 w-4" />
               </span>
             </div>
           ))}

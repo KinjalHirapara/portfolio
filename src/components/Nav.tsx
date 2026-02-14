@@ -1,15 +1,16 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import NavLinks from "./NavLinks";
 import ThemeToggle from "./ThemeToggle";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { LuMenu, LuX } from "react-icons/lu";
+import { BsList } from "react-icons/bs";
+import { LuX } from "react-icons/lu";
+
 const Nav: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <>
       <nav
-        className={`fixed top-0 z-50 px-[5px] md:px-[50px] py-4 flex justify-between items-center w-full bg-light dark:bg-dark backdrop-blur`}
+        className={`fixed top-0 z-[1000] px-[5px] md:px-[50px] py-4 flex justify-between items-center w-full bg-light dark:bg-dark backdrop-blur`}
       >
         <a href="#home" className="flex items-center gap-3">
           <div className="logo relative w-16 h-16 text-primary">
@@ -52,51 +53,69 @@ const Nav: React.FC = () => {
           <ThemeToggle />
           <button
             type="button"
-            className="xl:hidden cursor-pointer h-10 px-4 py-2 rounded border-2 border-primary bg-transparent transition hover:shadow-[3px_3px_0_0_var(--color-primary)] hover:-translate-x-1 hover:-translate-y-1 flex items-center gap-2 leading-none"
+            className="xl:hidden cursor-pointer relative h-10 w-10 bg-transparent flex items-center justify-center leading-none text-primary"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? (
-              <>
-                <LuX className="h-6 w-6" />
-              </>
-            ) : (
-              <>
-                <LuMenu className="h-6 w-6" />
-              </>
-            )}
+            <BsList
+              className={`absolute h-7 w-7 text-primary transition-all duration-300 ${
+                menuOpen
+                  ? "opacity-0 scale-75 -rotate-90"
+                  : "opacity-100 scale-100 rotate-0"
+              }`}
+            />
+            <LuX
+              className={`absolute h-6 w-6 text-primary transition-all duration-300 ${
+                menuOpen
+                  ? "opacity-100 scale-100 rotate-0"
+                  : "opacity-0 scale-75 rotate-90"
+              }`}
+            />
           </button>
         </div>
       </nav>
-      {menuOpen && (
-        <div className="xl:hidden fixed inset-0 z-30">
-          <div
-            className="absolute inset-0 bg-black/40"
-            onClick={() => setMenuOpen(false)}
-          ></div>
-          <aside className="absolute right-0 top-0 h-full w-[260px] border-l border-primary bg-light text-textDark dark:bg-dark dark:text-textLight shadow-xl">
-            <div className="flex items-center justify-end p-4 border-b border-primary/30">
-              {/* <span className="text-sm font-semibold">Menu</span> */}
-              <button
-                type="button"
-                className="px-2 py-1 rounded border border-primary text-primary text-xs font-semibold"
-                aria-label="Close menu"
-                onClick={() => setMenuOpen(false)}
-              >
-                <LuX className="h-6 w-6" />
-              </button>
-            </div>
-            <div className="p-4">
-              <NavLinks
-                className="flex-col items-start gap-3 text-textDark dark:text-textLight"
-                onLinkClick={() => setMenuOpen(false)}
-              />
-            </div>
-          </aside>
-        </div>
-      )}
+
+      <div
+        className={`xl:hidden fixed inset-0 z-[1100] transition-[visibility] duration-300 ${
+          menuOpen ? "visible" : "invisible"
+        }`}
+      >
+        <div
+          className={`absolute inset-0 bg-black/45 transition-opacity duration-300 ${
+            menuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          aria-hidden="true"
+          onClick={() => setMenuOpen(false)}
+        ></div>
+        <aside
+          className={`absolute right-0 top-0 z-[1110] h-full w-full border-l border-primary bg-light text-textDark dark:bg-dark dark:text-textLight shadow-xl transform transition-transform duration-300 ease-out ${
+            menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex items-center justify-end p-4 border-b border-primary/30">
+            <button
+              type="button"
+              className="p-1 rounded text-primary transition-transform duration-200 hover:scale-105"
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+            >
+              <LuX className="h-6 w-6" />
+            </button>
+          </div>
+          <div className="p-4">
+            <NavLinks
+              className="flex-col items-start gap-3 text-textDark dark:text-textLight"
+              onLinkClick={() => setMenuOpen(false)}
+            />
+          </div>
+        </aside>
+      </div>
     </>
   );
 };
+
 export default Nav;
+
+
+
