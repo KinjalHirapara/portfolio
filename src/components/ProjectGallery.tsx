@@ -14,7 +14,6 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
   images,
   className = "",
   imageClassName = "",
-  overlayClassName = "",
 }) => {
   const galleryImages = useMemo(() => {
     return images.length > 0 ? images : [""];
@@ -47,7 +46,6 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
         loading="lazy"
         className={`absolute inset-0 h-full w-full object-contain ${imageClassName}`}
       />
-      {/* <div className={`absolute inset-0 bg-black/35 ${overlayClassName}`} /> */}
       {hasControls && (
         <>
           <button
