@@ -166,8 +166,8 @@ const Project1: React.FC = () => {
       className={`relative z-10 min-h-[100dvh] ${PROJECT1_CONFIG.sectionMaxWidthClass} mx-auto flex flex-col px-4 pt-[100px]`}
     >
       <div className="text-center mb-[30px]">
-        <h2 className="text-xl lg:text-3xl font-bold text-primary">
-          <span className="numbered-heading">Projects</span>
+        <h2 className="numbered-heading uppercase text-2xl md:text-3xl font-bold text-primary">
+          Projects
         </h2>
       </div>
 

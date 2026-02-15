@@ -14,8 +14,8 @@ const Works: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-xl lg:text-3xl font-bold text-primary text-center">
-          <span className="numbered-heading">Projects</span>
+        <h2 className="numbered-heading uppercase text-xl lg:text-3xl font-bold text-primary text-center">
+          Projects
         </h2>
       </motion.div>
       <div className="flex-1 flex mt-8">

@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { experiences } from "../constants";
 import { motion, type Variants } from "framer-motion";
 import { FaBriefcase } from "react-icons/fa";
@@ -26,8 +26,8 @@ const Experience: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-primary text-center">
-          <span className="numbered-heading">Experience</span>
+        <h2 className="numbered-heading uppercase text-2xl md:text-3xl font-bold mb-8 text-primary text-center">
+          Experience
         </h2>
       </motion.div>
 

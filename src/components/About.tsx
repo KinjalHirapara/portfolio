@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { fadeInUp } from "../utils/motion";
 
 const About: React.FC = () => {
@@ -16,8 +16,8 @@ const About: React.FC = () => {
             variants={fadeInUp}
             className="space-y-4"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-primary text-left">
-              <span className="numbered-heading">About Me</span>
+            <h2 className="numbered-heading uppercase text-2xl md:text-3xl font-bold text-primary text-left">
+              About Me
             </h2>
             <p className="text-base md:text-lg leading-relaxed">
               I am a Front-End Developer with over 5 years of experience
