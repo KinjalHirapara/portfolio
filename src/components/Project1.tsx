@@ -16,7 +16,7 @@ type Project1Config = {
   scrollPaddingPercent: number;
   minScrollPerCardPercent: number;
   maxScrollPerCardPercent: number;
-  sectionMaxWidthClass: string;
+  contentMaxWidthClass: string;
   cardBgClass: string;
   cardRadiusClass: string;
   pinnedHeightClass: string;
@@ -33,7 +33,7 @@ const PROJECT1_CONFIG: Project1Config = {
   scrollPaddingPercent: 20,
   minScrollPerCardPercent: 90,
   maxScrollPerCardPercent: 180,
-  sectionMaxWidthClass: "max-w-6xl",
+  contentMaxWidthClass: "max-w-6xl",
   cardBgClass: "bg-dark",
   cardRadiusClass: "rounded-[clamp(18px,2.5vw,28px)]",
   pinnedHeightClass: "min-h-[100svh]",
@@ -163,69 +163,73 @@ const Project1: React.FC = () => {
     <section
       ref={pinRef}
       id="projects"
-      className={`relative z-10 min-h-[100dvh] ${PROJECT1_CONFIG.sectionMaxWidthClass} mx-auto flex flex-col px-4 pt-[100px]`}
+      className="relative z-10 w-full bg-dark text-textDark"
     >
-      <div className="text-center mb-[30px]">
-        <h2 className="numbered-heading uppercase text-2xl md:text-3xl font-bold text-primary">
-          Projects
-        </h2>
-      </div>
-
       <div
-        className={`relative ${
-          reduceMotion
-            ? "flex flex-col gap-8"
-            : `${PROJECT1_CONFIG.pinnedHeightClass} z-20 pt-4 md:pt-6 overflow-hidden`
-        }`}
+        className={`mx-auto flex min-h-[100dvh] w-full ${PROJECT1_CONFIG.contentMaxWidthClass} flex-col px-4 pt-[100px]`}
       >
-        {projects.map((project, index) => (
-          <article
-            key={`${project.title}-${index}`}
-            ref={(el) => {
-              cardRefs.current[index] = el;
-            }}
-            className={`${
-              reduceMotion
-                ? "relative"
-                : "absolute left-1/2 top-0 -translate-x-1/2"
-            } w-full ${PROJECT1_CONFIG.cardRadiusClass} overflow-hidden border border-white ${PROJECT1_CONFIG.cardBgClass} p-4`}
-          >
-            <div className={`relative ${PROJECT1_CONFIG.imageHeightClass}`}>
-              <div className="h-full grid grid-cols-1 lg:grid-cols-12">
-                <ProjectGallery
-                  title={project.title}
-                  images={
-                    project.gallery && project.gallery.length > 0
-                      ? project.gallery
-                      : [project.image]
-                  }
-                  className="h-full lg:col-span-8"
-                />
-                <div className="flex-1 min-h-0 overflow-y-auto px-5 md:px-6 lg:col-span-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-textLight mt-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-primary text-sm md:text-base">
-                    {project.overline}
-                  </p>
-                  <p className="text-textLight/80 mt-4 text-sm md:text-base leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={`${tech}-${techIndex}`}
-                        className="rounded-full border border-light/20 bg-light/10 px-3 py-1 text-xs text-textlight dark:text-textLight"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+        <div className="mb-[30px] text-center">
+          <h2 className="numbered-heading uppercase text-2xl md:text-3xl font-bold text-primary">
+            Projects
+          </h2>
+        </div>
+
+        <div
+          className={`relative ${
+            reduceMotion
+              ? "flex flex-col gap-8"
+              : `${PROJECT1_CONFIG.pinnedHeightClass} z-20 pt-4 md:pt-6 overflow-hidden`
+          }`}
+        >
+          {projects.map((project, index) => (
+            <article
+              key={`${project.title}-${index}`}
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
+              className={`${
+                reduceMotion
+                  ? "relative"
+                  : "absolute left-1/2 top-0 -translate-x-1/2"
+              } w-full ${PROJECT1_CONFIG.cardRadiusClass} overflow-hidden border border-white ${PROJECT1_CONFIG.cardBgClass} p-4`}
+            >
+              <div className={`relative ${PROJECT1_CONFIG.imageHeightClass}`}>
+                <div className="h-full grid grid-cols-1 lg:grid-cols-12">
+                  <ProjectGallery
+                    title={project.title}
+                    images={
+                      project.gallery && project.gallery.length > 0
+                        ? project.gallery
+                        : [project.image]
+                    }
+                    className="h-full lg:col-span-8"
+                  />
+                  <div className="flex-1 min-h-0 overflow-y-auto px-5 md:px-6 lg:col-span-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-textLight mt-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-primary text-sm md:text-base">
+                      {project.overline}
+                    </p>
+                    <p className="text-textLight/80 mt-4 text-sm md:text-base leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={`${tech}-${techIndex}`}
+                          className="rounded-full border border-light/20 bg-light/10 px-3 py-1 text-xs text-textlight dark:text-textLight"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
