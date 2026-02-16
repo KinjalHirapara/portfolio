@@ -2,6 +2,7 @@ import React from "react";
 import { experiences } from "../constants";
 import { motion, type Variants } from "framer-motion";
 import { FaBriefcase } from "react-icons/fa";
+import { BsChevronDoubleRight } from "react-icons/bs";
 
 const Experience: React.FC = () => {
   const cardVariants: Variants = {
@@ -65,22 +66,11 @@ const Experience: React.FC = () => {
               </div>
 
               <ul className="space-y-2 text-sm leading-relaxed text-textDark">
-                {(exp.summary || exp.learningNote) && (
-                  <li className="space-y-2 mb-3 border-b border-primary/20 pb-3 list-none">
-                    {exp.summary && (
-                      <p className="text-sm text-textDark/85">
-                        {exp.summary}
-                      </p>
-                    )}
-                    {exp.learningNote && (
-                      <p className="text-sm text-textDark/85">
-                        - {exp.learningNote}
-                      </p>
-                    )}
-                  </li>
-                )}
                 {exp.responsibilities.map((item, idx) => (
-                  <li key={idx}>{item}</li>
+                  <li key={idx} className="flex items-start gap-2 text-left">
+                    <BsChevronDoubleRight className="mt-[5px] h-3.5 w-3.5 shrink-0 text-primary" />
+                    <span>{item}</span>
+                  </li>
                 ))}
               </ul>
             </motion.div>
@@ -156,23 +146,10 @@ const Experience: React.FC = () => {
                   viewport={{ once: false, amount: 0.3 }}
                 >
                   <ul className="space-y-2 text-sm leading-relaxed text-textDark">
-                    {(exp.summary || exp.learningNote) && (
-                      <li className="space-y-2 mb-3 list-none border-b border-primary/20 pb-3">
-                        {exp.summary && (
-                          <p className="text-sm text-textDark/85">
-                            {exp.summary}
-                          </p>
-                        )}
-                        {exp.learningNote && (
-                          <p className="text-sm text-textDark/85">
-                            {exp.learningNote}
-                          </p>
-                        )}
-                      </li>
-                    )}
                     {exp.responsibilities.map((item, idx) => (
-                      <li key={idx} className="list-disc list-inside marker:text-primary">
-                        {item}
+                      <li key={idx} className="flex items-start gap-2 text-left">
+                        <BsChevronDoubleRight className="mt-[5px] h-3.5 w-3.5 shrink-0 text-primary" />
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
