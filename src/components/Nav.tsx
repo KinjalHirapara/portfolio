@@ -3,6 +3,7 @@ import NavLinks from "./NavLinks";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { BsList } from "react-icons/bs";
 import { LuX } from "react-icons/lu";
+import Button from "./Button";
 
 const Nav: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,7 +50,7 @@ const Nav: React.FC = () => {
               </a>
             </div>
           </div>
-          <button
+          <Button
             type="button"
             className="xl:hidden cursor-pointer relative h-10 w-10 bg-transparent flex items-center justify-center leading-none text-primary"
             aria-label="Toggle menu"
@@ -70,7 +71,7 @@ const Nav: React.FC = () => {
                   : "opacity-0 scale-75 rotate-90"
               }`}
             />
-          </button>
+          </Button>
         </div>
       </nav>
 
@@ -92,14 +93,14 @@ const Nav: React.FC = () => {
           }`}
         >
           <div className="flex items-center justify-end p-4 border-b border-primary/30">
-            <button
+            <Button
               type="button"
-              className="p-1 rounded text-primary transition-transform duration-200 hover:scale-105"
+              className="p-1 rounded text-primary transition-transform duration-200"
               aria-label="Close menu"
               onClick={() => setMenuOpen(false)}
             >
               <LuX className="h-6 w-6" />
-            </button>
+            </Button>
           </div>
           <div className="p-4">
             <NavLinks

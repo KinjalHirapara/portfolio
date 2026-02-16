@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Button from "./Button";
 
 type ProjectGalleryProps = {
   title: string;
@@ -72,28 +73,28 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
       />
       {hasControls && (
         <>
-          <motion.button
+          <Button
             type="button"
             onClick={goPrev}
-            whileHover={{ scale: 1.08, x: -2 }}
+            whileHover={{ x: -2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 280, damping: 18 }}
             className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/45 bg-black/55 text-white backdrop-blur"
             aria-label={`Previous ${title} image`}
           >
             <FaChevronLeft className="h-4 w-4" />
-          </motion.button>
-          <motion.button
+          </Button>
+          <Button
             type="button"
             onClick={goNext}
-            whileHover={{ scale: 1.08, x: 2 }}
+            whileHover={{ x: 2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 280, damping: 18 }}
             className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/45 bg-black/55 text-white backdrop-blur"
             aria-label={`Next ${title} image`}
           >
             <FaChevronRight className="h-4 w-4" />
-          </motion.button>
+          </Button>
           <motion.div
             key={`${title}-counter-${activeIndex}`}
             initial={{ opacity: 0, y: -8 }}
@@ -107,7 +108,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
             {galleryImages.map((_, index) => {
               const isActive = index === activeIndex;
               return (
-                <button
+                <Button
                   key={`${title}-dot-${index}`}
                   type="button"
                   onClick={() => setImageAt(index)}
@@ -125,7 +126,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
                     transition={{ duration: 0.28, ease: "easeOut" }}
                     className="block h-1.5 rounded-full"
                   />
-                </button>
+                </Button>
               );
             })}
           </div>

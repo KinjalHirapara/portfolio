@@ -3,6 +3,7 @@ import { fadeInUp } from "../utils/motion";
 import profileImg from "../assets/profile.jpg";
 import { BsArrowRight, BsDot } from "react-icons/bs";
 import { skills } from "../constants";
+import Button from "./Button";
 
 const ChevronIcon: React.FC<{
   direction: "left" | "right";
@@ -114,13 +115,13 @@ const Home: React.FC = () => {
             experience and usability.
           </motion.div>
           <div className="flex flex-wrap gap-3 md:gap-4 mt-1 md:mt-2">
-            <button
+            <Button
               type="button"
               className="cursor-pointer group px-4 sm:px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-[var(--color-primary)] text-sm md:text-base text-white font-semibold transition active:translate-y-0.5 flex items-center gap-2"
             >
               View Projects
               <BsArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </Button>
           </div>
         </div>
         <div className="relative w-full max-w-[220px] h-[220px] sm:max-w-[260px] sm:h-[260px] md:max-w-[300px] md:h-[300px] lg:max-w-[340px] lg:h-[340px] mx-auto md:mx-0 overflow-visible shrink-0">

@@ -1,12 +1,13 @@
 import React from "react";
 import { useTheme } from "../context/ThemeContext";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import Button from "./Button";
 
 const ThemeToggle: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button
+    <Button
       className={`relative inline-flex h-8 w-[65px] items-center rounded-full border-2 border-primary transition
       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 ${
         theme === "dark" ? "bg-primary/30" : "bg-transparent"
@@ -31,7 +32,7 @@ const ThemeToggle: React.FC = () => {
         }`}
         aria-hidden="true"
       />
-    </button>
+    </Button>
   );
 };
 

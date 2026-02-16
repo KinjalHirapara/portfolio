@@ -9,6 +9,7 @@ import {
 import { motion } from "framer-motion";
 import { projects } from "../constants";
 import { fadeInUp } from "../utils/motion";
+import Button from "./Button";
 
 const Projects: React.FC = () => {
   const [activeGallery, setActiveGallery] = useState<string[] | null>(null);
@@ -89,7 +90,7 @@ const Projects: React.FC = () => {
 
                 <div className="flex flex-wrap gap-4 justify-start">
                   {project.gallery && project.gallery.length > 0 && (
-                    <button
+                    <Button
                       type="button"
                       onClick={() => {
                         setActiveGallery(project.gallery ?? null);
@@ -98,7 +99,7 @@ const Projects: React.FC = () => {
                       className="px-4 py-2 rounded border-2 border-primary bg-transparent text-primary font-semibold transition hover:shadow-[3px_3px_0_0_var(--color-primary)] hover:-translate-x-1 hover:-translate-y-1"
                     >
                       Show Images
-                    </button>
+                    </Button>
                   )}
                   {project.github && (
                     <a
@@ -132,14 +133,14 @@ const Projects: React.FC = () => {
             className="relative w-full h-full flex items-center justify-center"
             onClick={(event) => event.stopPropagation()}
           >
-            <button
+            <Button
               type="button"
               onClick={closeGallery}
               className="absolute top-4 right-4 text-white text-2xl hover:text-white/80 cursor-pointer"
               aria-label="Close gallery"
             >
               <FaTimes />
-            </button>
+            </Button>
             <img
               src={activeGallery[activeIndex]}
               alt={`Project image ${activeIndex + 1}`}
@@ -147,22 +148,22 @@ const Projects: React.FC = () => {
             />
             {activeGallery.length > 1 && (
               <>
-                <button
+                <Button
                   type="button"
                   onClick={showPrev}
                   className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-white/80 cursor-pointer"
                   aria-label="Previous image"
                 >
                   <FaChevronLeft />
-                </button>
-                <button
+                </Button>
+                <Button
                   type="button"
                   onClick={showNext}
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-white/80 cursor-pointer"
                   aria-label="Next image"
                 >
                   <FaChevronRight />
-                </button>
+                </Button>
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sm text-white/80">
                   {activeIndex + 1} / {activeGallery.length}
                 </div>
