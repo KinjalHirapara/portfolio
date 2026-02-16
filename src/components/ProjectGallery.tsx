@@ -60,10 +60,10 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
           alt={`${title} preview ${activeIndex + 1}`}
           loading="lazy"
           custom={direction}
-          initial={{ opacity: 0, x: direction > 0 ? 28 : -28, scale: 0.98 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          exit={{ opacity: 0, x: direction > 0 ? -28 : 28, scale: 0.98 }}
-          transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35, ease: "easeInOut" }}
           className={`absolute inset-0 h-full w-full object-contain ${imageClassName}`}
         />
       </AnimatePresence>
@@ -78,7 +78,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
             whileHover={{ scale: 1.08, x: -2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 280, damping: 18 }}
-            className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/45 bg-black/55 text-white backdrop-blur"
+            className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/45 bg-black/55 text-white backdrop-blur"
             aria-label={`Previous ${title} image`}
           >
             <FaChevronLeft className="h-4 w-4" />
@@ -89,7 +89,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
             whileHover={{ scale: 1.08, x: 2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 280, damping: 18 }}
-            className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/45 bg-black/55 text-white backdrop-blur"
+            className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/45 bg-black/55 text-white backdrop-blur"
             aria-label={`Next ${title} image`}
           >
             <FaChevronRight className="h-4 w-4" />
