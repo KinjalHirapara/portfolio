@@ -37,7 +37,7 @@ const Experience: React.FC = () => {
           return (
             <motion.div
               key={`${exp.title}-${exp.company}`}
-              className="rounded-lg border border-primary/40 bg-primary/10 p-4 shadow-sm"
+              className="rounded-2xl border border-primary/25 bg-light p-5 shadow-[0_12px_24px_rgba(0,0,0,0.12)]"
               variants={cardVariants}
               custom={direction}
               initial="hidden"
@@ -47,7 +47,7 @@ const Experience: React.FC = () => {
               <div className="flex items-start justify-between gap-4 mb-2">
                 <div className="flex-1 min-w-0">
                   {exp.title && (
-                    <h3 className="text-lg font-semibold truncate">
+                    <h3 className="text-lg font-semibold truncate text-textDark">
                       {exp.title}
                     </h3>
                   )}
@@ -57,23 +57,23 @@ const Experience: React.FC = () => {
                     </p>
                   )}
                   {exp.duration && (
-                    <span className="mt-1 inline-flex text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-black/15 bg-black/5 text-black/65 dark:border-white/25 dark:bg-white/10 dark:text-white/85">
+                    <span className="mt-1 inline-flex text-[10px] leading-none px-2 py-1 rounded-full border whitespace-nowrap border-primary/25 bg-primary/10 text-textDark/80">
                       {exp.duration}
                     </span>
                   )}
                 </div>
               </div>
 
-              <ul className="space-y-2 text-base">
+              <ul className="space-y-2 text-sm leading-relaxed text-textDark">
                 {(exp.summary || exp.learningNote) && (
                   <li className="space-y-2 mb-3 border-b border-primary/20 pb-3 list-none">
                     {exp.summary && (
-                      <p className="text-sm text-gray-700 dark:text-gray-300">
+                      <p className="text-sm text-textDark/85">
                         {exp.summary}
                       </p>
                     )}
                     {exp.learningNote && (
-                      <p className="text-sm text-gray-700 dark:text-gray-300">
+                      <p className="text-sm text-textDark/85">
                         - {exp.learningNote}
                       </p>
                     )}
@@ -148,32 +148,32 @@ const Experience: React.FC = () => {
 
               <div className="flex justify-start">
                 <motion.div
-                  className="w-full rounded-lg border border-primary/40 bg-primary/10 p-4 shadow-sm"
+                  className="w-full rounded-2xl border border-primary/25 bg-light p-5 shadow-[0_12px_28px_rgba(0,0,0,0.14)]"
                   variants={cardVariants}
                   custom={direction}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: false, amount: 0.3 }}
                 >
-                  <ul className="space-y-2 text-base">
+                  <ul className="space-y-2 text-sm leading-relaxed text-textDark">
                     {(exp.summary || exp.learningNote) && (
-                      <li className="space-y-2 mb-3 list-none">
+                      <li className="space-y-2 mb-3 list-none border-b border-primary/20 pb-3">
                         {exp.summary && (
-                          <p className="text-sm text-gray-700 dark:text-gray-300">
+                          <p className="text-sm text-textDark/85">
                             {exp.summary}
                           </p>
                         )}
                         {exp.learningNote && (
-                          <p className="text-sm text-gray-700 dark:text-gray-300">
+                          <p className="text-sm text-textDark/85">
                             {exp.learningNote}
                           </p>
                         )}
                       </li>
                     )}
                     {exp.responsibilities.map((item, idx) => (
-                      <p className="text-sm text-gray-700 dark:text-gray-300">
-                        <li key={idx}>{item}</li>
-                      </p>
+                      <li key={idx} className="list-disc list-inside marker:text-primary">
+                        {item}
+                      </li>
                     ))}
                   </ul>
                 </motion.div>
