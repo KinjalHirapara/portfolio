@@ -1,11 +1,13 @@
-import { AnimatePresence, motion } from "framer-motion";
+﻿import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaExternalLinkAlt } from "react-icons/fa";
 import Button from "./Button";
 
 type ProjectGalleryProps = {
   title: string;
   images: string[];
+  externalLink?: string;
+  disableGallery?: boolean;
   className?: string;
   imageClassName?: string;
   overlayClassName?: string;
@@ -14,6 +16,8 @@ type ProjectGalleryProps = {
 const ProjectGallery: React.FC<ProjectGalleryProps> = ({
   title,
   images,
+  externalLink,
+  disableGallery = false,
   className = "",
   imageClassName = "",
   overlayClassName = "",
@@ -21,10 +25,13 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
   const galleryImages = useMemo(() => {
     return images.length > 0 ? images : [""];
   }, [images]);
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(1);
-  const hasControls = galleryImages.length > 1;
-  const activeImage = galleryImages[activeIndex] ?? galleryImages[0];
+  const hasControls = !disableGallery && galleryImages.length > 1;
+  const activeImage = disableGallery
+    ? galleryImages[0]
+    : galleryImages[activeIndex] ?? galleryImages[0];
 
   const goNext = () => {
     if (!hasControls) {
@@ -45,7 +52,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
   };
 
   const setImageAt = (index: number) => {
-    if (index === activeIndex) {
+    if (!hasControls || index === activeIndex) {
       return;
     }
     setDirection(index > activeIndex ? 1 : -1);
@@ -54,23 +61,45 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
 
   return (
     <div className={`relative overflow-hidden rounded-xl ${className}`}>
-      <AnimatePresence mode="wait" custom={direction}>
-        <motion.img
-          key={`${title}-${activeIndex}`}
+      {hasControls ? (
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.img
+            key={`${title}-${activeIndex}`}
+            src={activeImage}
+            alt={`${title} preview ${activeIndex + 1}`}
+            loading="lazy"
+            custom={direction}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className={`absolute inset-0 h-full w-full object-contain ${imageClassName}`}
+          />
+        </AnimatePresence>
+      ) : (
+        <img
           src={activeImage}
-          alt={`${title} preview ${activeIndex + 1}`}
+          alt={`${title} preview`}
           loading="lazy"
-          custom={direction}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.35, ease: "easeInOut" }}
           className={`absolute inset-0 h-full w-full object-contain ${imageClassName}`}
         />
-      </AnimatePresence>
+      )}
+
       <div
-        className={`pointer-events-none absolute inset-0 rounded-2xl border-1 border-light ${overlayClassName}`}
+        className={`pointer-events-none absolute inset-0 rounded-2xl ${overlayClassName}`}
       />
+      {externalLink && (
+        <a
+          href={externalLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open ${title} project`}
+          className="absolute right-3 top-3 z-20 flex h-7 w-7 items-center justify-center rounded-full border border-white/35 bg-black/55 text-white backdrop-blur transition-colors hover:border-primary hover:text-primary"
+        >
+          <FaExternalLinkAlt className="h-3.5 w-3.5" />
+        </a>
+      )}
+
       {hasControls && (
         <>
           <Button
@@ -79,7 +108,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
             whileHover={{ x: -2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 280, damping: 18 }}
-            className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/45 bg-black/55 text-white backdrop-blur"
+            className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/45 bg-black/55 text-white backdrop-blur"
             aria-label={`Previous ${title} image`}
           >
             <FaChevronLeft className="h-4 w-4" />
@@ -90,7 +119,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
             whileHover={{ x: 2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 280, damping: 18 }}
-            className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/45 bg-black/55 text-white backdrop-blur"
+            className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/45 bg-black/55 text-white backdrop-blur"
             aria-label={`Next ${title} image`}
           >
             <FaChevronRight className="h-4 w-4" />
@@ -100,7 +129,9 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25 }}
-            className="absolute right-3 top-3 z-20 rounded-full border border-white/35 bg-black/55 px-3 py-1 text-xs text-white backdrop-blur"
+            className={`absolute top-3 z-20 rounded-full border border-white/35 bg-black/55 px-3 py-1 text-xs text-white backdrop-blur ${
+              externalLink ? "right-12" : "right-3"
+            }`}
           >
             {activeIndex + 1}/{galleryImages.length}
           </motion.div>
