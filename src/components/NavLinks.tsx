@@ -59,7 +59,7 @@ const NavLinks: React.FC<{
             <a
               href={`#${link.id}`}
               onClick={props.onLinkClick}
-              className={`cursor-pointer text-textDark dark:text-textLight relative inline-flex items-center px-1 py-1 capitalize transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-primary after:origin-left after:transition-transform after:duration-300 ${
+              className={`cursor-pointer text-textDark dark:text-textLight relative inline-flex items-center px-1 py-1 uppercase transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-primary after:origin-left after:transition-transform after:duration-300 ${
                 isActive
                   ? "after:scale-x-100"
                   : "after:scale-x-0 hover:after:scale-x-100"
