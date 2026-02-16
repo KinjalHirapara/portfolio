@@ -150,7 +150,10 @@ export const experiences = [
     learningNote:
       "Strengthened collaboration in Scrum workflows while balancing delivery speed with maintainable implementation.",
     responsibilities: [
-      "Contribute to the ongoing development and maintenance of the Youthline WordPress platform by building new service pages, updating content, and implementing new features. Customize themes and plugins to improve user experience and meet project requirements. Work closely with the team in a Scrum-based workflow to ensure timely delivery, effective task tracking, and smooth project execution.",
+      "Contributed to the development and maintenance of the Youthline WordPress platform, building new service pages and implementing feature enhancements.",
+      "Customized WordPress themes and plugins to improve UX and meet project requirements.",
+      "Managed content updates and ensured responsive, accessible design across devices.",
+      "Collaborated in a Scrum-based Agile workflow for task tracking and timely delivery.",
     ],
   },
   {
@@ -163,12 +166,13 @@ export const experiences = [
     learningNote:
       "Improved end-to-end ownership by combining testing discipline, performance tuning, and workflow automation.",
     responsibilities: [
-      "Developed scalable, reusable frontend components using React, ensuring responsive design and cross-device compatibility.",
-      "Integrated Syncfusion Data Grid and Fluent UI component libraries to build interactive, user-friendly interfaces and rich data-driven features.",
-      "Built and maintained unit and integration test suites with Jest to improve reliability, catch regressions early, and ensure consistent behavior across components.",
-      "Implemented and optimized RESTful API interactions to support efficient data retrieval and seamless backend integration.",
-      "Tracked, documented, and resolved functional and performance issues, improving overall application stability and quality.",
-      "Built AI-powered workflow automations using Claude Code, creating custom sub-agents and commands to streamline end-to-end development workflows including coding, review, testing, and documentation.",
+      "Developed scalable, reusable React components with responsive and cross-browser compatibility.",
+      "Built rich data-driven UIs using Syncfusion Data Grid, Fluent UI, and TypeScript.",
+      "Implemented RESTful API integrations for seamless backend communication.",
+      "Applied TDD practices using Jest for unit and integration testing.",
+      "Followed Agile Scrum methodology, Git workflows, and code reviews.",
+      "Optimized performance and resolved functional issues to improve application stability.",
+      "Built AI-powered workflow automations using Claude Code, creating custom sub-agents to streamline development, testing, and documentation.",
     ],
   },
   {
@@ -181,12 +185,12 @@ export const experiences = [
     learningNote:
       "Gained deep experience in translating business-heavy requirements into scalable, maintainable frontend architecture.",
     responsibilities: [
-      "Developed interactive, responsive dashboard applications using Angular, HTML, SCSS, and visualization libraries such as ECharts and Kendo UI.",
-      "Translated design prototypes and requirements into dynamic, user-friendly web applications with consistent performance across devices.",
-      "Built reusable Angular components and implemented lazy loading, reactive forms, and state management to improve performance, streamline workflows, and ensure clean, maintainable code.",
-      "Integrated RESTful APIs to enable real-time data interaction and seamless communication between frontend and backend systems.",
-      "Worked closely with designers and backend engineers to convert business requirements into functional, high-quality UI features.",
-      "Used Git for version control, managing branches and pull requests, and maintaining clean, collaborative development workflows.",
+      "Developed interactive, responsive dashboard applications using Angular, HTML, SCSS, Kendo UI, and ECharts.",
+      "Built reusable Angular components with lazy loading, reactive forms, and state management for scalable architecture.",
+      "Integrated RESTful APIs for real-time data visualization and seamless backend communication.",
+      "Translated design prototypes into high-performance, cross-device compatible web applications.",
+      "Collaborated with designers and backend teams in an Agile Scrum environment.",
+      "Managed version control using Git, handling branching strategies and pull requests.",
     ],
   },
   {
@@ -199,15 +203,11 @@ export const experiences = [
     learningNote:
       "Built a strong foundation in core frontend principles, performance optimization, and collaborative delivery.",
     responsibilities: [
-      "Started as a Junior Frontend Developer, building interactive and responsive web applications using HTML, CSS and JavaScript, focusing on clean, maintainable code and smooth API-based data handling.",
-      "Gained strong experience in DOM manipulation, event handling, and frontend performance optimization to improve page speed and responsiveness.",
-      "Worked closely with senior developers and UX designers to translate wireframes into pixel-perfect, cross-browser-compatible user interfaces.",
-      "Progressed into a Frontend Developer role, working extensively with Angular to build dynamic, responsive, and scalable web applications.",
-      "Developed reusable Angular components, improved data binding, and strengthened state management to enhance application performance and maintainability.",
-
-      "Contributed to multiple products including a Property Management Tool, Project Management System, Leave Management System, theme-based applications, and data dashboards, with a strong focus on responsive design and usability.",
-      "Adopted Git-based workflows, contributing to branch management, code reviews, and collaborative development processes.",
-      "Used tools like Trello and TMetric for task tracking, time management, and sprint progress monitoring in an Agile workflow.",
+      "Progressed from Junior to Frontend Developer through strong performance and technical growth.",
+      "Built responsive, cross-browser applications using HTML, CSS, JavaScript, and Angular.",
+      "Developed reusable, modular components improving scalability and maintainability.",
+      "Delivered product features for enterprise tools including management systems and dashboards.",
+      "Collaborated in Agile Scrum teams, using Git, Trello, and structured sprint workflows.",
     ],
   },
 ];
