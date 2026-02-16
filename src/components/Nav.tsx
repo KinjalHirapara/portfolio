@@ -1,6 +1,5 @@
 ﻿import { useState } from "react";
 import NavLinks from "./NavLinks";
-import ThemeToggle from "./ThemeToggle";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { BsList } from "react-icons/bs";
 import { LuX } from "react-icons/lu";
@@ -50,7 +49,6 @@ const Nav: React.FC = () => {
               </a>
             </div>
           </div>
-          <ThemeToggle />
           <button
             type="button"
             className="xl:hidden cursor-pointer relative h-10 w-10 bg-transparent flex items-center justify-center leading-none text-primary"
@@ -116,6 +114,7 @@ const Nav: React.FC = () => {
 };
 
 export default Nav;
+
 
 
 

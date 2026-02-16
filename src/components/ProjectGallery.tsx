@@ -68,7 +68,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
         />
       </AnimatePresence>
       <div
-        className={`pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/25 ${overlayClassName}`}
+        className={`pointer-events-none absolute inset-0 rounded-2xl border-1 border-light ${overlayClassName}`}
       />
       {hasControls && (
         <>

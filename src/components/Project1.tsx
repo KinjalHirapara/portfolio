@@ -201,11 +201,11 @@ const Project1: React.FC = () => {
                   }
                   className="h-full lg:col-span-8"
                 />
-                <div className="flex-1 min-h-0 overflow-y-auto p-5 md:p-6 lg:col-span-4">
+                <div className="flex-1 min-h-0 overflow-y-auto px-5 md:px-6 lg:col-span-4">
                   <h3 className="text-xl md:text-2xl font-bold text-textLight mt-2">
                     {project.title}
                   </h3>
-                  <p className="text-primary text-sm md:text-base mt-1">
+                  <p className="text-primary text-sm md:text-base">
                     {project.overline}
                   </p>
                   <p className="text-textLight/80 mt-4 text-sm md:text-base leading-relaxed">
@@ -215,7 +215,7 @@ const Project1: React.FC = () => {
                     {project.tech.map((tech, techIndex) => (
                       <span
                         key={`${tech}-${techIndex}`}
-                        className="rounded-full border border-dark/20 bg-dark/10 px-3 py-1 text-xs text-textLight"
+                        className="rounded-full border border-light/20 bg-light/10 px-3 py-1 text-xs text-textlight dark:text-textLight"
                       >
                         {tech}
                       </span>
