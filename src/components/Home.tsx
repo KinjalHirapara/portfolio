@@ -125,7 +125,7 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="relative w-full max-w-[220px] h-[220px] sm:max-w-[260px] sm:h-[260px] md:max-w-[300px] md:h-[300px] lg:max-w-[340px] lg:h-[340px] mx-auto md:mx-0 overflow-visible shrink-0">
-          <div className="absolute h-[100%] w-[100%] rounded-full border-[2px] border-primary/80 ring-slow-spin z-10" />
+          <div className="absolute h-[100%] w-[100%] rounded-full border-[2px] border-primary/80 z-10" />
           <div className="hidden sm:block absolute -top-10 -left-20 text-primary text-5xl md:text-6xl z-20">
             <ChevronIcon direction="left" className="block h-[2em] w-[2em]" />
           </div>
