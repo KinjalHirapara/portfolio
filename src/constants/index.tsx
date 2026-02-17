@@ -2,7 +2,6 @@ import {
   HomeIcon,
   UserIcon,
   BriefcaseIcon,
-  RectangleStackIcon,
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 
@@ -47,11 +46,6 @@ export const navLinks = [
     id: "experience",
     title: "Experience",
     icon: BriefcaseIcon,
-  },
-  {
-    id: "projects",
-    title: "Projects",
-    icon: RectangleStackIcon,
   },
   {
     id: "contact",
