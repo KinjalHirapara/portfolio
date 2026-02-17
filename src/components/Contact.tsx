@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
+          viewport={{ once: false, amount: 0.35 }}
           transition={{ duration: 0.5 }}
           className="flex flex-col items-start justify-center"
         >
@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
+          viewport={{ once: false, amount: 0.35 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="relative flex items-center justify-center rounded-2xl bg-light px-3 py-3 md:max-w-[420px]"
         >
@@ -115,9 +115,6 @@ const Contact: React.FC = () => {
           </div>
           <div className="pointer-events-none absolute -bottom-10 -right-5 z-20 hidden sm:block">
             <div className="relative h-28 w-36">
-              {/* <div className="absolute left-0 top-0 flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-md">
-                <FaComments className="h-10 w-10 text-light" />
-              </div> */}
               <div className="absolute bottom-0 right-0 flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-md">
                 <FaCommentDots className="h-12 w-12 text-light" />
               </div>
