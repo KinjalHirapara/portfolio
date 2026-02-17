@@ -13,19 +13,16 @@ const contactCards = [
     label: "Email",
     value: "kinjalhirapara25@gmail.com",
     icon: <FaEnvelope className="h-4 w-4 text-primary" />,
-    action: <FaEnvelope className="h-3.5 w-3.5 text-primary" />,
   },
   {
     label: "Phone",
     value: "+64 224154944",
     icon: <FaPhone className="h-4 w-4 text-primary" />,
-    action: <FaPhone className="h-3.5 w-3.5 text-primary" />,
   },
   {
     label: "Address",
     value: "Christchurch, Canterbury, New Zealand",
     icon: <FaLocationDot className="h-4 w-4 text-primary" />,
-    action: <FaLocationDot className="h-3.5 w-3.5 text-primary" />,
   },
 ];
 
