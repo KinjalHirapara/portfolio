@@ -23,9 +23,10 @@ const Experience: React.FC = () => {
       className="relative min-h-[100dvh] max-w-6xl mx-auto px-4 py-[60px] lg:py-[30px] flex flex-col"
     >
       <motion.div
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <h2 className="numbered-heading uppercase text-2xl md:text-3xl font-bold mb-8 text-primary text-center">
           Experience

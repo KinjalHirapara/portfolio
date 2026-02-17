@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { projects } from "../constants";
 import ProjectGallery from "./ProjectGallery";
 
@@ -42,13 +43,22 @@ const PROJECT1_CONFIG: Project1Config = {
 
 const Project: React.FC = () => {
   const pinRef = useRef<HTMLDivElement | null>(null);
+  const titleRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<Array<HTMLElement | null>>([]);
+  const titleInView = useInView(titleRef, { amount: 0.4 });
+  const titleControls = useAnimation();
   const [reduceMotion, setReduceMotion] = useState(() => {
     if (typeof window === "undefined") {
       return false;
     }
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   });
+
+  useEffect(() => {
+    titleControls.start(
+      titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 },
+    );
+  }, [titleControls, titleInView]);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -169,11 +179,17 @@ const Project: React.FC = () => {
       <div
         className={`mx-auto flex min-h-[100dvh] w-full ${PROJECT1_CONFIG.contentMaxWidthClass} flex-col px-4 pt-[100px]`}
       >
-        <div className="mb-[30px] text-center">
+        <motion.div
+          ref={titleRef}
+          initial={{ opacity: 0, y: 24 }}
+          animate={titleControls}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="mb-[30px] text-center"
+        >
           <h2 className="numbered-heading uppercase text-2xl md:text-3xl font-bold text-primary">
             Projects
           </h2>
-        </div>
+        </motion.div>
 
         <div
           className={`relative ${
