@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import {
+  FaCommentDots,
+  FaComments,
   FaEnvelope,
   FaGithub,
   FaLinkedinIn,
@@ -32,9 +34,10 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="flex min-h-[100dvh] flex-col overflow-hidden px-0 pt-[90px] mobile-landscape-padding justify-center"
+      className="relative flex min-h-[100dvh] flex-col overflow-hidden px-0 pt-[90px] mobile-landscape-padding justify-center bg-cover bg-center bg-no-repeat"
     >
-      <div className="grid grid-cols-1 gap-8 px-5 pb-10 pt-6 md:grid-cols-2 md:gap-10 md:px-8 md:pt-8 lg:px-10 mx-auto w-full max-w-6xl">
+      <div className="pointer-events-none absolute inset-0 bg-dark/70" />
+      <div className="relative z-10 grid grid-cols-1 gap-8 px-5 pb-10 pt-6 md:grid-cols-2 md:gap-10 md:px-8 md:pt-8 lg:px-10 mx-auto w-full max-w-6xl">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -86,16 +89,16 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="relative flex items-center justify-center"
+          className="relative flex items-center justify-center rounded-2xl bg-light px-3 py-3 md:max-w-[420px]"
         >
-          <div className="relative z-10 w-full space-y-4 md:max-w-[420px]">
+          <div className="relative z-10 w-full space-y-4 ">
             {contactCards.map((item) => (
               <div
                 key={item.label}
-                className="flex items-center justify-between gap-4 rounded-2xl bg-white px-4 py-3 shadow-[0_8px_24px_rgba(16,24,40,0.08)]"
+                className="flex items-center justify-between gap-4"
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/50">
+                  <span className="flex h-9 w-9 items-center justify-center">
                     {item.icon}
                   </span>
                   <div>
@@ -109,6 +112,16 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="pointer-events-none absolute -bottom-10 -right-5 z-20 hidden sm:block">
+            <div className="relative h-28 w-36">
+              {/* <div className="absolute left-0 top-0 flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-md">
+                <FaComments className="h-10 w-10 text-light" />
+              </div> */}
+              <div className="absolute bottom-0 right-0 flex h-20 w-20 items-center justify-center rounded-full bg-primary shadow-md">
+                <FaCommentDots className="h-12 w-12 text-light" />
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
