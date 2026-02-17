@@ -205,9 +205,9 @@ const Project1: React.FC = () => {
                     }
                     externalLink={project.external}
                     disableGallery={Boolean(project.external)}
-                    className="h-full flex-1 w-full lg:w-[70%]"
+                    className="h-full flex-1 w-full lg:w-[60%]"
                   />
-                  <div className="w-full lg:w-[30%] flex-shrink-0">
+                  <div className="w-full lg:w-[40%] flex-shrink-0">
                     <h3 className="text-xl md:text-2xl font-bold text-textLight mt-2">
                       {project.title}
                     </h3>

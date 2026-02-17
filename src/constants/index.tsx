@@ -225,10 +225,10 @@ type Project = {
 
 export const projects: Project[] = [
   {
-    title: "NMDC",
+    title: "NMDC (National Mineral Development Corporation)",
     overline: "Amnex Technologies",
     description:
-      "Worked as a Software Developer on the National Mineral Development Corporation (NMDC) project, building a web-based monitoring dashboard for real-time tracking of mining operations. Used Angular, Kendo UI, and ECharts to create responsive, data-driven interfaces, and integrated RESTful APIs to deliver live performance insights for both on-site and admin users.",
+      "Built a web-based dashboard to track mining operations in real time. Used Angular, Kendo UI, and ECharts to create responsive, data-driven interfaces. Connected RESTful APIs to show live performance information for on-site and admin users, helping improve operational visibility and decision-making.",
     tech: ["Angular", "Bootstrap", "API Integration", "Kendo UI", "ECharts"],
     image: NMDCImg,
     gallery: Array.from(
@@ -237,10 +237,10 @@ export const projects: Project[] = [
     ),
   },
   {
-    title: "Circle Vision",
+    title: "Circle Vision (CMS Platform)",
     overline: "Timeloop Technologies",
     description:
-      "This is a CMS-based property management and website generation platform built for real estate brokers. The tool allows users to manage property listings and content and generate public-facing websites by selecting a theme. Once a theme is selected, the system automatically displays uploaded content such as images, videos, and text inside the chosen layout, making it easy to publish professional property websites without manual design work. I worked as a Frontend Developer on this platform, where I built and enhanced core features using Angular and designed multiple responsive UI themes. I implemented dynamic content rendering so platform data could be mapped seamlessly to different themes, improving flexibility, usability, and overall user experience.",
+      "Worked on a CMS-based platform for real estate brokers to manage property listings and create websites easily. Users can select a property display theme and add images, videos, 3D tours, and floor plans, which are automatically displayed in the chosen layout. I built and enhanced 5+ responsive themes using HTML, CSS, Bootstrap, and JavaScript, implemented dynamic content rendering with Angular components, and developed CRUD operations for managing property details, images, and other content. Enhanced user experience by building flexible, easy-to-use interfaces for managing property content and website creation, and collaborated with the team to deliver fully functional features on time.",
     tech: ["Angular", "Bootstrap", "API Integration", "jQuery", "HTML", "CSS"],
     image: circleVisionImg,
     gallery: [
