@@ -3,7 +3,7 @@ import type { Page } from "@playwright/test";
 
 const waitForAppReady = async (page: Page) => {
   await page
-    .locator("#page-scroll")
+    .locator("#home")
     .waitFor({ state: "visible", timeout: 15000 });
 };
 
@@ -24,32 +24,22 @@ test.describe("portfolio smoke tests", () => {
     await expect(page.locator("#contact")).toBeInViewport();
   });
 
-  test("project gallery modal opens, navigates, and closes", async ({ page }) => {
+  test("project gallery navigates inline", async ({ page }) => {
     await page.getByRole("link", { name: /projects/i }).click();
     const projectsSection = page.locator("#projects");
     await projectsSection.scrollIntoViewIfNeeded();
-    const showImagesButton = projectsSection
-      .getByRole("button", { name: "Show Images" })
+
+    const nextButton = projectsSection
+      .getByRole("button", { name: /next .* image/i })
       .first();
-    await showImagesButton.waitFor({ state: "visible" });
-    await showImagesButton.click();
+    await nextButton.waitFor({ state: "visible" });
 
-    const dialog = page.locator('[role="dialog"][aria-modal="true"]');
-    await expect(dialog).toBeVisible();
-    await expect(page.locator("body")).toHaveClass(/modal-open/);
-
-    const count = page.locator("#project-gallery-count");
-    if (await count.count()) {
-      const nextButton = dialog.getByRole("button", { name: "Next image" });
-      if (await nextButton.count()) {
-        const initialCount = (await count.textContent()) ?? "";
-        await nextButton.click();
-        await expect(count).not.toHaveText(initialCount);
-      }
-    }
-
-    await page.keyboard.press("Escape");
-    await expect(dialog).toBeHidden();
-    await expect(page.locator("body")).not.toHaveClass(/modal-open/);
+    await expect(
+      projectsSection.getByRole("img", { name: /preview 2/i }),
+    ).toHaveCount(0);
+    await nextButton.click();
+    await expect(
+      projectsSection.getByRole("img", { name: /preview 2/i }),
+    ).toHaveCount(1);
   });
 });
