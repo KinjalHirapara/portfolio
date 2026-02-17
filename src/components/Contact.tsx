@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import {
   FaCommentDots,
-  FaComments,
   FaEnvelope,
   FaGithub,
   FaLinkedinIn,
