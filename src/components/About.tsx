@@ -124,8 +124,8 @@ const About: React.FC = () => {
                 <div className="mx-auto mt-3 h-px w-14 bg-primary/60" />
                 <ul className="mt-4 space-y-2 text-sm leading-relaxed text-textlight/90">
                   {card.points.map((point) => (
-                    <li key={point} className="flex items-center gap-2">
-                      <BsChevronDoubleRight className="h-3.5 w-3.5 shrink-0 text-primary" />
+                    <li key={point} className="flex items-start gap-2">
+                      <BsChevronDoubleRight className="mt-[5px] h-3.5 w-3.5 shrink-0 text-primary" />
                       <span>{point}</span>
                     </li>
                   ))}
