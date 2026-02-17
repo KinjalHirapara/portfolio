@@ -5,9 +5,10 @@ const CustomScrollbar: React.FC = () => {
   const thumbRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    let frameId = 0;
+    let frameId: number | null = null;
 
     const update = () => {
+      frameId = null;
       const doc = document.documentElement;
       const scrollTop = window.scrollY || doc.scrollTop;
       const maxScroll = doc.scrollHeight - window.innerHeight;
@@ -18,13 +19,25 @@ const CustomScrollbar: React.FC = () => {
       if (thumbRef.current) {
         thumbRef.current.style.height = `${height}px`;
       }
+    };
+
+    const scheduleUpdate = () => {
+      if (frameId !== null) {
+        return;
+      }
       frameId = requestAnimationFrame(update);
     };
 
-    frameId = requestAnimationFrame(update);
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
 
     return () => {
-      cancelAnimationFrame(frameId);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (frameId !== null) {
+        cancelAnimationFrame(frameId);
+      }
     };
   }, []);
 
