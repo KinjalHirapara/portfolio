@@ -202,6 +202,8 @@ const Project1: React.FC = () => {
                         ? project.gallery
                         : [project.image]
                     }
+                    externalLink={project.external}
+                    disableGallery={Boolean(project.external)}
                     className="h-full lg:col-span-8"
                   />
                   <div className="flex-1 min-h-0 overflow-y-auto px-5 md:px-6 lg:col-span-4">
