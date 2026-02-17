@@ -1,5 +1,3 @@
-import { useTheme } from "../context/ThemeContext";
-
 import Home from "./Home";
 import About from "./About";
 import Experience from "./Experience";
@@ -15,8 +13,6 @@ import ScrollToTop from "./ScrollToTop";
 
 const SectionRouter: React.FC = () => {
   const [loading, setLoading] = useState(true);
-
-  const { theme } = useTheme();
 
   useEffect(() => {
     if (loading) {
@@ -53,13 +49,7 @@ const SectionRouter: React.FC = () => {
   }
 
   return (
-    <div
-      className={`${
-        theme === "dark"
-          ? "dark:bg-dark dark:text-textLight"
-          : "bg-light text-textDark"
-      } w-screen `}
-    >
+    <div className="dark bg-dark text-textLight w-screen">
       <PointerDot />
       <CustomScrollbar />
       <ScrollToTop />

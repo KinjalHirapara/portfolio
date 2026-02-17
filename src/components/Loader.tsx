@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { useTheme } from "../context/ThemeContext";
 import PointerDot from "./PointerDot";
 
 const animationDuration = 2600;
 const transitionDuration = 800;
 
 const Loader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
-  const { theme } = useTheme();
   const controls = useAnimation();
   const label = "Loading...";
 
@@ -44,11 +42,7 @@ const Loader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
   }, [controls, onFinish]);
 
   return (
-    <div
-      className={`fixed inset-0 flex items-center justify-center z-50 ${
-        theme === "dark" ? "bg-dark text-textLight" : "bg-light text-textDark"
-      }`}
-    >
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-dark text-textLight">
       <PointerDot />
       <div className="relative h-[120px] w-[min(85vw,640px)] flex items-center justify-center overflow-visible">
         <motion.span
