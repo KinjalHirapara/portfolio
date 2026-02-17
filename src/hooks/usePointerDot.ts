@@ -86,8 +86,8 @@ export const usePointerDot = (dotRef: RefObject<HTMLDivElement | null>) => {
       }
     };
 
-    window.addEventListener("pointermove", handleMove, { passive: true });
-    window.addEventListener("mousemove", handleMove, { passive: true });
+    const moveEventName = "PointerEvent" in window ? "pointermove" : "mousemove";
+    window.addEventListener(moveEventName, handleMove, { passive: true });
     window.addEventListener("pointerleave", handleLeave);
     window.addEventListener("mouseleave", handleLeave);
     window.addEventListener("blur", handleLeave);
@@ -95,8 +95,7 @@ export const usePointerDot = (dotRef: RefObject<HTMLDivElement | null>) => {
     frameRef.current = requestAnimationFrame(update);
 
     return () => {
-      window.removeEventListener("pointermove", handleMove);
-      window.removeEventListener("mousemove", handleMove);
+      window.removeEventListener(moveEventName, handleMove);
       window.removeEventListener("pointerleave", handleLeave);
       window.removeEventListener("mouseleave", handleLeave);
       window.removeEventListener("blur", handleLeave);
