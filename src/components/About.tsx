@@ -113,16 +113,16 @@ const About: React.FC = () => {
             return (
               <div
                 key={card.title}
-                className="relative rounded-2xl border border-primary/30 bg-light px-5 pb-5 pt-10 text-left backdrop-blur-sm"
+                className="relative rounded-2xl border border-primary/30 bg-dark px-5 pb-5 pt-10 text-left backdrop-blur-sm"
               >
                 <div className="absolute left-1/2 top-0 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary/70 bg-primary text-dark">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-textDark mt-2 text-center">
+                <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-textlight mt-2 text-center">
                   {card.title}
                 </h3>
                 <div className="mx-auto mt-3 h-px w-14 bg-primary/60" />
-                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-textDark/90">
+                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-textlight/90">
                   {card.points.map((point) => (
                     <li key={point} className="flex items-center gap-2">
                       <BsChevronDoubleRight className="h-3.5 w-3.5 shrink-0 text-primary" />
