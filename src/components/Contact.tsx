@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
             <a
               href="mailto:kinjalhirapara25@gmail.com"
               aria-label="Email"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0f2232] transition hover:scale-105"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-dark transition hover:scale-105"
             >
               <FaEnvelope className="h-4 w-4" />
             </a>
@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0f2232] transition hover:scale-105"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-dark transition hover:scale-105"
             >
               <FaGithub className="h-4 w-4" />
             </a>
@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0f2232] transition hover:scale-105"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-dark transition hover:scale-105"
             >
               <FaLinkedinIn className="h-4 w-4" />
             </a>
