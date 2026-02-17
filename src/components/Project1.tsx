@@ -191,10 +191,10 @@ const Project1: React.FC = () => {
                 reduceMotion
                   ? "relative"
                   : "absolute left-1/2 top-0 -translate-x-1/2"
-              } w-full ${PROJECT1_CONFIG.cardRadiusClass} overflow-hidden border border-white ${PROJECT1_CONFIG.cardBgClass} p-4`}
+              } w-full ${PROJECT1_CONFIG.cardRadiusClass} overflow-hidden border border-primary ${PROJECT1_CONFIG.cardBgClass} p-4`}
             >
               <div className={`relative ${PROJECT1_CONFIG.imageHeightClass}`}>
-                <div className="h-full grid grid-cols-1 lg:grid-cols-12">
+                <div className="h-full flex flex-col lg:flex-row gap-6">
                   <ProjectGallery
                     title={project.title}
                     images={
@@ -204,9 +204,9 @@ const Project1: React.FC = () => {
                     }
                     externalLink={project.external}
                     disableGallery={Boolean(project.external)}
-                    className="h-full lg:col-span-8"
+                    className="h-full flex-1 w-full lg:w-[70%]"
                   />
-                  <div className="flex-1 min-h-0 overflow-y-auto px-5 md:px-6 lg:col-span-4">
+                  <div className="w-full lg:w-[30%] flex-shrink-0">
                     <h3 className="text-xl md:text-2xl font-bold text-textLight mt-2">
                       {project.title}
                     </h3>
