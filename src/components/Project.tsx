@@ -40,7 +40,7 @@ const PROJECT1_CONFIG: Project1Config = {
   imageHeightClass: "min-h-[22rem] h-[clamp(22rem,70vh,48rem)]",
 };
 
-const Project1: React.FC = () => {
+const Project: React.FC = () => {
   const pinRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<Array<HTMLElement | null>>([]);
   const [reduceMotion, setReduceMotion] = useState(() => {
@@ -238,4 +238,4 @@ const Project1: React.FC = () => {
   );
 };
 
-export default Project1;
+export default Project;
