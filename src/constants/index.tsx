@@ -32,7 +32,6 @@ import circleVisionImg from "../assets/Timeloop/175_01.png";
 import portfolioImg from "../assets/Personal/portfolio.png";
 import cfsalesImg from "../assets/CF_Sales/184_Appointment.png";
 import tekwoodImg from "../assets/Tekwoods/180_3.png";
-import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 export const navLinks = [
   {
     id: "home",
@@ -291,19 +290,5 @@ export const projects: Project[] = [
     image: portfolioImg,
     github: "https://github.com/KinjalHirapara/monika-portfolio/",
     external: "https://monika-patel-portfolio.netlify.app/",
-  },
-];
-export const contactdetails = [
-  {
-    icon: <FaEnvelope className="text-primary" />,
-    text: "kinjalhirapara25@gmail.com",
-  },
-  {
-    icon: <FaPhone className="text-primary" />,
-    text: "+64 224154944",
-  },
-  {
-    icon: <FaMapMarkerAlt className="text-primary" />,
-    text: "Christchurch, Canterbury, New Zealand",
   },
 ];
