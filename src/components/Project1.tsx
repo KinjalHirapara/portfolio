@@ -24,7 +24,7 @@ type Project1Config = {
 };
 
 const PROJECT1_CONFIG: Project1Config = {
-  initialYOffsetPercent: 110,
+  initialYOffsetPercent: 100,
   inactiveScale: 0.7,
   inactiveBrightness: 0.75,
   transitionDuration: 1,
@@ -93,7 +93,8 @@ const Project1: React.FC = () => {
         gsap.set(card, {
           zIndex: cards.length - index,
           opacity: 1,
-          yPercent: index === 0 ? 0 : PROJECT1_CONFIG.initialYOffsetPercent,
+          yPercent:
+            index === 0 ? 0 : index * PROJECT1_CONFIG.initialYOffsetPercent,
           scale: 1,
           filter: "brightness(1)",
         });
