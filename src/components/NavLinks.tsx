@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { navLinks } from "../constants";
 
+const SECTION_IDS = navLinks.map((link) => link.id);
+
 const NavLinks: React.FC<{
   className?: string;
   onLinkClick?: () => void;
 }> = (props) => {
-  const SECTION_IDS = navLinks.map((link) => link.id);
   const [activeId, setActiveId] = useState("home");
 
   const intersections = useRef(new Map<string, IntersectionObserverEntry>());
