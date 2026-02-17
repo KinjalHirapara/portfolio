@@ -98,7 +98,7 @@ const About: React.FC = () => {
               workflows, and state management. I have built dashboards, CMS
               platforms, and business applications that handle complex data and
               workflows, focusing on clean architecture, reusable components,
-              and responsive design. I’m skilled at translating Figma designs
+              and responsive design. I am skilled at translating Figma designs
               and business requirements into polished, production-ready
               interfaces, work collaboratively in agile, sprint-based teams
               using Git, and leverage AI-assisted workflows to improve
