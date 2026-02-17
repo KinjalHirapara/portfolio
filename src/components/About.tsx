@@ -2,7 +2,41 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FaCode, FaLightbulb, FaRocket } from "react-icons/fa";
 import { BsChevronDoubleRight } from "react-icons/bs";
-import { fadeInUp } from "../utils/motion";
+
+const introContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.05 },
+  },
+};
+
+const introItemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
+};
+
+const cardsContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.18, delayChildren: 0.12 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 28, scale: 0.98 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
+};
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -79,16 +113,22 @@ const About: React.FC = () => {
       >
         <div className="grid gap-8 items-center">
           <motion.div
-            custom={0}
             initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={introContainerVariants}
             className="space-y-4"
           >
-            <h2 className="numbered-heading uppercase text-2xl md:text-3xl font-bold text-primary text-center">
+            <motion.h2
+              variants={introItemVariants}
+              className="numbered-heading uppercase text-2xl md:text-3xl font-bold text-primary text-center"
+            >
               About Me
-            </h2>
-            <p className="text-base md:text-lg leading-relaxed text-textLight">
+            </motion.h2>
+            <motion.p
+              variants={introItemVariants}
+              className="text-base md:text-lg leading-relaxed text-textLight"
+            >
               Frontend-focused software developer with 5+ years of experience
               building scalable, user-centric web applications, with strong
               expertise in React, Angular, and TypeScript, and Solid backend
@@ -103,16 +143,23 @@ const About: React.FC = () => {
               interfaces, work collaboratively in agile, sprint-based teams
               using Git, and leverage AI-assisted workflows to improve
               productivity, testing, documentation, and automation.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          variants={cardsContainerVariants}
+          className="grid gap-5 md:grid-cols-3"
+        >
           {aboutCards.map((card) => {
             const Icon = card.icon;
             return (
-              <div
+              <motion.div
                 key={card.title}
+                variants={cardVariants}
                 className="relative rounded-2xl border border-primary/30 bg-dark px-5 pb-5 pt-10 text-left backdrop-blur-sm"
               >
                 <div className="absolute left-1/2 top-0 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary/70 bg-primary text-dark">
@@ -130,10 +177,10 @@ const About: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
