@@ -209,6 +209,7 @@ type Project = {
   title: string;
   overline: string;
   description: string;
+  contributions?: string[];
   tech: string[];
   image: string;
   gallery?: string[];
@@ -218,11 +219,23 @@ type Project = {
 
 export const projects: Project[] = [
   {
-    title: "NMDC (National Mineral Development Corporation)",
+    title: "NMDC Dashboard",
     overline: "Amnex Technologies",
     description:
-      "Built a web-based dashboard to track mining operations in real time. Used Angular, Kendo UI, and ECharts to create responsive, data-driven interfaces. Connected RESTful APIs to show live performance information for on-site and admin users, helping improve operational visibility and decision-making.",
-    tech: ["Angular", "Bootstrap", "API Integration", "Kendo UI", "ECharts"],
+      "Built a web-based dashboard to track mining operations in real time, providing live performance insights for on-site and admin users to improve operational visibility and decision-making.",
+    contributions: [
+      "Developed responsive, data-driven interfaces using Angular, Kendo UI, and ECharts.",
+      "Connected RESTful APIs to display real-time data.",
+      "Implemented lazy-loaded modules using Angular routing to improve performance and scalability.",
+    ],
+    tech: [
+      "Angular",
+      "Bootstrap",
+      "TypeScript",
+      "Kendo UI",
+      "ECharts",
+      "API Integration",
+    ],
     image: NMDCImg,
     gallery: Array.from(
       { length: 32 },
@@ -233,8 +246,19 @@ export const projects: Project[] = [
     title: "Circle Vision (CMS Platform)",
     overline: "Timeloop Technologies",
     description:
-      "Worked on a CMS-based platform for real estate brokers to manage property listings and create websites easily. Users can select a property display theme and add images, videos, 3D tours, and floor plans, which are automatically displayed in the chosen layout. I built and enhanced 5+ responsive themes using HTML, CSS, Bootstrap, and JavaScript, implemented dynamic content rendering with Angular components, and developed CRUD operations for managing property details, images, and other content. Enhanced user experience by building flexible, easy-to-use interfaces for managing property content and website creation, and collaborated with the team to deliver fully functional features on time.",
-    tech: ["Angular", "Bootstrap", "API Integration", "jQuery", "HTML", "CSS"],
+      "Developed a CMS platform for real estate brokers to manage property listings.",
+    contributions: [
+      "Built 5+ property listing themes using HTML, CSS, Bootstrap, and JavaScript.",
+      "Built a modular Angular-based property management system with dynamic content rendering and complete CRUD operations for properties, galleries, videos, and features.",
+    ],
+    tech: [
+      "Angular",
+      "Bootstrap",
+      "API Integration",
+      "TypeScript",
+      "HTML",
+      "CSS",
+    ],
     image: circleVisionImg,
     gallery: [
       "/assets/circlevision/175_01.png",
@@ -249,8 +273,12 @@ export const projects: Project[] = [
     title: "CF Sales Portal",
     overline: "Timeloop Technologies",
     description:
-      "CF Sales Portal is a web-based tool specially developed for the sales team of our client to manage their processes in a simplified manner. This portal is a central point of all the sales information, forecasting and management applications. Worked as a Frontend Developer, Developed responsive, user-friendly interfaces and integrated backend services to deliver a smooth and efficient user experience across the portal.",
-    tech: ["HTML", "CSS", "jQuery", "Bootstrap", "API Integration"],
+      "Developed a web-based tool for the sales team to manage information, forecasting, and processes efficiently.",
+    contributions: [
+      "Implemented full CRUD functionality for appointments, users, roles, and reports in a centralized admin dashboard.",
+      "Designed responsive UI components focused on usability and smooth workflow management.",
+    ],
+    tech: ["HTML", "CSS", "Bootstrap", "JavaScript", "API Integration"],
     image: cfsalesImg,
     gallery: [
       "/assets/cfsales/184_Appointment.png",
@@ -264,8 +292,12 @@ export const projects: Project[] = [
     title: "Tekwoods",
     overline: "Timeloop Technologies",
     description:
-      "Worked as a Frontend Developer on a web-based management system for a client in the Netherlands, designed to manage employees, projects, and invoices. Built responsive, user-friendly interfaces and integrated RESTful APIs to ensure smooth data flow and reliable application functionality.",
-    tech: ["HTML", "CSS", "jQuery", "Bootstrap", "API Integration"],
+      "Worked on a web-based management system to manage employees, projects, and invoices.",
+    contributions: [
+      "Created modular, maintainable UI components for enterprise workflows.",
+      "Integrated RESTful APIs for secure, scalable, and reliable data operations.",
+    ],
+    tech: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     image: tekwoodImg,
     gallery: [
       "/assets/techwood/17.png",
@@ -275,14 +307,14 @@ export const projects: Project[] = [
       "/assets/techwood/183_5.png",
     ],
   },
-  {
-    title: "Portfolio Website",
-    overline: "Personal Project",
-    description:
-      "Designed and developed a personal portfolio website using TypeScript and Tailwind CSS, focusing on clean layout, responsive design, and smooth user experience to showcase projects and skills effectively.",
-    tech: ["TypeScript", "Tailwind CSS"],
-    image: portfolioImg,
-    github: "https://github.com/KinjalHirapara/monika-portfolio/",
-    external: "https://monika-patel-portfolio.netlify.app/",
-  },
+  // {
+  //   title: "Portfolio Website",
+  //   overline: "Personal Project",
+  //   description:
+  //     "Designed and developed a personal portfolio website using TypeScript and Tailwind CSS, focusing on clean layout, responsive design, and smooth user experience to showcase projects and skills effectively.",
+  //   tech: ["TypeScript", "Tailwind CSS"],
+  //   image: portfolioImg,
+  //   github: "https://github.com/KinjalHirapara/monika-portfolio/",
+  //   external: "https://monika-patel-portfolio.netlify.app/",
+  // },
 ];

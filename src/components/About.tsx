@@ -58,19 +58,19 @@ const About: React.FC = () => {
       title: "Strategy & Clarity",
       icon: FaLightbulb,
       points: [
-        "Understand product goals before writing code.",
-        "Translate ideas into scalable architecture",
-        "Design flexible, reusable, and future-proof systems",
-        "focus on building solutions, not just features",
+        "Understand product goals before writing code",
+        "Translate ideas into scalable system architecture",
+        "Design flexible, reusable, and future-proof solutions",
+        "Focus on building real solutions, not just features",
       ],
     },
     {
       title: "Clean Implementation",
       icon: FaCode,
       points: [
-        "Create modular, reusable UI components",
+        "Build modular, reusable UI components",
         "Maintain clean state management and predictable data flow",
-        "Optimize for performance, and accessibility",
+        "Optimize for performance, accessibility, and reliability",
         "Handle edge cases, errors, and real-world user behavior",
         "Write clean, structured, and readable code",
       ],
@@ -83,7 +83,7 @@ const About: React.FC = () => {
         "Ensure smooth experiences across devices and screen sizes",
         "Keep codebases organized, documented, and maintainable",
         "Work effectively in agile, sprint-based workflows",
-        "Improve continuously through feedback, iteration, and learning",
+        "Grow continuously through feedback, iteration, and learning",
       ],
     },
   ];
@@ -131,6 +131,17 @@ const About: React.FC = () => {
               className="text-base md:text-lg leading-relaxed text-textLight"
             >
               Frontend-focused software developer with 5+ years of experience
+              building scalable web applications using React, Angular, and
+              TypeScript supported by backend experience in Node.js and
+              PostgreSQL. I specialize in crafting clean, maintainable interface
+              systems through modern architectural patterns, modular design,
+              reusable components, and responsive layouts. Experienced in REST
+              API integration, state management, CRUD workflows, test-driven
+              development, and Git-based version control. I actively use
+              AI-powered development tools to accelerate workflows, improve code
+              quality, generate documentation, and build automation that boosts
+              productivity and delivery speed.
+              {/* Frontend-focused software developer with 5+ years of experience
               building scalable, user-centric web applications, with strong
               expertise in React, Angular, and TypeScript, and Solid backend
               experience using Node.js and PostgreSQL. I specialize in creating
@@ -143,7 +154,7 @@ const About: React.FC = () => {
               and business requirements into polished, production-ready
               interfaces, work collaboratively in agile, sprint-based teams
               using Git, and leverage AI-assisted workflows to improve
-              productivity, testing, documentation, and automation.
+              productivity, testing, documentation, and automation. */}
             </motion.p>
           </motion.div>
         </div>

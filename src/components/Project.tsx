@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useAnimation, useInView } from "framer-motion";
+import { BsChevronDoubleRight } from "react-icons/bs";
 import { projects } from "../constants";
 import ProjectGallery from "./ProjectGallery";
 
@@ -233,6 +234,21 @@ const Project: React.FC = () => {
                     <p className="text-textLight/80 mt-4 text-sm md:text-base leading-relaxed">
                       {project.description}
                     </p>
+                    {project.contributions && project.contributions.length > 0 && (
+                      <div className="mt-4">
+                        <ul className="space-y-2 text-sm md:text-base leading-relaxed text-textLight/80">
+                          {project.contributions.map((item, idx) => (
+                            <li
+                              key={`${project.title}-contribution-${idx}`}
+                              className="flex items-start gap-2 text-left"
+                            >
+                              <BsChevronDoubleRight className="mt-[5px] h-3.5 w-3.5 shrink-0 text-primary" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                     <div className="mt-5 flex flex-wrap gap-2">
                       {project.tech.map((tech, techIndex) => (
                         <span
