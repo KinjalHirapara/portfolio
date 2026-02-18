@@ -283,7 +283,7 @@ export const projects: Project[] = [
     gallery: [
       "/assets/cfsales/184_Appointment.png",
       "/assets/cfsales/185_Audit.png",
-      "/assets/cfsales/186_Customers_Data.png",
+      "/assets/cfsales/186_Data.png",
       "/assets/cfsales/190_Dashboard.png",
       "/assets/cfsales/191_Question_Sets.png",
     ],
