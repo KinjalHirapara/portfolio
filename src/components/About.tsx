@@ -1,9 +1,10 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { FaCode, FaLightbulb, FaRocket } from "react-icons/fa";
 import { BsChevronDoubleRight } from "react-icons/bs";
 
-const introContainerVariants = {
+const introContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -11,7 +12,7 @@ const introContainerVariants = {
   },
 };
 
-const introItemVariants = {
+const introItemVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
@@ -20,7 +21,7 @@ const introItemVariants = {
   },
 };
 
-const cardsContainerVariants = {
+const cardsContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -28,7 +29,7 @@ const cardsContainerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 28, scale: 0.98 },
   visible: {
     opacity: 1,
