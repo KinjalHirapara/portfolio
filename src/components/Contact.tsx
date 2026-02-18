@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
           className="flex flex-col items-start justify-center"
         >
           <h2 className="numbered-heading uppercase text-2xl md:text-3xl pl-1 font-bold text-primary relative before:content-[''] before:absolute before:left-[-500px] before:bottom-[5px] before:w-[500px] before:h-[2px] before:bg-primary">
-            Contact
+            Contact Me
           </h2>
           <h3 className="mt-5 text-2xl font-semibold text-textLight md:text-3xl">
             Let&apos;s Build Something Together
