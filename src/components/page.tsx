@@ -6,7 +6,6 @@ import Contact from "./Contact";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
-import PointerDot from "./PointerDot";
 import Lenis from "lenis";
 import CustomScrollbar from "./CustomScrollbar";
 import ScrollToTop from "./ScrollToTop";
@@ -50,7 +49,6 @@ const SectionRouter: React.FC = () => {
 
   return (
     <div className="dark bg-dark text-textLight w-screen">
-      <PointerDot />
       <CustomScrollbar />
       <ScrollToTop />
       <div>

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import PointerDot from "./PointerDot";
 
 const animationDuration = 2600;
 const transitionDuration = 800;
@@ -43,7 +42,6 @@ const Loader: React.FC<{ onFinish: () => void }> = ({ onFinish }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-dark text-textLight">
-      <PointerDot />
       <div className="relative h-[120px] w-[min(85vw,640px)] flex items-center justify-center overflow-visible">
         <motion.span
           className="text-primary text-4xl md:text-6xl font-semibold tracking-[0.45em] uppercase select-none"
