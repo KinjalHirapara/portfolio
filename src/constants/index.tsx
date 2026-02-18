@@ -300,11 +300,11 @@ export const projects: Project[] = [
     tech: ["HTML", "CSS", "Bootstrap", "JavaScript"],
     image: tekwoodImg,
     gallery: [
-      "/assets/techwood/17.png",
-      "/assets/techwood/180_3.png",
-      "/assets/techwood/181_1.png",
-      "/assets/techwood/182_4.png",
-      "/assets/techwood/183_5.png",
+      "/assets/techwood/image1.png",
+      "/assets/techwood/image2.png",
+      "/assets/techwood/image3.png",
+      "/assets/techwood/image4.png",
+      "/assets/techwood/image5.png",
     ],
   },
   // {
