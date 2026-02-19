@@ -3,7 +3,7 @@ name: Build and Deploy to Deploy Branch (Production)
 on:
   push:
     branches:
-      - main
+      - Orange_theme
 
 permissions:
   contents: write
