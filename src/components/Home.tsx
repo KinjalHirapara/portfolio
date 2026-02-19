@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                   srcSet={`${profileImg340} 340w, ${profileImg680} 680w`}
                   sizes="(max-width: 640px) 220px, (max-width: 768px) 260px, (max-width: 1024px) 300px, 340px"
                 />
-                <img
+                <motion.img
                   src={profileImg}
                   alt="Profile"
                   width={340}
@@ -144,6 +144,10 @@ const Home: React.FC = () => {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   className="w-full h-full object-cover"
                 />
               </picture>
