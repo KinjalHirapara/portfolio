@@ -164,7 +164,7 @@ const About: React.FC = () => {
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
           variants={cardsContainerVariants}
-          className="grid gap-5 md:grid-cols-3"
+          className="grid gap-10 md:gap-5 md:grid-cols-3"
         >
           {aboutCards.map((card) => {
             const Icon = card.icon;
