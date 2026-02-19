@@ -28,7 +28,6 @@ import {
 
 import NMDCImg from "../assets/NMDC/1.png";
 import circleVisionImg from "../assets/Timeloop/175_01.png";
-import portfolioImg from "../assets/Personal/portfolio.png";
 import cfsalesImg from "../assets/CF_Sales/184_Appointment.png";
 import tekwoodImg from "../assets/Tekwoods/180_3.png";
 export const navLinks = [
