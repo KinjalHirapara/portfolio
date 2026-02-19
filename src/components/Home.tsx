@@ -81,7 +81,7 @@ const Home: React.FC = () => {
               ></span>
             </h1>
           </div>
-          <div className="relative text-3xl sm:text-4xl md:text-4xl pl-2 font-bold text-primary before:content-[''] before:absolute before:left-[-500px] before:bottom-[5px] before:w-[500px] before:h-[2px] before:bg-primary">
+          <div className="relative text-3xl sm:text-4xl md:text-4xl lg:pl-2 font-bold text-primary lg:before:content-[''] lg:before:absolute lg:before:left-[-500px] lg:before:bottom-[5px] lg:before:w-[500px] lg:before:h-[2px] lg:before:bg-primary">
             Kinjal Hirapara
           </div>
           <motion.div
@@ -180,7 +180,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-
-
-
