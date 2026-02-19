@@ -1,5 +1,7 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import profileImg from "../assets/profile.jpg";
+import profileImg340 from "../assets/profile-340.webp";
+import profileImg680 from "../assets/profile-680.webp";
 import { BsArrowRight, BsDot } from "react-icons/bs";
 import { skills } from "../constants";
 
@@ -128,11 +130,23 @@ const Home: React.FC = () => {
           </div>
           <div className="relative w-full h-full p-[10px] z-10">
             <div className="w-full h-full overflow-hidden rounded-full border-4 border-light dark:border-dark bg-light dark:bg-dark">
-              <img
-                src={profileImg}
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={`${profileImg340} 340w, ${profileImg680} 680w`}
+                  sizes="(max-width: 640px) 220px, (max-width: 768px) 260px, (max-width: 1024px) 300px, 340px"
+                />
+                <img
+                  src={profileImg}
+                  alt="Profile"
+                  width={340}
+                  height={324}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full h-full object-cover"
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -162,3 +176,7 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
+
+
+
