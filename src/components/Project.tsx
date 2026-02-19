@@ -251,6 +251,7 @@ const Project: React.FC = () => {
                     }
                     externalLink={project.external}
                     disableGallery={Boolean(project.external)}
+                    hideDotsOnSmall={true}
                     className={`${shouldUseGsap ? "h-full" : "min-h-[220px] aspect-[16/10]"} flex-1 w-full lg:w-[60%]`}
                   />
                   <div className="w-full lg:w-[40%] flex-shrink-0">

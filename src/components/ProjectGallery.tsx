@@ -8,6 +8,7 @@ type ProjectGalleryProps = {
   images: string[];
   externalLink?: string;
   disableGallery?: boolean;
+  hideDotsOnSmall?: boolean;
   className?: string;
   imageClassName?: string;
   overlayClassName?: string;
@@ -18,6 +19,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
   images,
   externalLink,
   disableGallery = false,
+  hideDotsOnSmall = false,
   className = "",
   imageClassName = "",
   overlayClassName = "",
@@ -135,7 +137,11 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({
           >
             {activeIndex + 1}/{galleryImages.length}
           </motion.div>
-          <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 gap-2 rounded-full border border-white/20 bg-black/45 px-3 py-1.5 backdrop-blur">
+          <div
+            className={`absolute bottom-3 left-1/2 z-20 -translate-x-1/2 gap-2 rounded-full border border-white/20 bg-black/45 px-3 py-1.5 backdrop-blur ${
+              hideDotsOnSmall ? "hidden lg:flex" : "flex"
+            }`}
+          >
             {galleryImages.map((_, index) => {
               const isActive = index === activeIndex;
               return (
