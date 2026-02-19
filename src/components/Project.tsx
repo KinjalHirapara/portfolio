@@ -48,18 +48,40 @@ const Project: React.FC = () => {
   const cardRefs = useRef<Array<HTMLElement | null>>([]);
   const titleInView = useInView(titleRef, { amount: 0.4 });
   const titleControls = useAnimation();
+  const [isLargeScreen, setIsLargeScreen] = useState(() => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+    return window.matchMedia("(min-width: 1024px)").matches;
+  });
   const [reduceMotion, setReduceMotion] = useState(() => {
     if (typeof window === "undefined") {
       return false;
     }
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   });
+  const shouldUseGsap = isLargeScreen && !reduceMotion;
 
   useEffect(() => {
     titleControls.start(
       titleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 },
     );
   }, [titleControls, titleInView]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    const media = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsLargeScreen(media.matches);
+    update();
+    if (media.addEventListener) {
+      media.addEventListener("change", update);
+      return () => media.removeEventListener("change", update);
+    }
+    media.addListener(update);
+    return () => media.removeListener(update);
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -77,14 +99,19 @@ const Project: React.FC = () => {
   }, []);
 
   useLayoutEffect(() => {
-    if (reduceMotion) {
+    const cards = cardRefs.current.filter(Boolean) as HTMLElement[];
+
+    if (!shouldUseGsap) {
+      cards.forEach((card) => {
+        gsap.set(card, { clearProps: "transform,filter,opacity,zIndex" });
+      });
       return;
     }
+
     const pin = pinRef.current;
     if (!pin) {
       return;
     }
-    const cards = cardRefs.current.filter(Boolean) as HTMLElement[];
     if (!cards.length) {
       return;
     }
@@ -169,7 +196,7 @@ const Project: React.FC = () => {
     }, pin);
 
     return () => ctx.revert();
-  }, [reduceMotion]);
+  }, [shouldUseGsap]);
 
   return (
     <section
@@ -194,9 +221,9 @@ const Project: React.FC = () => {
 
         <div
           className={`relative ${
-            reduceMotion
-              ? "flex flex-col gap-8"
-              : `${PROJECT1_CONFIG.pinnedHeightClass} z-20 pt-4 md:pt-6 overflow-hidden`
+            shouldUseGsap
+              ? `${PROJECT1_CONFIG.pinnedHeightClass} z-20 pt-4 md:pt-6 overflow-hidden`
+              : "flex flex-col gap-8"
           }`}
         >
           {projects.map((project, index) => (
@@ -206,12 +233,14 @@ const Project: React.FC = () => {
                 cardRefs.current[index] = el;
               }}
               className={`${
-                reduceMotion
-                  ? "relative"
-                  : "absolute left-1/2 top-0 -translate-x-1/2"
-              } w-full ${PROJECT1_CONFIG.cardRadiusClass} overflow-hidden border border-primary ${PROJECT1_CONFIG.cardBgClass} p-4`}
+                shouldUseGsap
+                  ? "absolute left-1/2 top-0 -translate-x-1/2"
+                  : "relative"
+              } w-full ${PROJECT1_CONFIG.cardRadiusClass} overflow-hidden ${shouldUseGsap ? "border border-primary" : "border-0"} ${PROJECT1_CONFIG.cardBgClass} p-4`}
             >
-              <div className={`relative ${PROJECT1_CONFIG.imageHeightClass}`}>
+              <div
+                className={`relative ${shouldUseGsap ? PROJECT1_CONFIG.imageHeightClass : ""}`}
+              >
                 <div className="h-full flex flex-col lg:flex-row gap-6">
                   <ProjectGallery
                     title={project.title}
@@ -222,7 +251,7 @@ const Project: React.FC = () => {
                     }
                     externalLink={project.external}
                     disableGallery={Boolean(project.external)}
-                    className="h-full flex-1 w-full lg:w-[60%]"
+                    className={`${shouldUseGsap ? "h-full" : "min-h-[220px] aspect-[16/10]"} flex-1 w-full lg:w-[60%]`}
                   />
                   <div className="w-full lg:w-[40%] flex-shrink-0">
                     <h3 className="text-xl md:text-2xl font-bold text-textLight mt-2">
