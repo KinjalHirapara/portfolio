@@ -152,7 +152,7 @@ export const experiences = [
     title: "Software Developer",
     company: "Predictable Data",
     city: "USA (Remote)",
-    duration: "June 2025 - Present",
+    duration: "June 2025 - March 2026",
     summary:
       "Build scalable frontend systems with React and modern UI libraries, focusing on reliability and product quality.",
     learningNote:
